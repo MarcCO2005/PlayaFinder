@@ -2,7 +2,7 @@
 class Security extends Connection
 {
     private $loginPage = "login.php";
-    private $homePage = "index.php";
+    private $homePage = "index.html";
     public function __construct()
     {
         parent::__construct();
@@ -20,7 +20,7 @@ class Security extends Connection
     {
         if (count($_POST) > 0) {
             $user = $this->getUser($_POST["userName"]);
-            $_SESSION["loggedIn"] = $this->checkUser($user, $_POST["userPassword"]) ? $user["userName"] : false;
+            $_SESSION["loggedIn"] = $this->checkUser($user, $_POST["userPassword"]) ? $user["email"] : false;
             if ($_SESSION["loggedIn"]) {
                 header("Location: " . $this->homePage);
             } else {
@@ -34,11 +34,15 @@ class Security extends Connection
     public function doRegister()
     {
         if (count($_POST) > 0) {
-            $user = $_POST["userName"];
-            $password = $_POST["userPassword"];
+            $user = $_POST["name"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            $localidad = $_POST["localidad"];
+            $telefono = $_POST["phone"];
             $encrypt = password_hash("$password", PASSWORD_BCRYPT);
-            $query = "INSERT INTO `users`(`userName`, `userPassword`, `securePassword`) VALUES ('$user' ,'0' ,'$encrypt')";
+            $query = "INSERT INTO `Usuario`(`nombre`, `email`, `telefono`, `contrasena`, `secure_contr`, `provincia`) VALUES ('$user','$email','$telefono','$password','$encrypt','$localidad')";
             mysqli_query($this->conn, $query);
+            header("Location: " . $this->loginPage);
         } else {
             return null;
         }
@@ -54,7 +58,7 @@ class Security extends Connection
     {
         if ($user) {
             //return $this->checkPassword($user["userPassword"], $userPassword);
-            return $this->checkPassword($user["securePassword"], $userPassword);
+            return $this->checkPassword($user["secure_contr"], $userPassword);
         } else {
             return false;
         }
@@ -68,7 +72,7 @@ class Security extends Connection
 
     private function getUser($userName)
     {
-        $sql = "SELECT * FROM users WHERE userName = '$userName'";
+        $sql = "SELECT * FROM Usuario WHERE email = '$userName'";
         $result = $this->conn->query($sql);
         if ($result->num_rows > 0) {
             return $result->fetch_assoc();
