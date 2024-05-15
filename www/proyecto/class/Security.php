@@ -2,7 +2,7 @@
 class Security extends Connection
 {
     private $loginPage = "login.php";
-    private $homePage = "index.html";
+    private $homePage = "index.php";
     public function __construct()
     {
         parent::__construct();
@@ -40,7 +40,7 @@ class Security extends Connection
             $localidad = $_POST["localidad"];
             $telefono = $_POST["phone"];
             $encrypt = password_hash("$password", PASSWORD_BCRYPT);
-            $query = "INSERT INTO `Usuario`(`nombre`, `email`, `telefono`, `contrasena`, `secure_contr`, `provincia`) VALUES ('$user','$email','$telefono','$password','$encrypt','$localidad')";
+            $query = "INSERT INTO `Usuario`(`nombre`, `email`, `telefono`, `contrasena`, `secure_contr`, `provincia`) VALUES ('$user','$email','$telefono','no timporta','$encrypt','$localidad')";
             mysqli_query($this->conn, $query);
             header("Location: " . $this->loginPage);
         } else {
@@ -70,7 +70,7 @@ class Security extends Connection
         //return ($userPassword === $securePassword);
     }
 
-    private function getUser($userName)
+    function getUser($userName)
     {
         $sql = "SELECT * FROM Usuario WHERE email = '$userName'";
         $result = $this->conn->query($sql);
