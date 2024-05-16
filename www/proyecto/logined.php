@@ -27,7 +27,7 @@ $info = $security->getUser($email);
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
               </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -36,7 +36,7 @@ $info = $security->getUser($email);
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Menu</a>
+                <a class="nav-link" href="logined.php">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php">Destino</a>
@@ -45,10 +45,8 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="contacto.php">Contacto</a>
               </li>
             </ul>
-            
             <form class="d-flex">
-              <a href="login.php"><button class="btn btn-primary" type="button"style="margin-right:10px" >Log In</button></a>
-              <a href="register.php"><button class="btn btn-primary" type="button">Register</button></a>
+                <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>"><i style="color: white; width: 1em;" class="d-block w-100 bi bi-person-circle"></i></a>
           </form>
           </div>
         </div>
@@ -56,56 +54,13 @@ $info = $security->getUser($email);
 
 
 
-      <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item active d-item">
-            <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
-            <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
-            </div>
-          </div>
-
-          <div class="carousel-item d-item">
-            <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
-            <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
-            </div>
-          </div>
-          <div class="carousel-item d-item">
-            <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
-            <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
-            </div>
-          </div>
-          <div class="carousel-item d-item">
-            <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
-            <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-</div>
-</div>
 <div class="container content">
   <h2 style=" margin: 50px;"></h2>
   <div class="row text-center">
     <div class="col-sm-6 mb-3 mb-sm-0 ">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>
+          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>?
           </h5>
           <p class="card-text" style="text-align: center;">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
           <a href="noticias.php" class="btn btn-primary"style="align-items-center">Comienza tu busqueda</a>
@@ -113,14 +68,18 @@ $info = $security->getUser($email);
       </div>
     </div>
     <div class="col-sm-6">
-
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
        
 <div class="container">
   <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-inner">
       <div class="carousel-item active d-item">
         <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
+
       </div>
+
       <div class="carousel-item d-item">
         <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
        
@@ -131,6 +90,7 @@ $info = $security->getUser($email);
       </div>
       <div class="carousel-item d-item">
         <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
+       
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
