@@ -39,9 +39,6 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="index.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="perfil.php">Perfil</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="contacto.php">Destino</a>
               </li>
               <li class="nav-item">
@@ -81,9 +78,7 @@ $info = $security->getUser($email);
     <div class="carousel-inner">
       <div class="carousel-item active d-item">
         <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
-
       </div>
-
       <div class="carousel-item d-item">
         <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
        
@@ -94,7 +89,6 @@ $info = $security->getUser($email);
       </div>
       <div class="carousel-item d-item">
         <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
-       
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

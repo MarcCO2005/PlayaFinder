@@ -17,8 +17,15 @@ $info = $security->getUser($email);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+  .d-img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+  }
+</style>
 <body>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
@@ -39,24 +46,70 @@ $info = $security->getUser($email);
               </li>
             </ul>
             <form class="d-flex">
-                <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>"><i style="color: white;" class="d-block w-100 bi bi-person-circle"></i></a>
+                <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>"><i style="color: white; width: 1em;" class="d-block w-100 bi bi-person-circle"></i></a>
           </form>
           </div>
         </div>
       </nav>
-<div class="content container mt-5">
-    <div class="card">
-        <div class="card-header">
-            Datos del Usuario
-        </div>
+
+
+
+<div class="container content">
+  <h2 style=" margin: 50px;"></h2>
+  <div class="row text-center">
+    <div class="col-sm-6 mb-3 mb-sm-0 ">
+      <div class="card h-100">
         <div class="card-body">
-            <h5 class="card-title">Nombre de Usuario: <?php echo $info['nombre']; ?></h5>
-            <p class="card-text">Correo Electrónico: <?php echo $info['email']; ?></p>
-            <p class="card-text">Localidad: <?php echo $info['provincia']; ?></p>
+          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>?
+          </h5>
+          <p class="card-text" style="text-align: center;">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+          <a href="noticias.php" class="btn btn-primary"style="align-items-center">Comienza tu busqueda</a>
         </div>
+      </div>
     </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+       
+<div class="container">
+  <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active d-item">
+        <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
+
+      </div>
+
+      <div class="carousel-item d-item">
+        <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
+       
+      </div>
+      <div class="carousel-item d-item">
+        <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
+       
+      </div>
+      <div class="carousel-item d-item">
+        <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
+       
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>
-</body>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container text-center text-md-left">
     <div class="row text-center text-md-left">
