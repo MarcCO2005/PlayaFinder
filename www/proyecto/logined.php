@@ -46,7 +46,7 @@ $info = $security->getUser($email);
               </li>
             </ul>
             <form class="d-flex">
-                <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>"><i style="color: white;" class="d-block w-100 bi bi-person-circle"></i></a>
+                <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>"><i style="color: white; width: 1em;" class="d-block w-100 bi bi-person-circle"></i></a>
           </form>
           </div>
         </div>
