@@ -18,12 +18,32 @@ $info = $security->getUser($email);
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-  .d-img {
-    
-    height: 500px; 
+  .d-item {
+    height: 650px;
+}
+
+.d-img {
+    height: 100%;
     object-fit: cover;
-    
-  }
+    filter: brightness(0.6);
+}
+
+
+.mapa {
+    border-radius: 15px;
+    width: 600px;
+    height: 400px;
+}
+
+.imagen {
+    width: 600px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    text-align: center;
+}
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -50,18 +70,18 @@ $info = $security->getUser($email);
             <form class="d-flex">
               <a href="login.php"><button class="btn btn-primary" type="button"style="margin-right:10px" >Log In</button></a>
               <a href="register.php"><button class="btn btn-primary" type="button">Register</button></a>
-          </form>
+            </form>
           </div>
         </div>
       </nav>
 
 
-      <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="3000">
+      <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="2000">
         <div class="carousel-inner">
           <div class="carousel-item active d-item">
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
+                <h2 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h2>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
             </div>
           </div>
@@ -69,26 +89,19 @@ $info = $security->getUser($email);
           <div class="carousel-item d-item">
             <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
+                <h2 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h2>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
             </div>
           </div>
           <div class="carousel-item d-item">
             <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
+                <h2 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h2>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+       
       </div>
 </div>
 </div>
