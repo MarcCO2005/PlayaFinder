@@ -57,7 +57,7 @@ $info = $security->getUser($email);
     <div class="col-sm-6 mb-3 mb-sm-0 ">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>?
+          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>
           </h5>
           <p class="card-text" style="text-align: center;">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
           <a href="noticias.php" class="btn btn-primary"style="align-items-center">Comienza tu busqueda</a>
@@ -70,7 +70,7 @@ $info = $security->getUser($email);
           <h5 class="card-title"></h5>
        
 <div class="container">
-  <div id="carouselExample" class="carousel slide">
+  <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-inner">
       <div class="carousel-item active d-item">
         <img src="img/fondo.PNG" class="d-block w-100 d-img" alt="">
