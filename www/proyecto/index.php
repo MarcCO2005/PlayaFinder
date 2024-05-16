@@ -39,9 +39,6 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="index.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="perfil.php">Perfil</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="contacto.php">Destino</a>
               </li>
               <li class="nav-item">
@@ -64,7 +61,7 @@ $info = $security->getUser($email);
     <div class="col-sm-6 mb-3 mb-sm-0 ">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>?
+          <h5 class="card-title">¿Que tal nena?
           </h5>
           <p class="card-text" style="text-align: center;">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
           <a href="noticias.php" class="btn btn-primary"style="align-items-center">Comienza tu busqueda</a>
@@ -77,13 +74,11 @@ $info = $security->getUser($email);
           <h5 class="card-title"></h5>
        
 <div class="container">
-  <div id="carouselExample" class="carousel slide">
+  <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="3000">
     <div class="carousel-inner">
       <div class="carousel-item active d-item">
         <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
-
       </div>
-
       <div class="carousel-item d-item">
         <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
        
@@ -94,7 +89,6 @@ $info = $security->getUser($email);
       </div>
       <div class="carousel-item d-item">
         <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
-       
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
