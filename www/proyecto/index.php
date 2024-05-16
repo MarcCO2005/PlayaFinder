@@ -17,6 +17,13 @@ $info = $security->getUser($email);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+  .d-img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+  }
+</style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
@@ -73,12 +80,20 @@ $info = $security->getUser($email);
   <div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active d-item">
-        <img src="img/fondo.PNG" class="d-block w-100 d-img" alt="">
+        <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
 
       </div>
 
       <div class="carousel-item d-item">
-        <img src="img/logo.jpg" class="d-block w-100 d-img" alt="">
+        <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
+       
+      </div>
+      <div class="carousel-item d-item">
+        <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
+       
+      </div>
+      <div class="carousel-item d-item">
+        <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
        
       </div>
     </div>
