@@ -19,9 +19,10 @@ $info = $security->getUser($email);
 </head>
 <style>
   .d-img {
-    width: 100%;
-    height: 300px; 
+    
+    height: 500px; 
     object-fit: cover;
+    
   }
 </style>
 <body>
@@ -37,9 +38,6 @@ $info = $security->getUser($email);
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
                 <a class="nav-link" href="index.php">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="perfil.php">Perfil</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php">Destino</a>
@@ -58,44 +56,27 @@ $info = $security->getUser($email);
       </nav>
 
 
-
-<div class="container content">
-  <h2 style=" margin: 50px;"></h2>
-  <div class="row text-center">
-    <div class="col-sm-6 mb-3 mb-sm-0 ">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>?
-          </h5>
-          <p class="card-text" style="text-align: center;">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-          <a href="noticias.php" class="btn btn-primary"style="align-items-center">Comienza tu busqueda</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-
-       
-    <div id="carouselExample" class="carousel slide">
+      <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
           <div class="carousel-item active d-item">
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu modificacion</h1>
+                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
             </div>
           </div>
 
           <div class="carousel-item d-item">
-            <img src="img/2.png" class="d-block w-100 d-img" alt="">
+            <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu modificacion</h1>
+                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
             </div>
           </div>
           <div class="carousel-item d-item">
-            <img src="img/3.png" class="d-block w-100 d-img" alt="">
+            <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu modificacion</h1>
+                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
             </div>
           </div>
@@ -109,9 +90,6 @@ $info = $security->getUser($email);
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-      </div>
-    </div>
-  </div>
 </div>
 </div>
 

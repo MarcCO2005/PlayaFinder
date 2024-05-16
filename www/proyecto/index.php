@@ -56,6 +56,49 @@ $info = $security->getUser($email);
 
 
 
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active d-item">
+            <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
+            <div class="carousel-caption top-0 mt-4" >
+                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
+            </div>
+          </div>
+
+          <div class="carousel-item d-item">
+            <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
+            <div class="carousel-caption top-0 mt-4" >
+                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
+            </div>
+          </div>
+          <div class="carousel-item d-item">
+            <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
+            <div class="carousel-caption top-0 mt-4" >
+                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
+            </div>
+          </div>
+          <div class="carousel-item d-item">
+            <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
+            <div class="carousel-caption top-0 mt-4" >
+                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</div>
+</div>
 <div class="container content">
   <h2 style=" margin: 50px;"></h2>
   <div class="row text-center">
