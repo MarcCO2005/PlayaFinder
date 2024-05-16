@@ -3,6 +3,7 @@ class Security extends Connection
 {
     private $loginPage = "login.php";
     private $homePage = "index.php";
+    private $newPage = "logined.php";
     public function __construct()
     {
         parent::__construct();
@@ -22,7 +23,7 @@ class Security extends Connection
             $user = $this->getUser($_POST["userName"]);
             $_SESSION["loggedIn"] = $this->checkUser($user, $_POST["userPassword"]) ? $user["email"] : false;
             if ($_SESSION["loggedIn"]) {
-                header("Location: " . $this->homePage);
+                header("Location: " . $this->newPage);
             } else {
                 return "Incorrect User Name or Password";
             }
@@ -37,7 +38,7 @@ class Security extends Connection
             $user = $_POST["name"];
             $email = $_POST["email"];
             $password = $_POST["password"];
-            $localidad = $_POST["localidad"];
+            $localidad = $_POST["provincia"];
             $telefono = $_POST["phone"];
             $encrypt = password_hash("$password", PASSWORD_BCRYPT);
             $query = "INSERT INTO `Usuario`(`nombre`, `email`, `telefono`, `contrasena`, `secure_contr`, `provincia`) VALUES ('$user','$email','$telefono','no timporta','$encrypt','$localidad')";

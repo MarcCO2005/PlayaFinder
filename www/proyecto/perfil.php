@@ -20,7 +20,7 @@ $info = $security->getUser($email);
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
               </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -29,10 +29,7 @@ $info = $security->getUser($email);
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="perfil.php">Perfil</a>
+                <a class="nav-link" href="logined.php">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php">Destino</a>
@@ -42,8 +39,7 @@ $info = $security->getUser($email);
               </li>
             </ul>
             <form class="d-flex">
-              <a href="login.php"><button class="btn btn-primary" type="button"style="margin-right:10px" >Log In</button></a>
-              <a href="register.php"><button class="btn btn-primary" type="button">Register</button></a>
+                <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>"><i style="color: white;" class="d-block w-100 bi bi-person-circle"></i></a>
           </form>
           </div>
         </div>
