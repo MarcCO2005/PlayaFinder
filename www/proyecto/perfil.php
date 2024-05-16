@@ -20,7 +20,7 @@ $info = $security->getUser($email);
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
               </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -29,16 +29,16 @@ $info = $security->getUser($email);
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Menu</a>
+                <a class="nav-link" href="index.php">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="perfil.php">Perfil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Destino</a>
+                <a class="nav-link" href="contacto.php">Destino</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.html">Contacto</a>
+                <a class="nav-link" href="contacto.php">Contacto</a>
               </li>
             </ul>
             <form class="d-flex">

@@ -27,23 +27,23 @@ $registerMessage = $security->doRegister();
           <form method="post" action="">
             <div class="mb-3">
               <label for="name" class="form-label">Nombre</label>
-              <input name="name" type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
+              <input name="name" type="text" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Correo electrónico</label>
-              <input name="email" type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico">
+              <input name="email" type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico" required>
             </div>
             <div class="mb-3">
               <label for="phone" class="form-label">Teléfono</label>
-              <input name="phone" type="tel" class="form-control" id="phone" placeholder="Ingresa tu número de teléfono">
+              <input name="phone" type="tel" class="form-control" id="phone" placeholder="Ingresa tu número de teléfono" required>
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">Contraseña</label>
-              <input name="password" type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña">
+              <input name="password" type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required>
             </div>
             <div class="mb-3">
               <label for="localidad" class="form-label">Localidad</label>
-              <input name="localidad" type="text" class="form-control" id="localidad" placeholder="Ingresa tu localidad">
+              <input name="localidad" type="text" class="form-control" id="localidad" placeholder="Ingresa tu localidad" required>
             </div>
             <div class="d-grid">
               <button type="submit" class="btn btn-primary">Registrarse</button>
