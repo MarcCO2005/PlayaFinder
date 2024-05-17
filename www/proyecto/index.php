@@ -29,12 +29,6 @@ $info = $security->getUser($email);
 }
 
 
-.mapa {
-    border-radius: 15px;
-    width: 600px;
-    height: 400px;
-}
-
 .imagen {
     width: 600px;
     height: 300px;
@@ -44,6 +38,21 @@ $info = $security->getUser($email);
 .card-footer {
     text-align: center;
 }
+.navbar {
+            background-color: transparent !important; 
+            position: absolute;
+            width: 100%;
+            z-index: 999; /* Colocar por encima de otros elementos */
+        }
+        .carousel-item {
+            height: 100%; 
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+ 
+    background-color:  rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+}
+
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -60,10 +69,10 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="index.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php">Destino</a>
+                <a class="nav-link" href="login.php">Destino</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php">Contacto</a>
+                <a class="nav-link" href="login.php">Contacto</a>
               </li>
             </ul>
             
@@ -75,12 +84,12 @@ $info = $security->getUser($email);
         </div>
       </nav>
 
-      <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="2000">
+      <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="2000" >
         <div class="carousel-inner">
           <div class="carousel-item active d-item">
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="card-title" style="margin-top: 50px">Registrate para tener mas ventajas!</h1>
+                <h1 class="card-title" style="margin-top: 150px">Registrate para tener más ventajas!</h1>
                 <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Comienza tu busqueda
             </div>
@@ -89,7 +98,7 @@ $info = $security->getUser($email);
           <div class="carousel-item d-item">
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="card-title" style="margin-top: 50px">Registrate para tener mas ventajas!</h1>
+                <h1 class="card-title" style="margin-top: 150px">Registrate para tener más ventajas!</h1>
                 <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Comienza tu busqueda
             </div>
@@ -97,7 +106,7 @@ $info = $security->getUser($email);
           <div class="carousel-item d-item">
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="card-title" style="margin-top: 50px">Registrate para tener mas ventajas!</h1>
+                <h1 class="card-title" style="margin-top:150px">Registrate para tener mas ventajas!</h1>
                 <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Comienza tu busqueda
             </div>
