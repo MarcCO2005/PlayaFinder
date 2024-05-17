@@ -43,7 +43,7 @@ body {
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Menu</a>
+                <a class="nav-link" href="index.php" style="color:white;">Menu</a>
               </li>
             </ul>
             <form class="d-flex">
