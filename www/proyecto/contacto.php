@@ -79,13 +79,13 @@ body {
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Menu</a>
+                <a class="nav-link" href="index.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Destino</a>
+                <a class="nav-link" href="#" style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="#" style="color:white;">Contacto</a>
               </li>
             </ul>
           
