@@ -1,28 +1,16 @@
 <?php
 
 class Playa {
-    protected $id;
     protected $nombre;
-    protected $email;
-    protected $telefono;
-    protected $contrasena;
+    protected $ciudad;
+    protected $cod_post;
+    protected $cat;
 
-    function __construct($id, $nombre, $email, $telefono, $contrasena){
-        $this->id = $id;
+    function __construct($nombre, $ciudad, $cod_post, $cat){
         $this->nombre = $nombre;
-        $this->email = $email;
-        $this->telefono = $telefono;
-        $this->contrasena = $contrasena;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
+        $this->ciudad = $ciudad;
+        $this->cod_post = $cod_post;
+        $this->cat = $cat;
     }
 
     public function getNombre()
@@ -35,34 +23,34 @@ class Playa {
         $this->nombre = $nombre;
     }
 
-    public function getEmail()
+    public function getCiudad()
     {
-        return $this->email;
+        return $this->ciudad;
     }
 
-    public function setEmail($email)
+    public function setCiudad($ciudad)
     {
-        $this->email = $email;
+        $this->ciudad = $ciudad;
     }
 
-    public function getTelefono()
+    public function getCod_post()
     {
-        return $this->telefono;
+        return $this->cod_post;
     }
 
-    public function setTelefono($telefono)
+    public function setCod_post($cod_post)
     {
-        $this->telefono = $telefono;
+        $this->cod_post = $cod_post;
     }
 
-    public function getContrasena()
+    public function getCat()
     {
-        return $this->contrasena;
+        return $this->cat;
     }
 
-    public function setContrasena($contrasena)
+    public function setCat($cat)
     {
-        $this->contrasena = $contrasena;
+        $this->cat = $cat;
     }
 }
 

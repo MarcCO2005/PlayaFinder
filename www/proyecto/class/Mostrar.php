@@ -23,8 +23,31 @@ class Mostrar extends Connection{
             $ready->close();
         }
         fclose($gestor);
-
     }
+
+    function getAllPlayas(){
+        $array = [];
+        $conn= $this->getConn();
+        $query = "SELECT * FROM `Playa`";
+        $result = mysqli_query($conn, $query);
+        $total = $result->num_rows;
+        $cont = 0;
+        while ($cont < $total) {
+            $result->data_seek($cont);
+            $info = $result->fetch_array(MYSQLI_ASSOC);
+            $nombre = $info["nombre"];
+            $ciudad = $info["ciudad"];
+            $cod_post = $info["codigo_postal"];
+            $cat = $info["id_categoria"];
+
+            $object = new Playa($nombre, $ciudad, $cod_post, $cat);
+
+            array_push($array, $object);
+            $cont++;
+        }
+        return($array);
+    }
+
 }
 
 ?>
