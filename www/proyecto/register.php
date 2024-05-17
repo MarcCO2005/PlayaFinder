@@ -11,10 +11,28 @@ $registerMessage = $security->doRegister();
   <title>Registro</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+  <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
+<style>
+body {
+    background-image: url('img/fondo.png');
+    background-size: cover;
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+</style>
 <body>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<div class="overlay"></div>
+<nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
@@ -25,13 +43,7 @@ $registerMessage = $security->doRegister();
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contacto.php">Destino</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contacto.php">Contacto</a>
+                <a class="nav-link" href="index.php" style="color:white;">Menu</a>
               </li>
             </ul>
             <form class="d-flex">
