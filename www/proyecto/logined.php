@@ -136,7 +136,7 @@ $info = $security->getUser($email);
           <h5 class="card-title">Sobre nosotros</h5>
           <p class="card-text">En nuestra web, nuestra misión es ayudarte a descubrir las mejores playas del mundo. Ya sea que busques una playa tranquila para relajarte, un destino familiar lleno de actividades, o el lugar perfecto para practicar deportes acuáticos, estamos aquí para guiarte en cada paso del camino.</p>
           <img src="img/trabajadores.jpg" class="card-img imagen" alt="..." style=" width: 100%;">
-          <a href="contacto.html" class="btn btn-primary">Contactanos</a>
+          <a href="contacto.php" class="btn btn-primary">Contactanos</a>
         </div>
       </div>
     </div>

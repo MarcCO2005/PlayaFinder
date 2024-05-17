@@ -1,3 +1,8 @@
+<?php
+require_once "autoloader.php";
+$security = new Security();
+$registerMessage = $security->doRegister();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +15,7 @@
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
    <style>
       
-body {
-	background: #e8e8e8;
-}
+
 .form-area {
 	padding-top: 7%;
   padding-bottom: 7%;
@@ -25,7 +28,6 @@ body {
 	padding: 200px 98px;
 }
 .left h2 {
-	font-family: poppins;
 	color: #fff;
 	font-weight: 700;
 	font-size: 48px;
@@ -65,10 +67,32 @@ body {
 .right button:hover{
     background-color: #848484;
 }
-  </style>
+body {
+    background-image: url('img/fondo.png');
+    background-size: cover;
+    position: relative;
+    min-height: 100vh; /* Make sure body covers full height */
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color:  rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+}
+</style>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<!-- Overlay -->
+<div class="overlay"></div>
+
+<nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
@@ -79,16 +103,20 @@ body {
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php" style="color:white;">Menu</a>
+                <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" style="color:white;">Destino</a>
+                <a class="nav-link" href="prueba.php" style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" style="color:white;">Contacto</a>
+                <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
               </li>
             </ul>
-          
+            <form class="d-flex">
+    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
+        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+    </a>
+</form>
           </div>
         </div>
       </nav>
@@ -142,62 +170,4 @@ body {
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Links de interes</h5>
           <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Cuenta</a></p>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Hazte miembro</a></p>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Envios</a></p>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Informacion productos</a></p>
-      </div>
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
-          <p>
-            <i class="bi bi-house"></i> Alcasser, El Pla, 34
-          </p>
-          <p>
-            <i class="bi bi-envelope"></i> aodariolopez@gmail.com
-          </p>
-          <p>
-            <i class="bi bi-telephone-fill"></i> +34 722 65 31 27
-          </p>
-          <p>
-            <i class="bi bi-printer"></i> +01 315115548
-          </p>
-      </div>
-    </div>
-
-    <hr class="mb-4">
-
-    <div class="row align-items-center">
-      <div class="col-md-6 col-lg-7">
-        <p>Copyright ©2024 Derechos de autor de:
-          <a href="https://tonipizzeria.com/index.php/181-alcacer-new" style="text-decoration: none;">
-            <strong class="text-warning">DaríoAlcasser</strong>
-          </a>
-        </p>
-      </div>
-    
-      <div class="col-md-5 col-lg-4">
-        <div class="text-center text-md-right">
-          <ul class="list-unstyled list-inline">
-            <li class="list-inline-item">
-              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-facebook"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-twitter"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-instagram"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-google"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-youtube"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-</div>
-</footer>
-      
-</body>
-</html>
+          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-de
