@@ -13,6 +13,7 @@ $loginMessage = $security->doLogin();
     <link rel="stylesheet" type="text/css" href="form/view.css">
 </head>
 <style>
+
 body {
     background-image: url('img/fondo.png');
     background-size: cover;
