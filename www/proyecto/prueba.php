@@ -6,6 +6,7 @@ require_once "autoloader.php";
 $data = new Mostrar;
 
 $result = $data->getAllPlayas();
+$output = $data->showCards($result);
 
 ?>
 
@@ -97,6 +98,12 @@ $result = $data->getAllPlayas();
         </div>
       </nav>
 
+    <div class="container">
+
+        <?php echo $output; ?>
+
+        
+    </div>
 </body>
 
 
