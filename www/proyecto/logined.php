@@ -18,11 +18,35 @@ $info = $security->getUser($email);
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-  .d-img {
-    width: 100%;
-    height: 300px; 
+  .d-item {
+    height: 650px;
+}
+
+.d-img {
+    height: 100%;
     object-fit: cover;
-  }
+    filter: brightness(0.6);
+}
+
+p {
+    font-size: 30px;
+}
+
+.mapa {
+    border-radius: 15px;
+    width: 600px;
+    height: 400px;
+}
+
+.imagen {
+    width: 600px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    text-align: center;
+}
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -51,7 +75,35 @@ $info = $security->getUser($email);
           </div>
         </div>
       </nav>
+      <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+          <div class="carousel-item active d-item">
+            <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
+            <div class="carousel-caption top-0 mt-4" >
+                <h1 class="card-title" style="margin-top: 50px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
+                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Comienza tu busqueda
+            </div>
+          </div>
 
+          <div class="carousel-item d-item">
+            <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
+            <div class="carousel-caption top-0 mt-4" >
+                <h1 class="card-title" style="margin-top: 50px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
+                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Comienza tu busqueda
+            </div>
+          </div>
+          <div class="carousel-item d-item">
+            <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
+            <div class="carousel-caption top-0 mt-4" >
+                <h1 class="card-title" style="margin-top: 50px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
+                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Comienza tu busqueda
+            </div>
+          </div>
+        </div>
+    </div>
 
 
 <div class="container content">
@@ -60,7 +112,9 @@ $info = $security->getUser($email);
     <div class="col-sm-6 mb-3 mb-sm-0 ">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>?
+          <h5 class="card-title">
+          <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.324995560287!2d-0.4467339245252179!3d39.3715200185909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604d85f8e6d457%3A0xf8e8167400479b71!2sToni%20Pizzer%C3%ADa!5e0!3m2!1ses!2ses!4v1714148633685!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
           </h5>
           <p class="card-text" style="text-align: center;">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
           <a href="noticias.php" class="btn btn-primary"style="align-items-center">Comienza tu busqueda</a>

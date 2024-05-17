@@ -18,11 +18,41 @@ $info = $security->getUser($email);
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-  .d-img {
-    width: 100%;
-    height: 300px; 
+  .d-item {
+    height: 650px;
+}
+
+.d-img {
+    height: 100%;
     object-fit: cover;
-  }
+    filter: brightness(0.6);
+}
+
+
+.imagen {
+    width: 600px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    text-align: center;
+}
+.navbar {
+            background-color: transparent !important; 
+            position: absolute;
+            width: 100%;
+            z-index: 999; /* Colocar por encima de otros elementos */
+        }
+        .carousel-item {
+            height: 100%; 
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+ 
+    background-color:  rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+}
+
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -39,10 +69,10 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="index.php">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php">Destino</a>
+                <a class="nav-link" href="login.php">Destino</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php">Contacto</a>
+                <a class="nav-link" href="login.php">Contacto</a>
               </li>
             </ul>
             
@@ -54,49 +84,36 @@ $info = $security->getUser($email);
         </div>
       </nav>
 
-
-
-      <div id="carouselExample" class="carousel slide">
+      <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="2000" >
         <div class="carousel-inner">
           <div class="carousel-item active d-item">
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
+                <h1 class="card-title" style="margin-top: 150px">Registrate para tener más ventajas!</h1>
+                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Comienza tu busqueda
             </div>
           </div>
 
           <div class="carousel-item d-item">
-            <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
+            <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
+                <h1 class="card-title" style="margin-top: 150px">Registrate para tener más ventajas!</h1>
+                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Comienza tu busqueda
             </div>
           </div>
           <div class="carousel-item d-item">
-            <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
+            <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
-            </div>
-          </div>
-          <div class="carousel-item d-item">
-            <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
-            <div class="carousel-caption top-0 mt-4" >
-                <h1 class="display-1 fw-folder text-capitalize" >Encuentra tu playa de ensueño</h1>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Informacion</button>
+                <h1 class="card-title" style="margin-top:150px">Registrate para tener mas ventajas!</h1>
+                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <button class="btn btn-primary px-4 py-2 fs-5 mt-5" >Comienza tu busqueda
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+    </div>
+
 </div>
 </div>
 <div class="container content">
@@ -105,7 +122,7 @@ $info = $security->getUser($email);
     <div class="col-sm-6 mb-3 mb-sm-0 ">
       <div class="card h-100">
         <div class="card-body">
-          <h5 class="card-title">¿Que tal nena?
+          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>
           </h5>
           <p class="card-text" style="text-align: center;">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
           <a href="noticias.php" class="btn btn-primary"style="align-items-center">Comienza tu busqueda</a>
