@@ -94,7 +94,7 @@ body {
 
 <nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
               </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
