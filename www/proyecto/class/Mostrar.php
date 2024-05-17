@@ -48,6 +48,29 @@ class Mostrar extends Connection{
         return($array);
     }
 
+    function showCards($array) {
+        $output = "";
+        $output = "<h1 style='text-align: center; margin: 50px;'>Playas</h1>
+                    <div class='row row-cols-1 row-cols-md-3 g-4'>";
+        foreach ($array as $element) {
+            $nombre = $element->getNombre();
+            $ciudad = $element->getCiudad();
+            
+           /* <h4><a href='changestatus.php?id=$nombre'><img src='img/bulb-icon-off.png'></a> $name </h4>*/
+            $output .= "<div class='col'>
+                        <div class='content card h-100'>
+                        <img src='img/img1.jpg' class='card-img-top'>
+                        <div class='card-body'>";
+            $output .= "<h5 class='card-title'>$nombre</h5>
+                <p class='card-text'>Ciudad: $ciudad</p>
+                </div>";
+            $output .= "<div class='card-footer'>
+                        <a href='https://alcacer.tonipizzeria.com/' class='btn btn-primary'>Mas info</a>
+                        </div></div></div>";
+        }
+        return $output;
+    }
+
 }
 
 ?>
