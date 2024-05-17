@@ -16,7 +16,13 @@ $info = $security->getUser($email);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
+<style>
+.content {
+  margin-bottom: 50px;
+}
+</style>
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
@@ -39,13 +45,15 @@ $info = $security->getUser($email);
               </li>
             </ul>
             <form class="d-flex">
-                <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>"><i style="color: white;" class="d-block w-100 bi bi-person-circle"></i></a>
-          </form>
+    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
+        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+    </a>
+</form>
           </div>
         </div>
       </nav>
 <div class="content container mt-5">
-    <div class="card">
+    <div class="card content">
         <div class="card-header">
             Datos del Usuario
         </div>
@@ -53,6 +61,7 @@ $info = $security->getUser($email);
             <h5 class="card-title">Nombre de Usuario: <?php echo $info['nombre']; ?></h5>
             <p class="card-text">Correo Electrónico: <?php echo $info['email']; ?></p>
             <p class="card-text">Localidad: <?php echo $info['provincia']; ?></p>
+            <a href="index.php"><button class="btn btn-primary" type="button"style="margin-right:10px" >Cerrar sesion</button></a>
         </div>
     </div>
 </div>
