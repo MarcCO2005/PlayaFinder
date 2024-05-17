@@ -16,27 +16,33 @@ $info = $security->getUser($email);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
-  .d-item {
+.content {
+  margin-bottom: 50px;
+}
+
+.d-item {
     height: 600px;
 }
 
-.d-img {
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-
-p {
+.subtitulo {
     font-size: 30px;
 }
 
-.mapa {
-    border-radius: 15px;
-    width: 600px;
-    height: 400px;
+.d-img {
+  width: 100%;
+    height: 670px;
+    object-fit: cover;
+    filter: brightness(0.6);
 }
+.mapa{
+  border-radius: 15px;
+  width:100% ;
+  height:490px ;
+}
+
 
 .imagen {
     width: 600px;
@@ -46,6 +52,20 @@ p {
 
 .card-footer {
     text-align: center;
+}
+.navbar {
+            background-color: transparent !important; 
+            position: absolute;
+            width: 100%;
+            z-index: 999;
+        }
+        .carousel-item {
+            height: 100%; 
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+ 
+    background-color:  rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
 }
 </style>
 <body>
@@ -60,18 +80,20 @@ p {
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="logined.php">Menu</a>
+                <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Destino</a>
+                <a class="nav-link" href="#"style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php">Contacto</a>
+                <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
               </li>
             </ul>
             <form class="d-flex">
-                <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>"><i style="color: white; width: 1em;" class="d-block w-100 bi bi-person-circle"></i></a>
-          </form>
+    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
+        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+    </a>
+</form>
           </div>
         </div>
       </nav>
@@ -81,7 +103,7 @@ p {
         <div class="carousel-item active d-item">
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
-                <h1 class="card-title" style="margin-top: 50px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
+                <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
                 <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
             </div>
@@ -89,7 +111,7 @@ p {
         <div class="carousel-item d-item">
             <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
-                <h1 class="card-title" style="margin-top: 50px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
+                <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
                 <p class="card-text" style="margin-top: 50px">Descubre montañas majestuosas en todo el mundo con nuestro buscador. Tu aventura en la naturaleza está a solo un clic de distancia.</p>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
             </div>
@@ -97,7 +119,7 @@ p {
         <div class="carousel-item d-item">
             <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
-                <h1 class="card-title" style="margin-top: 50px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
+                <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
                 <p class="card-text" style="margin-top: 50px">Descubre ciudades vibrantes en todo el mundo con nuestro buscador. Tu aventura urbana perfecta está a solo un clic de distancia.</p>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
             </div>
@@ -105,54 +127,27 @@ p {
     </div>
   </div>
 
-
-<div class="container content">
-  <h2 style=" margin: 50px;"></h2>
-  <div class="row text-center">
-    <div class="col-sm-6 mb-3 mb-sm-0 ">
-      <div class="card h-100">
+  <div class="container">
+  <h2 style="text-align: center; margin: 50px;">Quienes somos</h2>
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
         <div class="card-body">
-          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>?
-          </h5>
-          <p class="card-text" style="text-align: center;">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-          <a href="noticias.php" class="btn btn-primary"style="align-items-center">Comienza tu busqueda</a>
+          <h5 class="card-title">Sobre nosotros</h5>
+          <p class="card-text">En nuestra web, nuestra misión es ayudarte a descubrir las mejores playas del mundo. Ya sea que busques una playa tranquila para relajarte, un destino familiar lleno de actividades, o el lugar perfecto para practicar deportes acuáticos, estamos aquí para guiarte en cada paso del camino.</p>
+          <img src="img/trabajadores.jpg" class="card-img imagen" alt="..." style=" width: 100%;">
+          <a href="contacto.html" class="btn btn-primary">Contactanos</a>
         </div>
       </div>
     </div>
     <div class="col-sm-6">
-      <div class="card">
+      <div class="card content">
         <div class="card-body">
-          <h5 class="card-title"></h5>
-       
-<div class="container">
-  <div id="carouselExample" class="carousel slide"data-bs-ride="carousel" data-bs-interval="3000">
-    <div class="carousel-inner">
-      <div class="carousel-item active d-item">
-        <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
-
-      </div>
-
-      <div class="carousel-item d-item">
-        <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
-       
-      </div>
-      <div class="carousel-item d-item">
-        <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
-       
-      </div>
-      <div class="carousel-item d-item">
-        <img src="img/img4.jpg" class="d-block w-100 d-img" alt="">
-       
+          <h5 class="card-title"><i class="bi bi-geo-alt-fill"></i>Ubicacion</h5>
+        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.324995560287!2d-0.4467339245252179!3d39.3715200185909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604d85f8e6d457%3A0xf8e8167400479b71!2sToni%20Pizzer%C3%ADa!5e0!3m2!1ses!2ses!4v1714148633685!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 </div>
       </div>

@@ -11,6 +11,7 @@ $loginMessage = $security->doLogin();
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="form/view.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
 
@@ -30,7 +31,7 @@ body {
 
 </style>
 <body><div class="overlay"></div>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
@@ -41,7 +42,7 @@ body {
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Menu</a>
+                <a class="nav-link" href="index.php" style="color:white;">Menu</a>
               </li>
               
             </ul>
