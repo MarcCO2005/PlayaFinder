@@ -28,7 +28,7 @@ $registerMessage = $security->doRegister();
 	padding: 200px 98px;
 }
 .left h2 {
-	color: #fff;
+	color: white;
 	font-weight: 700;
 	font-size: 48px;
 }
@@ -57,7 +57,7 @@ $registerMessage = $security->doRegister();
 	border-radius: 0;
 	background: #252525;
 	width: 180px;
-	color: #fff;
+	color: white;
 	padding: 15px 0;
 	display: inline-block;
 	font-size: 16px;
@@ -71,7 +71,7 @@ body {
     background-image: url('img/fondo.png');
     background-size: cover;
     position: relative;
-    min-height: 100vh; /* Make sure body covers full height */
+    
 }
 .overlay {
     position: fixed;
