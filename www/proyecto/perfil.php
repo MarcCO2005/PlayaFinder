@@ -16,6 +16,7 @@ $info = $security->getUser($email);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
 .content {
@@ -44,8 +45,10 @@ $info = $security->getUser($email);
               </li>
             </ul>
             <form class="d-flex">
-                <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>"><i style="color: white;" class="d-block w-100 bi bi-person-circle"></i></a>
-          </form>
+    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
+        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+    </a>
+</form>
           </div>
         </div>
       </nav>
