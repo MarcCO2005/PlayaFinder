@@ -31,7 +31,7 @@ body {
 
 </style>
 <body><div class="overlay"></div>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
             <a class="navbar-brand" href="index.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
