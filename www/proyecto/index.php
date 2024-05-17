@@ -113,7 +113,7 @@ $info = $security->getUser($email);
             <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Registrate para tener mas ventajas!</h1>
-                <p class="card-text subtitulo" style="margin-top: 50px">Descubre montañas majestuosas en todo el mundo con nuestro buscador. Tu aventura en la naturaleza está a solo un clic de distancia.</p>
+                <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
             </div>
         </div>
@@ -121,7 +121,7 @@ $info = $security->getUser($email);
             <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Registrate para tener mas ventajas!</h1>
-                <p class="card-text subtitulo" style="margin-top: 50px">Descubre ciudades vibrantes en todo el mundo con nuestro buscador. Tu aventura urbana perfecta está a solo un clic de distancia.</p>
+                <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
                 <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
             </div>
         </div>
