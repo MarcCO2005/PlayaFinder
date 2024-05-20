@@ -38,7 +38,7 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php "style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php "style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
@@ -52,19 +52,62 @@ $info = $security->getUser($email);
           </div>
         </div>
       </nav>
-<div class="content container mt-5">
-    <div class="card content">
+      <div class="content container mt-5">
+      <div class="card content">
         <div class="card-header">
-            Datos del Usuario
+            <h3>Datos del Usuario</h3>
         </div>
         <div class="card-body">
-            <h5 class="card-title">Nombre de Usuario: <?php echo $info['nombre']; ?></h5>
-            <p class="card-text">Correo Electrónico: <?php echo $info['email']; ?></p>
-            <p class="card-text">Localidad: <?php echo $info['provincia']; ?></p>
-            <a href="index.php"><button class="btn btn-primary" type="button"style="margin-right:10px" >Cerrar sesion</button></a>
+            <form action="" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre de Usuario:</label>
+                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['nombre']; ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="<?php echo $info['email']; ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="provincia" class="form-label">Localidad:</label>
+                    <select class="form-select" id="provincia" name="provincia">
+                        <?php
+                        $provincias = [
+                            "Álava", "Albacete", "Alicante", "Almería", "Asturias", "Ávila", "Badajoz", "Barcelona", "Burgos", "Cáceres", "Cádiz",
+                            "Cantabria", "Castellón", "Ceuta", "Ciudad Real", "Córdoba", "Cuenca", "Gerona", "Granada", "Guadalajara", "Guipúzcoa",
+                            "Huelva", "Huesca", "Islas Baleares", "Jaén", "La Coruña", "La Rioja", "Las Palmas", "León", "Lérida", "Lugo", "Madrid",
+                            "Málaga", "Melilla", "Murcia", "Navarra", "Orense", "Palencia", "Pontevedra", "Salamanca", "Segovia", "Sevilla", "Soria",
+                            "Tarragona", "Santa Cruz de Tenerife", "Teruel", "Toledo", "Valencia", "Valladolid", "Vizcaya", "Zamora", "Zaragoza"
+                        ];
+
+                        foreach ($provincias as $provincia) {
+                            $selected = ($info['provincia'] == $provincia) ? 'selected' : '';
+                            echo "<option value=\"$provincia\" $selected>$provincia</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <?php
+
+                  $name = "";
+                  $email = "";
+                  $provincia = "";
+                
+                  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $name = $_POST['name'];
+                    $email = $_POST['email'];
+                    $provincia = $_POST['provincia'];
+                }   
+                $nom = $info['nombre'];
+                ?>
+                <div class="mb-3">
+                    <a href='modificar.php?name=<?php echo $name ?>&email=<?php echo $email ?>&provincia=<?php echo $provincia ?>&nom=<?php echo $nom ?>'><button class="btn btn-primary" type="button" style="margin-right:10px">Modificar datos</button></a>
+                    <a href="index.php"><button class="btn btn-primary" type="button" style="margin-right:10px">Cerrar sesión</button></a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 </body>
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container text-center text-md-left">
