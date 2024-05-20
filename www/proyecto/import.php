@@ -5,6 +5,6 @@ require_once "autoloader.php";
 
 $data = new Mostrar;
 
-$result = $data->importLamps('playas.csv');
+$result = $data->import('playas.csv');
 
 ?>
