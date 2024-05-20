@@ -26,7 +26,7 @@ $info = $security->getUser($email);
 </head>
 <style>
   body {
-    background-color: grey;
+    background-color: #F2F2F2;
     background-size: cover;
     position: relative;
     background-repeat:no-repeat;
@@ -87,10 +87,11 @@ $info = $security->getUser($email);
 
     .carousel-item-custom {
         text-align: center;
-        border: 3px solid black;
+        border: 1px solid white;
         border-radius: 15px;
         padding: 20px;
-        background-color: #f0f0f0;
+        background-color: #A7B2F2;
+        height: 400px;
     }
 
     .carousel-item-custom h3 {
@@ -99,7 +100,9 @@ $info = $security->getUser($email);
         color: #343a40;
     }
     .carousel-item-custom img {
-        width: 100%;
+
+        height: 175px;
+
     }
 
     .carousel-item-custom p {
@@ -120,10 +123,25 @@ $info = $security->getUser($email);
         align-items: center;
         padding: 10px;
     }
+
     .Playas-frecuentes{
         justify-content: center;
         text-align: center;
     }
+    .carousel-wrapper .carousel-item-custom a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #007BFF; /* Color del enlace */
+    text-decoration: none;
+    border: 2px solid #007BFF; /* Borde del enlace */
+    transition: all 0.3s ease; /* Transición suave para los cambios */
+}
+
+.carousel-wrapper .carousel-item-custom a:hover {
+    background-color: #007BFF; /* Color de fondo al hacer hover */
+    color: #fff; /* Color del texto al hacer hover */
+    text-decoration: none; /* Asegura que no haya subrayado */
+}
 </style>
 <body>
 
@@ -161,7 +179,7 @@ $info = $security->getUser($email);
       <br>
       <br>
       <br>
-    <nav class="Playas-frecuentes"><h1>Destinos frecuentes</h1></nav>
+<h1 class="Playas-frecuentes">Destinos frecuentes</h1>
         
         <div class="carousel-wrapper">
             <div class="owl-carousel owl-theme">
@@ -218,31 +236,11 @@ $info = $security->getUser($email);
                         items: 2,
                     },
                     768: {
-                        items: 5,
-                    }
-                },
-            });
-        });
-        $(document).ready(function () {
-            $(".owl-carousel2").owlCarousel({
-                dots: false,
-                loop: true,
-                margin: 50,
-                autoplay: true,
-                autoplayTimeout: 2000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    480: {
-                        items: 2,
-                    },
-                    768: {
                         items: 3,
                     }
                 },
             });
         });
+      
     </script>
 </html>
