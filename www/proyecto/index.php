@@ -110,7 +110,7 @@ $info = $security->getUser($email);
             </div>
         </div>
         <div class="carousel-item d-item">
-            <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
+            <img src="img/fondo3.webp" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Registrate para tener mas ventajas!</h1>
                 <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
