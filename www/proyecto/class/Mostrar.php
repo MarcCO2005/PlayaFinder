@@ -2,22 +2,23 @@
 
 class Mostrar extends Connection{
 
-    function importLamps($file){
+    function import($file){
         $conn= $this->getConn();
         $query = "DELETE FROM `Playa`";
         $result = mysqli_query($conn, $query);
 
         $gestor = fopen($file, "r");
-        $query = "INSERT INTO `Playa`(`nombre`, `ciudad`, `codigo_postal`, `id_categoria`) VALUES (?,?,?,?)";
+        $query = "INSERT INTO `Playa`(`nombre`, `ciudad`, `codigo_postal`, `id_categoria`, `Valoracion`) VALUES (?,?,?,?,?)";
         
         while (($element = fgetcsv($gestor)) !== false) {
             $nombre = $element[0];
             $ciudad = $element[1];
             $cod_post = $element[2];
             $cat = $element[3];
+            $valoracion = $element[4];
 
             $ready = $conn->prepare($query);
-            $ready->bind_param("ssss", $nombre, $ciudad, $cod_post, $cat);
+            $ready->bind_param("sssss", $nombre, $ciudad, $cod_post, $cat, $valoracion);
             $ready->execute();
             $result = $ready->get_result();
             $ready->close();
