@@ -33,7 +33,7 @@ $info = $security->getUser($email);
 
 .d-img {
   width: 100%;
-    height: 670px;
+    height: 710px;
     object-fit: cover;
     filter: brightness(0.6);
 }
