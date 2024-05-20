@@ -52,15 +52,14 @@ class Mostrar extends Connection{
 
     function showCards($array) {
         $output = "";
-        $output = "
-                    <div class='row row-cols-1 row-cols-md-3 g-4'>";
+        $output = "<div class='row row-cols-1 row-cols-md-3 g-4'>";
         foreach ($array as $element) {
             $nombre = $element->getNombre();
             $ciudad = $element->getCiudad();
             $valoracion = $this->valoracion($nombre);
            /* <h4><a href='changestatus.php?id=$nombre'><img src='img/bulb-icon-off.png'></a> $name </h4>*/
             $output .= "<div class='col'>
-                        <div class='content card h-100'>
+                        <div class='content card h-100' style='border-color: #2E4BF2;'>
                         <img src='img/img1.jpg' class='card-img-top'>
                         <div class='card-body'>";
             $output .= "<h5 class='card-title'>$nombre</h5>
