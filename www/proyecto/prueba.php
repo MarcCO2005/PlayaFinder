@@ -101,7 +101,7 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
               </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex">              
     <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>

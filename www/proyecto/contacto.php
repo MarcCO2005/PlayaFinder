@@ -89,7 +89,7 @@ body {
 </style>
 </head>
 <body>
-<!-- Overlay -->
+
 <div class="overlay"></div>
 
 <nav class="navbar navbar-expand-sm navbar-dark transparent">
@@ -103,7 +103,7 @@ body {
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
+                <a class="nav-link" href="index.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="prueba.php" style="color:white;">Destino</a>

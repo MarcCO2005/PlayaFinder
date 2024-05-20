@@ -33,7 +33,7 @@ $info = $security->getUser($email);
 
 .d-img {
   width: 100%;
-    height: 670px;
+    height: 710px;
     object-fit: cover;
     filter: brightness(0.6);
 }
@@ -109,7 +109,7 @@ $info = $security->getUser($email);
             </div>
         </div>
         <div class="carousel-item d-item">
-            <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
+            <img src="img/fondo3.webp" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
                 <p class="card-text" style="margin-top: 50px">Descubre montañas majestuosas en todo el mundo con nuestro buscador. Tu aventura en la naturaleza está a solo un clic de distancia.</p>
