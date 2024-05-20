@@ -49,7 +49,6 @@ class Playa {
     {
         return $this->cat;
     }
-
     public function setCat($cat)
     {
         $this->cat = $cat;
