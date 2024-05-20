@@ -87,17 +87,17 @@ $info = $security->getUser($email);
 
     .carousel-item-custom {
         text-align: center;
-        border: 1px solid white;
+        border: 1px solid #2E4BF2;
         border-radius: 15px;
         padding: 20px;
-        background-color: #A7B2F2;
+        background-color: rgba(255, 255, 255, 1);
         height: 400px;
     }
 
     .carousel-item-custom h3 {
         margin-top: 15px;
         font-size: 1.5rem;
-        color: #343a40;
+        color: #010617;
     }
     .carousel-item-custom img {
 
@@ -107,7 +107,7 @@ $info = $security->getUser($email);
 
     .carousel-item-custom p {
         font-size: 1rem;
-        color: #6c757d;
+        color: #010617;
     }
 
     .carousel-item-custom a {
