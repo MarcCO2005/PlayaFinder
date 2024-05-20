@@ -52,12 +52,7 @@ class Mostrar extends Connection{
 
     function showCards($array) {
         $output = "";
-<<<<<<< HEAD:PlayaFinder-main/www/proyecto/class/Mostrar.php
-        $output = "<h1 style='text-align: center; margin: 50px; '>Playas</h1>
-=======
-        $output = "
->>>>>>> main:www/proyecto/class/Mostrar.php
-                    <div class='row row-cols-1 row-cols-md-3 g-4'>";
+        $output = "<div class='row row-cols-1 row-cols-md-3 g-4'>";
         foreach ($array as $element) {
             $nombre = $element->getNombre();
             $ciudad = $element->getCiudad();
