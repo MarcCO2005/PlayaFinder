@@ -137,14 +137,10 @@ $info = $security->getUser($email);
     <div class="col-sm-6 mb-3 mb-sm-0">
       <div class="card">
         <div class="card-body">
-<<<<<<<<< Temporary merge branch 1
-          <h5 class="card-title">¿Que tal <?php echo $info['nombre'];?>
-=========
-          <h5 class="card-title">¿Que tal nena?
->>>>>>>>> Temporary merge branch 2
-          </h5>
-          <p class="card-text" style="text-align: center;">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-          <a href="noticias.php" class="btn btn-primary"style="align-items-center">Comienza tu busqueda</a>
+          <h5 class="card-title">Sobre nosotros</h5>
+          <p class="card-text">En nuestra web, nuestra misión es ayudarte a descubrir las mejores playas del mundo. Ya sea que busques una playa tranquila para relajarte, un destino familiar lleno de actividades, o el lugar perfecto para practicar deportes acuáticos, estamos aquí para guiarte en cada paso del camino.</p>
+          <img src="img/trabajadores.jpg" class="card-img imagen" alt="..." style=" width: 100%;">
+          <a href="contacto.html" class="btn btn-primary">Contactanos</a>
         </div>
       </div>
     </div>

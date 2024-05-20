@@ -1,13 +1,14 @@
 <?php
 
-session_start();
 require_once "autoloader.php";
 
 $data = new Mostrar;
 
 $result = $data->getAllPlayas();
 $output = $data->showCards($result);
-
+$security = new Security();
+$email = $security->getUserData();
+$info = $security->getUser($email);
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +24,13 @@ $output = $data->showCards($result);
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
+  body {
+    background-color: grey;
+    background-size: cover;
+    position: relative;
+    background-repeat:no-repeat;
+    width: 100%;
+} 
 .content {
   margin-bottom: 50px;
 }
@@ -58,7 +66,7 @@ $output = $data->showCards($result);
     text-align: center;
 }
 .navbar {
-            background-color: transparent !important; 
+            background-color: ; 
             position: absolute;
             width: 100%;
             z-index: 999;
@@ -73,7 +81,7 @@ $output = $data->showCards($result);
 }
 </style>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
             <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
@@ -93,13 +101,17 @@ $output = $data->showCards($result);
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
               </li>
             </ul>
-            
+            <form class="d-flex">
+    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
+        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+    </a>
+</form>
           </div>
         </div>
       </nav>
 
     <div class="container">
-
+      <br>
         <?php echo $output; ?>
 
         
