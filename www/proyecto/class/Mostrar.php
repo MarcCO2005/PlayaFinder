@@ -40,8 +40,9 @@ class Mostrar extends Connection{
             $ciudad = $info["ciudad"];
             $cod_post = $info["codigo_postal"];
             $cat = $info["id_categoria"];
+            $cat = $info["Valoracion"];
 
-            $object = new Playa($nombre, $ciudad, $cod_post, $cat);
+            $object = new Playa($nombre, $ciudad, $cod_post, $cat, $valoracion);
 
             array_push($array, $object);
             $cont++;
@@ -51,7 +52,7 @@ class Mostrar extends Connection{
 
     function showCards($array) {
         $output = "";
-        $output = "<h1 style='text-align: center; margin: 50px;'>Playas</h1>
+        $output = "
                     <div class='row row-cols-1 row-cols-md-3 g-4'>";
         foreach ($array as $element) {
             $nombre = $element->getNombre();
@@ -70,6 +71,14 @@ class Mostrar extends Connection{
                         </div></div></div>";
         }
         return $output;
+    }
+
+    function valoracion($id){
+        $valoracion = 0;
+
+        $conn= $this->getConn();
+        $query = "SELECT * FROM `Playa`";
+        $result = mysqli_query($conn, $query);
     }
 
 }
