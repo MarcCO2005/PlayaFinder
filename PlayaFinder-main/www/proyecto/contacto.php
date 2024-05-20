@@ -89,12 +89,12 @@ body {
 </style>
 </head>
 <body>
-<!-- Overlay -->
+
 <div class="overlay"></div>
 
 <nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
-            <a class="navbar-brand" href="logined.php">
+            <a class="navbar-brand" href="index.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
               </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
@@ -103,7 +103,7 @@ body {
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
+                <a class="nav-link" href="index.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="prueba.php" style="color:white;">Destino</a>
