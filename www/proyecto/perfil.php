@@ -58,10 +58,10 @@ $info = $security->getUser($email);
             <h3>Datos del Usuario</h3>
         </div>
         <div class="card-body">
-            <form action="" method="POST">
+            <form action="" method="post">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre de Usuario:</label>
-                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $info['nombre']; ?>">
+                    <input type="text" class="form-control" id="name" name="name" value='<?php echo $info["nombre"]; ?>'>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo Electrónico:</label>
@@ -87,10 +87,6 @@ $info = $security->getUser($email);
                     </select>
                 </div>
                 <?php
-
-                  $name = "";
-                  $email = "";
-                  $provincia = "";
                 
                   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $name = $_POST['name'];
@@ -100,7 +96,7 @@ $info = $security->getUser($email);
                 $nom = $info['nombre'];
                 ?>
                 <div class="mb-3">
-                    <a href='modificar.php?name=<?php echo $name ?>&email=<?php echo $email ?>&provincia=<?php echo $provincia ?>&nom=<?php echo $nom ?>'><button class="btn btn-primary" type="button" style="margin-right:10px">Modificar datos</button></a>
+                    <a href='modificar.php?name=<?php echo $name; ?>&email=<?php echo $email ?>&provincia=<?php echo $provincia ?>&nom=<?php echo $nom ?>'><button class="btn btn-primary" type="button" style="margin-right:10px">Modificar datos</button></a>
                     <a href="index.php"><button class="btn btn-primary" type="button" style="margin-right:10px">Cerrar sesión</button></a>
                 </div>
             </form>
