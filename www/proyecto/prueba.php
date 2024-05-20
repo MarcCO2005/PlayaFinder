@@ -16,7 +16,7 @@ $info = $security->getUser($email);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu principal</title>
+    <title>PlayaFinder</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -79,6 +79,13 @@ $info = $security->getUser($email);
     background-color:  rgba(255, 255, 255, 0.5);
     border-radius: 50px;
 }
+h1{
+  text-align: center;  
+  margin-top: 70px;
+  margin-bottom: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark transparent">
@@ -101,7 +108,7 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
               </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex">              
     <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>
@@ -112,6 +119,7 @@ $info = $security->getUser($email);
 
     <div class="container">
       <br>
+      <h1>PLAYAS</h1>
         <?php echo $output; ?>
 
         

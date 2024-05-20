@@ -106,15 +106,15 @@ $info = $security->getUser($email);
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Registrate para tener mas ventajas!</h1>
                 <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
+                <a href="login.php" class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</a>
             </div>
         </div>
         <div class="carousel-item d-item">
-            <img src="img/img2.jpg" class="d-block w-100 d-img" alt="">
+            <img src="img/fondo3.webp" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Registrate para tener mas ventajas!</h1>
                 <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
+                <a href="login.php" class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</a>
             </div>
         </div>
         <div class="carousel-item d-item">
@@ -122,7 +122,7 @@ $info = $security->getUser($email);
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Registrate para tener mas ventajas!</h1>
                 <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
+                <a href="login.php" class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</a>
             </div>
         </div>
     </div>
@@ -172,28 +172,28 @@ $info = $security->getUser($email);
       </div>
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Proovedores</h5>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Tony pizzeria</a></p>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Alcasser</a></p>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Carcaixent</a></p>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Sabadell</a></p>
+          <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white" style="text-decoration: none;">IGN</a></p>
+          <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB" class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
+          <p><a href="https://www.pexels.com/es-es/" class="text-white" style="text-decoration: none;">Pexels</a></p>
+          <p><a href="https://www.tripadvisor.es/" class="text-white" style="text-decoration: none;">TripAdvisor</a></p>
       </div>
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Links de interes</h5>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Cuenta</a></p>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Hazte miembro</a></p>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Envios</a></p>
-          <p><a href="https://tonipizzeria.com/index.php/181-alcacer-new" class="text-white" style="text-decoration: none;">Informacion productos</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Cuenta</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Hazte miembro</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Envios</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Informacion productos</a></p>
       </div>
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
           <p>
-            <i class="bi bi-house"></i> Alcasser, El Pla, 34
+            <i class="bi bi-house"></i> Valencia, El Pla, 34
           </p>
           <p>
-            <i class="bi bi-envelope"></i> aodariolopez@gmail.com
+            <i class="bi bi-envelope"></i> playafinder@gmail.com
           </p>
           <p>
-            <i class="bi bi-telephone-fill"></i> +34 722 65 31 27
+            <i class="bi bi-telephone-fill"></i> +34 653 48 71 23
           </p>
           <p>
             <i class="bi bi-printer"></i> +01 315115548
@@ -206,7 +206,7 @@ $info = $security->getUser($email);
     <div class="row align-items-center">
       <div class="col-md-6 col-lg-7">
         <p>Copyright ©2024 Derechos de autor de:
-          <a href="https://tonipizzeria.com/index.php/181-alcacer-new" style="text-decoration: none;">
+          <a href="hw" style="text-decoration: none;">
             <strong class="text-warning">GRUPO-3</strong>
           </a>
         </p>

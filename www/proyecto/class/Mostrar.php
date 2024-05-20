@@ -40,7 +40,7 @@ class Mostrar extends Connection{
             $ciudad = $info["ciudad"];
             $cod_post = $info["codigo_postal"];
             $cat = $info["id_categoria"];
-            $valoracion = $info["Valoracion"];
+            $cat = $info["Valoracion"];
 
             $object = new Playa($nombre, $ciudad, $cod_post, $cat, $valoracion);
 
