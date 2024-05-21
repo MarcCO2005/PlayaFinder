@@ -114,13 +114,13 @@ $registerMessage = $security->doRegister();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="logined.php">Menu</a>
+                        <a class="nav-link" href="logined.php" style="color:white">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="destino.php">Destino</a>
+                        <a class="nav-link" href="destino.php"style="color:white">Destino</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contacto.php">Contacto</a>
+                        <a class="nav-link" href="contacto.php"style="color:white">Contacto</a>
                     </li>
                 </ul>
                 <form class="d-flex">
