@@ -28,7 +28,6 @@ $info = $security->getUser($email);
     <link rel="stylesheet" href="./owlcarousel/owl.theme.default.min.css">
 </head>
 <style>
-
 body {
     background-color: #F1F5F7;
     background-size: cover;
@@ -38,17 +37,6 @@ body {
 }
 .content {
     margin-bottom: 50px;
-}
-  body {
-    background-color: #00E2E2;
-    background-size: cover;
-    position: relative;
-    background-repeat:no-repeat;
-    width: 100%;
-} 
-.content {
-  margin-bottom: 50px;
-
 }
 
 .d-item {
@@ -65,21 +53,11 @@ body {
     object-fit: cover;
     filter: brightness(0.6);
 }
-
 .mapa {
     border-radius: 15px;
     width: 100%;
     height: 490px;
 }
-
-=======
-.mapa{
-  border-radius: 15px;
-  width:100% ;
-  height:490px ;
-}
-
-
 
 .imagen {
     width: 600px;
@@ -115,13 +93,10 @@ input[type="submit"]:focus {
 }
 
 
-=======
->>>>>>> Marcos
 .card-footer {
     text-align: center;
 }
 .navbar {
-
     background-color: #302B37;
     position: absolute;
     width: 100%;
@@ -132,58 +107,56 @@ input[type="submit"]:focus {
 }
 .navbar-dark .navbar-nav .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.5);
-            background-color: ; 
-            position: absolute;
-            width: 100%;
-            z-index: 999;
-        }
-        .carousel-item {
-            height: 100%; 
-        }
-        .navbar-dark .navbar-nav .nav-link:hover {
- 
-    background-color:  rgba(255, 255, 255, 0.5);
->>>>>>> Marcos
     border-radius: 50px;
 }
 
 .carousel-wrapper {
-        margin-top: 80px;
-    }
+    margin-top: 80px;
+}
 
-    .carousel-item-custom {
-        text-align: center;
-        border: 1px solid black;
-        border-radius: 15px;
-        padding: 20px;
-        background-color: rgba(255, 255, 255, 1);
-        height: 400px;
-    }
+.carousel-item-custom {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    height: 400px;
+}
 
-    .carousel-item-custom h3 {
-        margin-top: 15px;
-        font-size: 1.5rem;
-        color: #0000000;
-    }
-    .carousel-item-custom img {
+.carousel-item-custom h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #0000000;
+}
+.carousel-item-custom img {
+    height: 175px;
+}
 
-        height: 175px;
+.carousel-item-custom p {
+    font-size: 1rem;
+    color: #010617;
+}
 
-    }
+.carousel-item-custom a {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 1rem;
+    color: #007bff;
+}
 
-    .carousel-item-custom p {
-        font-size: 1rem;
-        color: #010617;
-    }
+.owl-carousel .owl-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
 
-    .carousel-item-custom a {
-        margin-top: 10px;
-        display: inline-block;
-        font-size: 1rem;
-        color: #007bff;
-    }
+.full-width-footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-<<<<<<< HEAD
 .card-hover {
         transition: transform 0.3s ease;
     }
@@ -216,32 +189,18 @@ input[type="submit"]:focus {
     text-align: center;
 }
 .carousel-wrapper .carousel-item-custom a {
-=======
-    .owl-carousel .owl-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .Playas-frecuentes{
-        justify-content: center;
-        text-align: center;
-    }
-    .carousel-wrapper .carousel-item-custom a {
->>>>>>> 72c9e1f79149aec2801766a94f9847de12ced7fe
     display: inline-block;
     padding: 10px 20px;
-    color: #007BFF; /* Color del enlace */
+    color: #007BFF;
     text-decoration: none;
-    border: 2px solid #007BFF; /* Borde del enlace */
-    transition: all 0.3s ease; /* Transición suave para los cambios */
+    border: 2px solid #007BFF;
+    transition: all 0.3s ease;
 }
 
 .carousel-wrapper .carousel-item-custom a:hover {
-    background-color: #007BFF; /* Color de fondo al hacer hover */
-    color: #fff; /* Color del texto al hacer hover */
-    text-decoration: none; /* Asegura que no haya subrayado */
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
 }
 </style>
 <body>
