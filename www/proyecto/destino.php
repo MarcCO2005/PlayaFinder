@@ -2,10 +2,12 @@
 
 require_once "autoloader.php";
 
+
 $data = new Mostrar;
 
 $result = $data->getAllPlayas();
 $output = $data->showCards($result);
+
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
@@ -25,6 +27,17 @@ $info = $security->getUser($email);
     <link rel="stylesheet" href="./owlcarousel/owl.theme.default.min.css">
 </head>
 <style>
+
+body {
+    background-color: #F1F5F7;
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+.content {
+    margin-bottom: 50px;
+}
   body {
     background-color: #00E2E2;
     background-size: cover;
@@ -34,6 +47,7 @@ $info = $security->getUser($email);
 } 
 .content {
   margin-bottom: 50px;
+
 }
 
 .d-item {
@@ -50,11 +64,20 @@ $info = $security->getUser($email);
     object-fit: cover;
     filter: brightness(0.6);
 }
+
+.mapa {
+    border-radius: 15px;
+    width: 100%;
+    height: 490px;
+}
+
+=======
 .mapa{
   border-radius: 15px;
   width:100% ;
   height:490px ;
 }
+
 
 
 .imagen {
@@ -63,10 +86,51 @@ $info = $security->getUser($email);
     margin-bottom: 20px;
 }
 
+input[type="submit"] {
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px;ç
+    font-weight: bold; 
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05); 
+}
+
+input[type="submit"]:active {
+    background-color: #003f7f; 
+    transform: scale(1);
+}
+
+input[type="submit"]:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+
+=======
+>>>>>>> Marcos
 .card-footer {
     text-align: center;
 }
 .navbar {
+
+    background-color: #302B37;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+.carousel-item {
+    height: 100%;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.5);
             background-color: ; 
             position: absolute;
             width: 100%;
@@ -78,6 +142,7 @@ $info = $security->getUser($email);
         .navbar-dark .navbar-nav .nav-link:hover {
  
     background-color:  rgba(255, 255, 255, 0.5);
+>>>>>>> Marcos
     border-radius: 50px;
 }
 
@@ -212,68 +277,155 @@ $info = $security->getUser($email);
       <br>
       <h1 style="text-align:center;">PLAYAS</h1>
       <div class="mb-3">
-    <label for="provincia" class="form-label">Filtra por provincia</label>
-    <select name="provincia" class="form-select" id="provincia" required>
-        <option value="" selected disabled>Selecciona tu provincia</option>
-        <option value="Álava">Álava</option>
-        <option value="Albacete">Albacete</option>
-        <option value="Alicante">Alicante</option>
-        <option value="Almería">Almería</option>
-        <option value="Asturias">Asturias</option>
-        <option value="Ávila">Ávila</option>
-        <option value="Badajoz">Badajoz</option>
-        <option value="Barcelona">Barcelona</option>
-        <option value="Burgos">Burgos</option>
-        <option value="Cáceres">Cáceres</option>
-        <option value="Cádiz">Cádiz</option>
-        <option value="Cantabria">Cantabria</option>
-        <option value="Castellón">Castellón</option>
-        <option value="Ceuta">Ceuta</option>
-        <option value="Ciudad Real">Ciudad Real</option>
-        <option value="Córdoba">Córdoba</option>
-        <option value="Cuenca">Cuenca</option>
-        <option value="Gerona">Gerona</option>
-        <option value="Granada">Granada</option>
-        <option value="Guadalajara">Guadalajara</option>
-        <option value="Guipúzcoa">Guipúzcoa</option>
-        <option value="Huelva">Huelva</option>
-        <option value="Huesca">Huesca</option>
-        <option value="Islas Baleares">Islas Baleares</option>
-        <option value="Jaén">Jaén</option>
-        <option value="La Coruña">La Coruña</option>
-        <option value="La Rioja">La Rioja</option>
-        <option value="Las Palmas">Las Palmas</option>
-        <option value="León">León</option>
-        <option value="Lérida">Lérida</option>
-        <option value="Lugo">Lugo</option>
-        <option value="Madrid">Madrid</option>
-        <option value="Málaga">Málaga</option>
-        <option value="Melilla">Melilla</option>
-        <option value="Murcia">Murcia</option>
-        <option value="Navarra">Navarra</option>
-        <option value="Orense">Orense</option>
-        <option value="Palencia">Palencia</option>
-        <option value="Pontevedra">Pontevedra</option>
-        <option value="Salamanca">Salamanca</option>
-        <option value="Segovia">Segovia</option>
-        <option value="Sevilla">Sevilla</option>
-        <option value="Soria">Soria</option>
-        <option value="Tarragona">Tarragona</option>
-        <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
-        <option value="Teruel">Teruel</option>
-        <option value="Toledo">Toledo</option>
-        <option value="Valencia">Valencia</option>
-        <option value="Valladolid">Valladolid</option>
-        <option value="Vizcaya">Vizcaya</option>
-        <option value="Zamora">Zamora</option>
-        <option value="Zaragoza">Zaragoza</option>
+        <form action="" method="POST">
+        <label for="provincia" class="form-label">Filtra por provincia</label>
+        <select name="provincia" class="form-select" style="width: 300px;" id="provincia" required>
+            <option value="" selected disabled>Selecciona tu provincia</option>
+            <option value="0">Quitar filtros</option>
+            <option value="Álava">Álava</option>
+            <option value="Albacete">Albacete</option>
+            <option value="Alicante">Alicante</option>
+            <option value="Almería">Almería</option>
+            <option value="Asturias">Asturias</option>
+            <option value="Ávila">Ávila</option>
+            <option value="Badajoz">Badajoz</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Burgos">Burgos</option>
+            <option value="Cáceres">Cáceres</option>
+            <option value="Cádiz">Cádiz</option>
+            <option value="Cantabria">Cantabria</option>
+            <option value="Castellón">Castellón</option>
+            <option value="Ceuta">Ceuta</option>
+            <option value="Ciudad Real">Ciudad Real</option>
+            <option value="Córdoba">Córdoba</option>
+            <option value="Cuenca">Cuenca</option>
+            <option value="Gerona">Gerona</option>
+            <option value="Granada">Granada</option>
+            <option value="Guadalajara">Guadalajara</option>
+            <option value="Guipúzcoa">Guipúzcoa</option>
+            <option value="Huelva">Huelva</option>
+            <option value="Huesca">Huesca</option>
+            <option value="Islas Baleares">Islas Baleares</option>
+            <option value="Jaén">Jaén</option>
+            <option value="La Coruña">La Coruña</option>
+            <option value="La Rioja">La Rioja</option>
+            <option value="Las Palmas">Las Palmas</option>
+            <option value="León">León</option>
+            <option value="Lérida">Lérida</option>
+            <option value="Lugo">Lugo</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Málaga">Málaga</option>
+            <option value="Melilla">Melilla</option>
+            <option value="Murcia">Murcia</option>
+            <option value="Navarra">Navarra</option>
+            <option value="Orense">Orense</option>
+            <option value="Palencia">Palencia</option>
+            <option value="Pontevedra">Pontevedra</option>
+            <option value="Salamanca">Salamanca</option>
+            <option value="Segovia">Segovia</option>
+            <option value="Sevilla">Sevilla</option>
+            <option value="Soria">Soria</option>
+            <option value="Tarragona">Tarragona</option>
+            <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+            <option value="Teruel">Teruel</option>
+            <option value="Toledo">Toledo</option>
+            <option value="Valencia">Valencia</option>
+            <option value="Valladolid">Valladolid</option>
+            <option value="Vizcaya">Vizcaya</option>
+            <option value="Zamora">Zamora</option>
+            <option value="Zaragoza">Zaragoza</option>
     </select>
+    <input type="submit" value="Filter" style="margin-top: 5px;">
+</form>
 </div>
-        <?php echo $output; ?>
+        <?php
+
+            $data = new Mostrar;
+
+            $result = $data->getAllPlayas();
+            
+
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $filtro = $_POST['provincia'];
+            } else {
+                $filtro = 0;
+            }
+
+            $output = $data->showCards($result, $filtro);
+            echo $output;
+        ?>
 
         
     </div>
+    
+    <footer class="bg-dark text-white pt-5 pb-4 full-width-footer" style="margin-top: 50px;">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Nombre de la compañia</h5>
+                    <p>Playa finder</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Proovedores</h5>
+                    <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white" style="text-decoration: none;">IGN</a></p>
+                    <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB" class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
+                    <p><a href="https://www.pexels.com/es-es/" class="text-white" style="text-decoration: none;">Pexels</a></p>
+                    <p><a href="https://www.tripadvisor.es/" class="text-white" style="text-decoration: none;">TripAdvisor</a></p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Links de interes</h5>
+                    <p><a href="" class="text-white" style="text-decoration: none;">Cuenta</a></p>
+                    <p><a href="" class="text-white" style="text-decoration: none;">Hazte miembro</a></p>
+                    <p><a href="" class="text-white" style="text-decoration: none;">Envios</a></p>
+                    <p><a href="" class="text-white" style="text-decoration: none;">Informacion productos</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
+                    <p><i class="bi bi-house"></i> Valencia, El Pla, 34</p>
+                    <p><i class="bi bi-envelope"></i> playafinder@gmail.com</p>
+                    <p><i class="bi bi-telephone-fill"></i> +34 653 48 71 23</p>
+                    <p><i class="bi bi-printer"></i> +01 315115548</p>
+                </div>
+            </div>
+
+            <hr class="mb-4">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 col-lg-7">
+                    <p>Copyright ©2024 Derechos de autor de:
+                        <a href="hw" style="text-decoration: none;">
+                            <strong class="text-warning">GRUPO-3</strong>
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-google"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+      
 </body>
+
 
 
 <script src="./owlcarousel/jquery.min.js"></script>
@@ -302,4 +454,5 @@ $info = $security->getUser($email);
         });
       
     </script>
+
 </html>
