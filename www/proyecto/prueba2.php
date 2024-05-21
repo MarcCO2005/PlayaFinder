@@ -259,3 +259,31 @@ $registerMessage = $security->doRegister();
       
 </body>
 </html>
+function showCards($array, $filtro, $filtroValoracion) {
+            $output = "";
+            $output .= "<div class='row row-cols-1 row-cols-md-3 g-4'>";
+            foreach ($array as $element) {
+                $nombre = $element->getNombre();
+                $ciudad = $element->getCiudad();
+                $valoracion = $this->valoracion($nombre);
+                
+                // Verifica si tanto la ciudad como la valoración coinciden con los filtros
+                if (($ciudad == $filtro|| $filtro == 0) && ($valoracion == $filtroValoracion || $filtroValoracion == 0)) {
+                    $output .= "<div class='col'>
+                        <div class='content card h-100'>
+                            <img src='img/img1.jpg' class='card-img-top'>
+                            <div class='card-body'>";
+                    $output .= "<h5 class='card-title'>$nombre</h5>
+                                <p class='card-text'>Ciudad: $ciudad</p>
+                                <p class='card-text' style='font-size: 20px;'> $valoracion</p>
+                            </div>";
+                    $output .= "<div class='card-footer'>
+                                    <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
+                                </div>
+                            </div>
+                        </div>";
+                }
+            }
+            $output .= "</div>"; // Cierre del div row
+            return $output;
+        }
