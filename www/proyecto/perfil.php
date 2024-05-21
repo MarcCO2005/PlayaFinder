@@ -73,7 +73,7 @@ $object->modificar($nom);
                 <div class="mb-3">
                 <label for="provincia" class="form-label">Provincia</label>
     <select name="provincia" class="form-select" id="provincia" required>
-        <option value="" selected disabled>Selecciona tu provincia</option>
+        <option value="" selected disabled><?php echo $info['provincia']; ?></option>
         <option value="Álava">Álava</option>
         <option value="Albacete">Albacete</option>
         <option value="Alicante">Alicante</option>

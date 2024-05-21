@@ -3,12 +3,12 @@
 require_once "autoloader.php";
 
 $data = new Mostrar;
-$nombre = $_POST['nombre'];
+$nombre = $_GET['nombre'];
 $result = $data->getAllPlayas();
-$playa = $data->getPlaya($result, $nombre);
+$playa = $data->getPlaya($nombre, $result);
 $security = new Security();
 $email = $security->getUserData();
-$info = $security->getUser($email);
+var_dump($playa);
 ?>
 
 <!DOCTYPE html>
@@ -79,6 +79,8 @@ $info = $security->getUser($email);
     background-color:  rgba(255, 255, 255, 0.5);
     border-radius: 50px;
 }
+
+
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark transparent">
@@ -95,7 +97,7 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
@@ -109,7 +111,19 @@ $info = $security->getUser($email);
           </div>
         </div>
       </nav>
-
+      
+      <div class="container">
+        <h1 class="beach-name"><?php echo $playa["nombre"]; ?></h1>
+        <p class="address"><?php echo $playa["ciudad"]; ?></p>
+        <div class="description">
+            <p>
+                Playa Hermosa es un destino paradisíaco, conocido por sus aguas cristalinas y arenas blancas. Es un lugar perfecto para relajarse, disfrutar del sol y participar en actividades acuáticas como el snorkel y el surf. Con una variedad de restaurantes y bares cercanos, los visitantes pueden disfrutar de una experiencia completa junto al mar.
+            </p>
+        </div>
+        <div class="image-container">
+            <img src="playa-hermosa.jpg" alt="Imagen de Playa Hermosa">
+        </div>
+    </div>
     
 </body>
 

@@ -126,7 +126,8 @@ class Mostrar extends Connection{
     public function getPlaya($nombre, $array){
         $playa = [];
         foreach ($array as $element) {
-            if ($element['nombre'] == $nombre) {
+            $name = $element->getNombre();
+            if ($name == $nombre) {
                 array_push($playa, $element);
             }
         }
