@@ -1,5 +1,6 @@
 <?php
 require_once "autoloader.php";
+session_start();
 $security = new Security();
 $registerMessage = $security->doRegister();
 ?>

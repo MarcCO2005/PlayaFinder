@@ -1,6 +1,7 @@
 <?php
 
 require_once "autoloader.php";
+session_start();
 
 $security = new Security();
 $email = $security->getUserData();
@@ -150,6 +151,33 @@ input[type="submit"]:focus {
     padding: 0;
 }
 
+.card-hover {
+        transition: transform 0.3s ease;
+    }
+
+    .card-hover:hover {
+        transform: scale(1.05);
+    }
+
+.carousel-wrapper .carousel-item-custom a:hover {
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+}
+.carousel-item-custom input[type="submit"]:hover,
+.carousel-item-custom a:hover {
+            transform: scale(1.05);
+            }
+            .btn-primary:hover {
+            transform: scale(1.05); /* Agrandar el botón al 5% más grande */
+        }
+.carousel-item-custom{
+    transition: transform 0.3s ease;
+}
+
+.carousel-item-custom:hover{
+    transform: scale(1.05);
+}
 .Playas-frecuentes {
     justify-content: center;
     text-align: center;
@@ -410,7 +438,16 @@ input[type="submit"]:focus {
                 },
             });
         });
-      
+        function mostrarDesplegable(btn) {
+            var desplegable = btn.nextElementSibling;
+            if (desplegable.style.display === "none") {
+                desplegable.style.display = "block";
+                btn.querySelector('i').classList.replace('bi-chevron-down', 'bi-chevron-up');
+            } else {
+                desplegable.style.display = "none";
+                btn.querySelector('i').classList.replace('bi-chevron-up', 'bi-chevron-down');
+            }
+        }
     </script>
     
 </html>

@@ -8,7 +8,7 @@ class Mostrar extends Connection{
         $result = mysqli_query($conn, $query);
 
         $gestor = fopen($file, "r");
-        $query = "INSERT INTO `Playa`(`nombre`, `ciudad`, `codigo_postal`, `id_categoria`, `Valoracion`) VALUES (?,?,?,?,?)";
+        $query = "INSERT INTO `Playa`(`nombre`, `ciudad`, `codigo_postal`, `id_categoria`, `Valoracion`, `descripcion`) VALUES (?,?,?,?,?,?)";
         
         while (($element = fgetcsv($gestor)) !== false) {
             $nombre = $element[0];
@@ -16,9 +16,10 @@ class Mostrar extends Connection{
             $cod_post = $element[2];
             $cat = $element[3];
             $valoracion = $element[4];
+            $descripcion = $element[5];
 
             $ready = $conn->prepare($query);
-            $ready->bind_param("sssss", $nombre, $ciudad, $cod_post, $cat, $valoracion);
+            $ready->bind_param("ssssss", $nombre, $ciudad, $cod_post, $cat, $valoracion, $descripcion);
             $ready->execute();
             $result = $ready->get_result();
             $ready->close();
@@ -41,8 +42,9 @@ class Mostrar extends Connection{
             $cod_post = $info["codigo_postal"];
             $cat = $info["id_categoria"];
             $valoracion = $info["Valoracion"];
+            $descripcion = $info["descripcion"];
 
-            $object = new Playa($nombre, $ciudad, $cod_post, $cat, $valoracion);
+            $object = new Playa($nombre, $ciudad, $cod_post, $cat, $valoracion, $descripcion);
 
             array_push($array, $object);
             $cont++;
@@ -52,37 +54,50 @@ class Mostrar extends Connection{
 
     function showCards($array, $filtro) {
         $output = "";
+        $cont = 0;
         $output = "<div class='row row-cols-1 row-cols-md-3 g-4'>";
         foreach ($array as $element) {
+            $cont++;
             $nombre = $element->getNombre();
             $ciudad = $element->getCiudad();
             $valoracion = $this->valoracion($nombre);
+            $descripcion = $element->getDescripcion();
             if ($ciudad == $filtro) {
                 $output .= "<div class='col'>
-                        <div class='content card h-100'>
-                        <img src='img/img1.jpg' class='card-img-top'>
+                        <div class='content card h-100 card-hover'>
+                        <img src='img/playa$cont.jpeg' class='card-img-top'>
                         <div class='card-body'>";
             $output .= "<h5 class='card-title'>$nombre</h5>
                 <p class='card-text'>Ciudad: $ciudad</p>
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
             $output .= "<div class='card-footer'>
-                        <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
-                        </div></div></div>";
+            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>
+            <a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
+                <i class='bi bi-chevron-down'></i>
+            </a>
+            <div class='desplegable' style='display: none;'>
+                <p>$descripcion</p>
+            </div>
+        </div></div></div>";
             } elseif ($filtro == 0) {
                 $output .= "<div class='col'>
-                        <div class='content card h-100'>
-                        <img src='img/img1.jpg' class='card-img-top'>
+                        <div class='content card h-100 card-hover'>
+                        <img src='img/playa$cont.jpeg' class='card-img-top'>
                         <div class='card-body'>";
             $output .= "<h5 class='card-title'>$nombre</h5>
                 <p class='card-text'>Ciudad: $ciudad</p>
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
             $output .= "<div class='card-footer'>
-                        <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
-                        </div></div></div>";
-            }
-           /* <h4><a href='changestatus.php?id=$nombre'><img src='img/bulb-icon-off.png'></a> $name </h4>*/
+            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>
+            <a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
+                <i class='bi bi-chevron-down'></i>
+            </a>
+            <div class='desplegable' style='display: none;'>
+                <p>$descripcion</p>
+            </div>
+        </div></div></div>";}
                         
         }
         return $output;
@@ -117,6 +132,7 @@ class Mostrar extends Connection{
             $conn= $this->getConn();
             $query = "UPDATE `Usuario` SET `nombre`='$nombre',`email`='$email',`provincia`='$provincia' WHERE `nombre` = '$nom'";
             $result = mysqli_query($conn, $query);
+
         } else {
             return null;
         }
