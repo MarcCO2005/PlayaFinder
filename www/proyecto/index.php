@@ -38,7 +38,7 @@ $info = $security->getUser($email);
 
 .d-img {
   width: 100%;
-  height: 710px;
+  height: auto;
   object-fit: cover;
     filter: brightness(0.6);
 }
@@ -130,7 +130,8 @@ $info = $security->getUser($email);
 
 </div>
 </div>
-
+<section>
+  <article>
 <div class="container">
   <h2 style="text-align: center; margin: 50px;">Quienes somos</h2>
   <div class="row">
@@ -160,7 +161,8 @@ $info = $security->getUser($email);
   </div>
 </div>
 </div>
-
+</article> 
+</section>
 
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container text-center text-md-left">
