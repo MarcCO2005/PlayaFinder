@@ -106,7 +106,7 @@ body {
                 <a class="nav-link" href="index.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="prueba.php" style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php" style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
