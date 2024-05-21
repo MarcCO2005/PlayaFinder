@@ -50,16 +50,16 @@ class Mostrar extends Connection{
         return($array);
     }
 
-    function showCards($array) {
+    function showCards($array, $filtro) {
         $output = "";
         $output = "<div class='row row-cols-1 row-cols-md-3 g-4'>";
         foreach ($array as $element) {
             $nombre = $element->getNombre();
             $ciudad = $element->getCiudad();
             $valoracion = $this->valoracion($nombre);
-           /* <h4><a href='changestatus.php?id=$nombre'><img src='img/bulb-icon-off.png'></a> $name </h4>*/
-            $output .= "<div class='col'>
-                        <div class='content card h-100' style='border-color: #2E4BF2;'>
+            if ($ciudad == $filtro) {
+                $output .= "<div class='col'>
+                        <div class='content card h-100'>
                         <img src='img/img1.jpg' class='card-img-top'>
                         <div class='card-body'>";
             $output .= "<h5 class='card-title'>$nombre</h5>
@@ -67,8 +67,22 @@ class Mostrar extends Connection{
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
             $output .= "<div class='card-footer'>
-                        <a href='https://alcacer.tonipizzeria.com/' class='btn btn-primary'>Mas info</a>
+                        <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
                         </div></div></div>";
+            } elseif ($filtro == 0) {
+                $output .= "<div class='col'>
+                        <div class='content card h-100'>
+                        <img src='img/img1.jpg' class='card-img-top'>
+                        <div class='card-body'>";
+            $output .= "<h5 class='card-title'>$nombre</h5>
+                <p class='card-text'>Ciudad: $ciudad</p>
+                <p class='card-text' style='font-size: 20px;'> $valoracion</p>
+                </div>";
+            $output .= "<div class='card-footer'>
+                        <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
+                        </div></div></div>";
+            }
+           /* <h4><a href='changestatus.php?id=$nombre'><img src='img/bulb-icon-off.png'></a> $name </h4>*/
                         
         }
         return $output;
@@ -95,6 +109,30 @@ class Mostrar extends Connection{
         return $output;
     }
 
-}
+    public function modificar($nom){
+        if (count($_POST) > 0) {
+            $nombre = $_POST['name'];
+            $email = $_POST['email'];
+            $provincia = $_POST['provincia'];
+            $conn= $this->getConn();
+            $query = "UPDATE `Usuario` SET `nombre`='$nombre',`email`='$email',`provincia`='$provincia' WHERE `nombre` = '$nom'";
+            $result = mysqli_query($conn, $query);
+        } else {
+            return null;
+        }
+        header("location: login.php");
+    }
 
+    public function getPlaya($nombre, $array){
+        $playa = [];
+        foreach ($array as $element) {
+            $name = $element->getNombre();
+            if ($name == $nombre) {
+                array_push($playa, $element);
+            }
+        }
+        return $playa;
+    }
+}
+           
 ?>
