@@ -1,6 +1,7 @@
 <?php
 
 require_once "autoloader.php";
+$onject = new Mostrar();
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
