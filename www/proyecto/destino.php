@@ -95,8 +95,9 @@ input[type="submit"]:focus {
     width: 100%;
     z-index: 999;
 }
-.carousel-item {
-    height: 100%;
+.carousel-item-custom {
+    transition: transform 0.3s ease;
+
 }
 .carousel-item-custom:hover {
             transform: scale(1.05);
@@ -179,6 +180,13 @@ input[type="submit"]:focus {
             .btn-primary:hover {
             transform: scale(1.05); /* Agrandar el botón al 5% más grande */
         }
+        .card-hover {
+        transition: transform 0.3s ease;
+    }
+
+    .card-hover:hover {
+        transform: scale(1.05);
+    }
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark transparent">
@@ -326,8 +334,8 @@ input[type="submit"]:focus {
         
     </div>
     
-    <footer class="bg-dark text-white pt-5 pb-4 full-width-footer" style="margin-top: 50px;">
-        <div class="container text-center text-md-left">
+    <footer class="bg-dark text-white pt-5 pb-4 " style="margin-top: 50px;">
+        <div class="containertext-center text-md-left">
             <div class="row text-center text-md-left">
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Nombre de la compañia</h5>

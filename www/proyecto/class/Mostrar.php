@@ -58,29 +58,30 @@ class Mostrar extends Connection{
             $ciudad = $element->getCiudad();
             $valoracion = $this->valoracion($nombre);
             if ($ciudad == $filtro) {
-                $output .= "<div class='col'>
-                        <div class='content card h-100'>
-                        <img src='img/img1.jpg' class='card-img-top'>
-                        <div class='card-body'>";
-            $output .= "<h5 class='card-title'>$nombre</h5>
-                <p class='card-text'>Ciudad: $ciudad</p>
-                <p class='card-text' style='font-size: 20px;'> $valoracion</p>
-                </div>";
-            $output .= "<div class='card-footer'>
-                        <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
-                        </div></div></div>";
-            } elseif ($filtro == 0) {
-                $output .= "<div class='col'>
-                        <div class='content card h-100'>
-                        <img src='img/img1.jpg' class='card-img-top'>
-                        <div class='card-body'>";
-            $output .= "<h5 class='card-title'>$nombre</h5>
-                <p class='card-text'>Ciudad: $ciudad</p>
-                <p class='card-text' style='font-size: 20px;'> $valoracion</p>
-                </div>";
-            $output .= "<div class='card-footer'>
-                        <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
-                        </div></div></div>";
+                        $output .= "<div class='col'>
+                                        <div class='content card h-100 card-hover'>
+                                        <img src='img/img1.jpg' class='card-img-top'>
+                                        <div class='card-body'>";
+                        $output .= "<h5 class='card-title'>$nombre</h5>
+                                    <p class='card-text'>Ciudad: $ciudad</p>
+                                    <p class='card-text' style='font-size: 20px;'> $valoracion</p>
+                                    </div>";
+                        $output .= "<div class='card-footer'>
+                                    <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
+                                    </div></div></div>";
+                        } elseif ($filtro == 0) {
+                        $output .= "<div class='col'>
+                                        <div class='content card h-100 card-hover'>
+                                        <img src='img/img1.jpg' class='card-img-top'>
+                                        <div class='card-body'>";
+                        $output .= "<h5 class='card-title'>$nombre</h5>
+                                    <p class='card-text'>Ciudad: $ciudad</p>
+                                    <p class='card-text' style='font-size: 20px;'> $valoracion</p>
+                                    </div>";
+                        $output .= "<div class='card-footer'>
+                                    <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
+                                    </div></div></div>";
+
             }
            /* <h4><a href='changestatus.php?id=$nombre'><img src='img/bulb-icon-off.png'></a> $name </h4>*/
                         
