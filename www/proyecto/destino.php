@@ -6,7 +6,7 @@ require_once "autoloader.php";
 $data = new Mostrar;
 
 $result = $data->getAllPlayas();
-$output = $data->showCards($result);
+
 
 $security = new Security();
 $email = $security->getUserData();
