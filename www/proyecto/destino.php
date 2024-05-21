@@ -53,7 +53,7 @@ body {
 }
 
 .imagen {
-    width: 600px;
+    width: 400px;
     height: 300px;
     margin-bottom: 20px;
 }
@@ -98,6 +98,9 @@ input[type="submit"]:focus {
 .carousel-item {
     height: 100%;
 }
+.carousel-item-custom:hover {
+            transform: scale(1.05);
+        }
 .navbar-dark .navbar-nav .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50px;
@@ -114,6 +117,7 @@ input[type="submit"]:focus {
     padding: 20px;
     background-color: rgba(255, 255, 255, 1);
     height: 400px;
+
 }
 
 .carousel-item-custom h3 {
@@ -168,6 +172,13 @@ input[type="submit"]:focus {
     color: #fff;
     text-decoration: none;
 }
+.carousel-item-custom input[type="submit"]:hover,
+        .carousel-item-custom a:hover {
+            transform: scale(1.05);
+            }
+            .btn-primary:hover {
+            transform: scale(1.05); /* Agrandar el botón al 5% más grande */
+        }
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark transparent">
