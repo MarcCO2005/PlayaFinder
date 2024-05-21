@@ -3,9 +3,9 @@
 require_once "autoloader.php";
 
 $data = new Mostrar;
-
+$nombre = $_POST['nombre'];
 $result = $data->getAllPlayas();
-$output = $data->showCards($result);
+$playa = $data->getPlaya($result, $nombre);
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
@@ -25,12 +25,12 @@ $info = $security->getUser($email);
 </head>
 <style>
   body {
-    background-color: grey;
+    background-color: #F1F5F7;
     background-size: cover;
     position: relative;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     width: 100%;
-} 
+}
 .content {
   margin-bottom: 50px;
 }
@@ -66,15 +66,15 @@ $info = $security->getUser($email);
     text-align: center;
 }
 .navbar {
-            background-color: ; 
-            position: absolute;
-            width: 100%;
-            z-index: 999;
-        }
-        .carousel-item {
-            height: 100%; 
-        }
-        .navbar-dark .navbar-nav .nav-link:hover {
+    background-color: #302B37;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+.carousel-item {
+  height: 100%; 
+}
+.navbar-dark .navbar-nav .nav-link:hover {
  
     background-color:  rgba(255, 255, 255, 0.5);
     border-radius: 50px;

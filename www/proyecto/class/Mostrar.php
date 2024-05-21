@@ -109,20 +109,29 @@ class Mostrar extends Connection{
         return $output;
     }
 
-    public function modificar(){
+    public function modificar($nom){
         if (count($_POST) > 0) {
-            $nombre = $_POST['nombre'];
+            $nombre = $_POST['name'];
             $email = $_POST['email'];
             $provincia = $_POST['provincia'];
             $conn= $this->getConn();
-            $query = "UPDATE `Usuario` SET `nombre`='$nombre',`email`='$email',`provincia`='$provincia' WHERE `nombre` = $nom";
+            $query = "UPDATE `Usuario` SET `nombre`='$nombre',`email`='$email',`provincia`='$provincia' WHERE `nombre` = '$nom'";
             $result = mysqli_query($conn, $query);
         } else {
             return null;
         }
+        header("location: login.php");
     }
 
-  
+    public function getPlaya($nombre, $array){
+        $playa = [];
+        foreach ($array as $element) {
+            if ($element['nombre'] == $nombre) {
+                array_push($playa, $element);
+            }
+        }
+        return $playa;
+    }
 }
 
 ?>

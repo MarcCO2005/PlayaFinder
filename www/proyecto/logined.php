@@ -90,7 +90,7 @@ $info = $security->getUser($email);
               </li>
             </ul>
             <form class="d-flex">
-    <a class="nav-link" href="perfil2.php" title="<?=$security->getUserData()?>">
+    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>
 </form>

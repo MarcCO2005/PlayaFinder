@@ -239,6 +239,7 @@ input[type="submit"]:focus {
         <label for="provincia" class="form-label">Filtra por provincia</label>
         <select name="provincia" class="form-select" style="width: 300px;" id="provincia" required>
             <option value="" selected disabled>Selecciona tu provincia</option>
+            <option value="0">Quitar filtros</option>
             <option value="Álava">Álava</option>
             <option value="Albacete">Albacete</option>
             <option value="Alicante">Alicante</option>
