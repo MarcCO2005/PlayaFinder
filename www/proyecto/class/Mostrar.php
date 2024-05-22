@@ -149,6 +149,23 @@ class Mostrar extends Connection{
         }
         return $playa;
     }
+
+    public function comentar($nombre, $fecha, $playa, $imagen){
+        if (count($_POST) > 0) {
+            $comentario = $_POST['comment'];
+            $conn= $this->getConn();
+            $query = "INSERT INTO `Comentario`(`opinion`, `fecha`, `user_name`, `nombre_playa`) VALUES ('$comentario','$fecha','$nombre','$playa')";
+            $result = mysqli_query($conn, $query);
+
+        } else {
+            return null;
+        }
+        header("location: playa.php?nombre=$playa&imagen=$imagen");
+    }
+
+    public getComents($playa, $nombre){
+        
+    }
 }
            
 ?>

@@ -1,147 +1,175 @@
 <?php
-
 require_once "autoloader.php";
 session_start();
-$data = new Mostrar;
-$nombre = $_GET['nombre'];
-$imagen = $_GET['imagen'];
-$result = $data->getAllPlayas();
-$playa = $data->getPlaya($nombre, $result);
-
 $security = new Security();
-$email = $security->getUserData();
-
+$registerMessage = $security->doRegister();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu principal</title>
-    
+    <title>PlayaFinder</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
-</head>
-<style>
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f8ff;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    margin-bottom: 20px;
-}
-
-.container {
-    padding: 20px;
-    background-color: ;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.beach-name {
-    color: #333333;
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.address {
-    color: #555555;
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.description {
-    text-align: justify;
-    font-size: 1.1em;
-    line-height: 1.6em;
-    color: #444444;
-    margin-bottom: 20px;
-}
-
-.image-container {
-    text-align: center;
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.nav-link {
-    color: white !important;
-    font-size: 1.1em;
-}
-
-.nav-link:hover {
-    color: #ffd700 !important;
-}
-
-.bi-person-circle {
-    color: white;
-    font-size: 2em;
-}
-
-
-
-</style>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="logined.php">
-                <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
-              </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
-        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
-    </a>
-</form>
-          </div>
-        </div>
-      </nav>
+    <style>
       
-      <div class="container">
-        <h1 class="beach-name"><?php echo $playa[0]->getNombre(); ?></h1>
-        <p class="address"><?php echo $playa[0]->getCiudad(); ?></p>
-        <div class="description">
-            <p>
-            <?php echo $playa[0]->getDescripcion();?>
-          </p>
+        body {
+            background-color: #333;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img/fondo.png');
+            background-size: cover;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 0;
+        }
+        .contact-info, .contact-form {
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px -5px rgba(0,0,0,0.5);
+        }
+        .contact-info {
+            background: #444;
+            flex: 1;
+            margin-right: 20px;
+        }
+        .contact-form {
+            background: black;
+            flex: 2;
+            margin-left: 20px;
+        }
+        .contact-info h2, .contact-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .contact-info p, .contact-form label {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .contact-form button {
+            background: #ffc107;
+            color: #333;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .contact-form button:hover {
+            background: #e0a800;
+        }
+        footer {
+            background: #222;
+            color: #999;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+ color: white;
+ background-color:  rgba(255, 255, 255, 0.5);
+ border-radius: 50px;
+}
+    </style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="content">
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container-fluid" style="margin-left:100px">
+            <a class="navbar-brand" href="index.php">
+                <img src="img/logo.jpg" alt="Logo" style="width:60px;" class="rounded-pill"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="logined.php" style="color:white">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="destino.php"style="color:white">Destino</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.php"style="color:white">Contacto</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
+                        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+                    </a>
+                </form>
+            </div>
         </div>
-        <div class="image-container">
-            <img src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
+    </nav>
+
+    <div class="container">
+        <div class="contact-section">
+            <div class="contact-info">
+                <h2>Llámanos</h2>
+                <p>604 003 385</p>
+                <p>881 954 603</p>
+                <p>Horario: 08.30-15.00h</p>
+                <p>Oficina: 09.00-13.00h</p>
+                <p>* Desde el 20 de junio hasta el 18 de septiembre.</p>
+            </div>
+            <div class="contact-form">
+                <h2>¡Nosotros te llamamos!</h2>
+                <form action="send_email.php" method="post">
+                    <label for="name">Nombre</label><br>
+                    <input type="text" id="name" name="name" required><br>
+                    
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    
+                    <label for="message">Mensaje</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br>
+                    
+                    <div class="form-check">
+                        <label id="boton">
+                            <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                            Aceptar <a href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal" style="color: #ffc107;">Política de Privacidad</a>
+                        </label>
+                    </div>
+                    <button type="submit">ENVIAR</button>
+                </form>
+            </div>
         </div>
     </div>
+
     
-</body>
-
-
 <footer class="bg-dark text-white pt-5 pb-4">
-  <div class="container text-center text-md-left">
+  <div class="container-fluid text-center text-md-left">
     <div class="row text-center text-md-left">
 
     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -214,6 +242,9 @@ body {
     </div>
   </div>
 
-</footer>
 
+</footer>
+      
+</body>
 </html>
+
