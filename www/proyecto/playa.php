@@ -10,6 +10,11 @@ $playa = $data->getPlaya($nombre, $result);
 
 $security = new Security();
 $email = $security->getUserData();
+$info = $security->getUser($email);
+$fecha = date('Y-m-d');
+$usuario = $info["nombre"];
+
+$data->comentar($usuario, $fecha, $nombre, $imagen);
 
 ?>
 
@@ -19,6 +24,7 @@ $email = $security->getUserData();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu principal</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -26,43 +32,48 @@ $email = $security->getUserData();
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
-  /* Reset CSS */
-* {
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+.content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.navbar {
+    margin-bottom: 20px;
 }
 
 .container {
-    max-width: 800px;
-    margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: ;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1.beach-name {
+.beach-name {
+    color: #333333;
+    text-align: center;
     font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #005f6b;
+    margin-bottom: 10px;
 }
 
 .address {
+    color: #555555;
+    text-align: center;
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #00796b;
 }
 
-.description p {
+.description {
+    text-align: justify;
     font-size: 1.1em;
+    line-height: 1.6em;
+    color: #444444;
     margin-bottom: 20px;
 }
 
@@ -74,31 +85,61 @@ h1.beach-name {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .container {
-        margin: 20px;
-        padding: 10px;
-    }
-
-    h1.beach-name {
-        font-size: 2em;
-    }
-
-    .address, .description p {
-        font-size: 1em;
-    }
+.nav-link {
+    color: white !important;
+    font-size: 1.1em;
 }
 
+.nav-link:hover {
+    color: #ffd700 !important;
+}
 
+.bi-person-circle {
+    color: white;
+    font-size: 2em;
+}
 
+.comment-form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .comment-form h2 {
+            margin-bottom: 10px;
+        }
+        .comment-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .comment-form input, .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .comment-form button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .comment-form button:hover {
+            background-color: #218838;
+        }
 
 </style>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark transparent">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
@@ -122,7 +163,7 @@ h1.beach-name {
     <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>
-        </form>
+</form>
           </div>
         </div>
       </nav>
@@ -139,9 +180,97 @@ h1.beach-name {
             <img src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
         </div>
     </div>
+
+    <div class="comment-form" style="margin-top: 50px; margin-bottom: 50px;">
+    <h2>Deja tu comentario</h2>
+    <form action="" method="post">
+        <p>Usuario: <?php echo $info["nombre"];?></p>
+        <p><?php echo $fecha;?></p>
+
+        <label for="comment">Comentario:</label>
+        <textarea id="comment" name="comment" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</div>
     
 </body>
 
 
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-center text-md-left">
+    <div class="row text-center text-md-left">
+
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Nombre de la compañia</h5>
+        <p>Playa finder</p>
+      </div>
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Proovedores</h5>
+          <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white" style="text-decoration: none;">IGN</a></p>
+          <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB" class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
+          <p><a href="https://www.pexels.com/es-es/" class="text-white" style="text-decoration: none;">Pexels</a></p>
+          <p><a href="https://www.tripadvisor.es/" class="text-white" style="text-decoration: none;">TripAdvisor</a></p>
+      </div>
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Links de interes</h5>
+          <p><a href="" class="text-white" style="text-decoration: none;">Cuenta</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Hazte miembro</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Envios</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Informacion productos</a></p>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
+          <p>
+            <i class="bi bi-house"></i> Valencia, El Pla, 34
+          </p>
+          <p>
+            <i class="bi bi-envelope"></i> playafinder@gmail.com
+          </p>
+          <p>
+            <i class="bi bi-telephone-fill"></i> +34 653 48 71 23
+          </p>
+          <p>
+            <i class="bi bi-printer"></i> +01 315115548
+          </p>
+      </div>
+    </div>
+
+    <hr class="mb-4">
+
+    <div class="row align-items-center">
+      <div class="col-md-6 col-lg-7">
+        <p>Copyright ©2024 Derechos de autor de:
+          <a href="" style="text-decoration: none;">
+            <strong class="text-warning">GRUPO-3</strong>
+          </a>
+        </p>
+      </div>
+    
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-instagram"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-google"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
 
 </html>
