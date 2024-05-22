@@ -219,7 +219,7 @@ input[type="submit"]:focus {
                 <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>

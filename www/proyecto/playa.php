@@ -26,13 +26,6 @@ $email = $security->getUserData();
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
-  /* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -40,14 +33,6 @@ body {
     line-height: 1.6;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
 
 h1.beach-name {
     font-size: 2.5em;
@@ -92,7 +77,12 @@ h1.beach-name {
         font-size: 1em;
     }
 }
-
+a:hover {
+    background-color: lightgrey;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+}
 
 
 
@@ -109,25 +99,27 @@ h1.beach-name {
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
+                <a class="nav-link" href="logined.php" style="color:black;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
+                <a class="nav-link" href="#"style="color:black;">Destino</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
+                <a class="nav-link" href="contacto.php"style="color:black;">Contacto</a>
               </li>
             </ul>
             <form class="d-flex">
     <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
-        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+        <i style="color: black; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>
-        </form>
+</form>
+
           </div>
         </div>
       </nav>
-      
-      <div class="container">
+      <br>
+      <br> 
+      <div class="container-fluid">
         <h1 class="beach-name"><?php echo $playa[0]->getNombre(); ?></h1>
         <p class="address"><?php echo $playa[0]->getCiudad(); ?></p>
         <div class="description">
@@ -139,9 +131,83 @@ h1.beach-name {
             <img src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
         </div>
     </div>
-    
-</body>
+    <br>
+    <footer>
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-center text-md-left">
+    <div class="row text-center text-md-left">
 
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Nombre de la compañia</h5>
+        <p>Playa finder</p>
+      </div>
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Proovedores</h5>
+          <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white" style="text-decoration: none;">IGN</a></p>
+          <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB" class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
+          <p><a href="https://www.pexels.com/es-es/" class="text-white" style="text-decoration: none;">Pexels</a></p>
+          <p><a href="https://www.tripadvisor.es/" class="text-white" style="text-decoration: none;">TripAdvisor</a></p>
+      </div>
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Links de interes</h5>
+          <p><a href="" class="text-white" style="text-decoration: none;">Cuenta</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Hazte miembro</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Envios</a></p>
+          <p><a href="" class="text-white" style="text-decoration: none;">Informacion productos</a></p>
+      </div>
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Contacto</h5>
+          <p>
+            <i class="bi bi-house"></i> Valencia, El Pla, 34
+          </p>
+          <p>
+            <i class="bi bi-envelope"></i> playafinder@gmail.com
+          </p>
+          <p>
+            <i class="bi bi-telephone-fill"></i> +34 653 48 71 23
+          </p>
+          <p>
+            <i class="bi bi-printer"></i> +01 315115548
+          </p>
+      </div>
+    </div>
+
+    <hr class="mb-4">
+
+    <div class="row align-items-center">
+      <div class="col-md-6 col-lg-7">
+        <p>Copyright ©2024 Derechos de autor de:
+          <a href="" style="text-decoration: none;">
+            <strong class="text-warning">GRUPO-3</strong>
+          </a>
+        </p>
+      </div>
+    
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-instagram"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-google"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
 
 
 </html>
