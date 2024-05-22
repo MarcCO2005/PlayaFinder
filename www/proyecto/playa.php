@@ -136,6 +136,34 @@ body {
         .comment-form button:hover {
             background-color: #218838;
         }
+        .comment-card {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .comment-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .comment-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .comment-card .date {
+            font-size: 0.9em;
+            color: #999;
+        }
+        .comment-card .comment-text {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #444;
+        }
 
 </style>
 <body>
@@ -180,6 +208,11 @@ body {
             <img src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
         </div>
     </div>
+
+    <?php 
+    $coments = $data->getComents($nombre);
+    echo $data->showComents($coments); 
+    ?>
 
     <div class="comment-form" style="margin-top: 50px; margin-bottom: 50px;">
     <h2>Deja tu comentario</h2>

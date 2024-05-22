@@ -163,8 +163,47 @@ class Mostrar extends Connection{
         header("location: playa.php?nombre=$playa&imagen=$imagen");
     }
 
-    public getComents($playa, $nombre){
-        
+    public function getComents($playa){
+        $array = [];
+        $conn= $this->getConn();
+        $query = "SELECT * FROM `Comentario`";
+        $result = mysqli_query($conn, $query);
+        $total = $result->num_rows;
+        $cont = 0;
+        while ($cont < $total) {
+            $result->data_seek($cont);
+            $info = $result->fetch_array(MYSQLI_ASSOC);
+            $id = $info['id']; 
+            $nombre = $info["user_name"];
+            $playa_nom = $info['nombre_playa'];
+            $coment = $info['opinion'];
+            $fecha = $info['fecha'];
+
+            $element=[$id, $nombre, $playa_nom, $coment, $fecha];
+
+            if ($playa == $playa_nom) {
+                array_push($array, $element);
+            }
+            
+            $cont++;
+        }
+        return($array);
+    }
+
+    public function showComents($array){
+        $output = "";
+        $cont = 0;
+        foreach ($array as $element) {
+            $output .= "<div class='comment-card'>";
+            $nombre = $element[1];
+            $fecha = $element[4];
+            $coment = $element[3];
+            $output .= "<h3>Usuario: $nombre</h3>
+            <p class='date'>Fecha: $fecha</p>
+            <div class='comment-text'>$coment</div>
+            </div>";
+    }
+    return $output;
     }
 }
            
