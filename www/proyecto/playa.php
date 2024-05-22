@@ -49,7 +49,7 @@ body {
 }
 
 .container {
-    padding: 20px;
+    
     background-color: ;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -209,7 +209,7 @@ body {
 </form>
           </div>
         </div>
-      </nav>
+      </nav>  
       
       <div class="container">
         <h1 class="beach-name"><?php echo $playa[0]->getNombre(); ?></h1>

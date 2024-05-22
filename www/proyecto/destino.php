@@ -54,7 +54,7 @@ body {
 }
 
 .imagen {
-    width: 600px;
+    width: 400px;
     height: 300px;
     margin-bottom: 20px;
 }
@@ -64,7 +64,7 @@ input[type="submit"] {
     color: white; 
     border: none; 
     padding: 10px 20px; 
-    font-size: 16px;ç
+    font-size: 16px;
     font-weight: bold; 
     border-radius: 5px;
     cursor: pointer; 
@@ -96,16 +96,20 @@ input[type="submit"]:focus {
     width: 100%;
     z-index: 999;
 }
-.carousel-item {
-    height: 100%;
+.carousel-item-custom {
+    transition: transform 0.3s ease;
+
 }
+.carousel-item-custom:hover {
+            transform: scale(1.05);
+        }
 .navbar-dark .navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
+    color:lightblue !important;
+    
 }
 
 .carousel-wrapper {
-    margin-top: 80px;
+    margin-top: 90px;
 }
 
 .carousel-item-custom {
@@ -114,13 +118,14 @@ input[type="submit"]:focus {
     border-radius: 15px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 1);
-    height: 400px;
+    height: 500px;
+
 }
 
 .carousel-item-custom h3 {
     margin-top: 15px;
     font-size: 1.5rem;
-    color: #0000000;
+    color: #000000;
 }
 .carousel-item-custom img {
     height: 175px;
@@ -151,18 +156,34 @@ input[type="submit"]:focus {
     padding: 0;
 }
 
-.card-hover {
+    .card-hover {
         transition: transform 0.3s ease;
     }
-
     .card-hover:hover {
         transform: scale(1.05);
+        
     }
+    .card-img {
+    height: auto;
+
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+.card-img-top {
+    height: 200px;
+    width: 414px;
+    border: none;
+    object-fit: cover;
+}
+
 
 .carousel-wrapper .carousel-item-custom a:hover {
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
+    
 }
 .carousel-item-custom input[type="submit"]:hover,
 .carousel-item-custom a:hover {
@@ -176,11 +197,13 @@ input[type="submit"]:focus {
 }
 
 .carousel-item-custom:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
+    
 }
 .Playas-frecuentes {
     justify-content: center;
     text-align: center;
+    
 }
 .carousel-wrapper .carousel-item-custom a {
     display: inline-block;
@@ -189,20 +212,29 @@ input[type="submit"]:focus {
     text-decoration: none;
     border: 2px solid #007BFF;
     transition: all 0.3s ease;
+    
 }
 
 .carousel-wrapper .carousel-item-custom a:hover {
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
+    
 }
+.carousel-item-custom input[type="submit"]:hover,
+        .carousel-item-custom a:hover {
+            transform: scale(1.05);
+            }
+            .btn-primary:hover {
+            transform: scale(1.05); /* Agrandar el botón al 5% más grande */
+        }
+        .card-hover {
+        transition: transform 0.3s ease;
+    }
 
-.card-img-top {
-    height: 200px;
-    width: 414px;
-    border: none;
-    object-fit: cover;
-}
+    .card-hover:hover {
+        transform: scale(1.05);
+    }
 
 </style>
 <body>
@@ -240,34 +272,16 @@ input[type="submit"]:focus {
       
 <h1 class="Playas-frecuentes" >Destinos populares</h1>
         
-        <div class="carousel-wrapper">
-            <div class="owl-carousel owl-theme">
-                <div class="item carousel-item-custom">
-                    <img src="./img/img1.jpg" alt="First Item" class="carousel-img">
-                    <h3>Playa de Los Genoveses</h3>
-                    <p>Almeria</p>
-                    <a href="#">READ MORE</a>
-                </div>
-                <div class="item carousel-item-custom">
-                    <img src="./img/img2.jpg" alt="Second Item" class="carousel-img">
-                    <h3>Playa de la Victoria</h3>
-                    <p>Cádiz</p>
-                    <a href="#">READ MORE</a>
-                </div>
-                <div class="item carousel-item-custom">
-                    <img src="./img/img3.jpg" alt="Third Item" class="carousel-img">
-                    <h3>Playa del Silencio</h3>
-                    <p>Asturias</p>
-                    <a href="#">READ MORE</a>
-                </div>
-                <div class="item carousel-item-custom">
-                    <img src="./img/img4.jpg" alt="Fourth Item" class="carousel-img">
-                    <h3>Playa de Cofete</h3>
-                    <p>Las Palmas</p>
-                    <a href="#">READ MORE</a>
-                </div>
-            </div>
-        </div>
+<?php 
+
+$data = new Mostrar;
+
+$result = $data->getAllPlayas();
+
+echo $data->fivestar($result);
+
+?>        
+
       <br>
       <h1 style="text-align:center;">PLAYAS</h1>
       <div class="mb-3">

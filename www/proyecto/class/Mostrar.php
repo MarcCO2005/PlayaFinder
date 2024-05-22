@@ -217,6 +217,42 @@ class Mostrar extends Connection{
         $query = "DELETE FROM `Comentario` WHERE `id` = $id";
         $result = mysqli_query($conn, $query);
     }
+
+    public function fivestar($array) {
+        $carousel = "";
+        $cont = 0;
+        $carousel .= "<div class='carousel-wrapper'>
+            <div class='owl-carousel owl-theme'>";
+        
+        foreach ($array as $element) {
+            // Verificar que el elemento tenga los métodos necesarios
+            if (method_exists($element, 'getNombre') && method_exists($element, 'getCiudad') &&
+                method_exists($element, 'getValoracion') && method_exists($element, 'getDescripcion')) {
+                
+                $nombre = $element->getNombre();
+                $ciudad = $element->getCiudad();
+                $valoracion = $element->getValoracion();
+                $descripcion = $element->getDescripcion();
+                 $cont++;
+                if ($valoracion == 5) {
+                    
+                    $carousel .= "<div class='item carousel-item-custom'>
+                        <img src='img/playa$cont.jpeg' alt='' class='carousel-img'>
+                        <h3>$nombre</h3>
+                        <h4>$ciudad</h4>
+                        <p>$descripcion</p>
+                        <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg'>READ MORE</a>
+                    </div>";
+                }
+            }
+        }
+    
+        // Cerrar las etiquetas HTML abiertas
+        $carousel .= "</div></div>";
+    
+        return $carousel;
+    }
+
 }
            
 ?>
