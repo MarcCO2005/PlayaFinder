@@ -92,7 +92,13 @@ body {
     font-size: 2em;
 }
 
-
+.cards {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 </style>
 <body>
@@ -134,7 +140,7 @@ body {
           </p>
         </div>
         <div class="image-container">
-            <img src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
+            <img class="cards" src="img/<?php echo $imagen;?>"alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
         </div>
     </div>
     

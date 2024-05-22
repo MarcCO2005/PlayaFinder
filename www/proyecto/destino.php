@@ -70,7 +70,7 @@ input[type="submit"] {
     color: white; 
     border: none; 
     padding: 10px 20px; 
-    font-size: 16px;ç
+    font-size: 16px;
     font-weight: bold; 
     border-radius: 5px;
     cursor: pointer; 
@@ -106,8 +106,8 @@ input[type="submit"]:focus {
     height: 100%;
 }
 .navbar-dark .navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
+    color:lightblue !important;
+    
 }
 
 .carousel-wrapper {
@@ -164,6 +164,13 @@ input[type="submit"]:focus {
     .card-hover:hover {
         transform: scale(1.05);
     }
+    .card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 .carousel-wrapper .carousel-item-custom a:hover {
     background-color: #007BFF;
@@ -201,6 +208,7 @@ input[type="submit"]:focus {
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
+    
 }
 </style>
 <body>
