@@ -64,7 +64,7 @@ class Mostrar extends Connection{
             $descripcion = $element->getDescripcion();
             if ($ciudad == $filtro) {
                 $output .= "<div class='col'>
-                        <div class='content card h-100 card-hover'>
+                        <div class='content card h-100 card-hover card-img-top'>
                         <img src='img/playa$cont.jpeg' class='card-img-top'>
                         <div class='card-body'>";
             $output .= "<h5 class='card-title'>$nombre</h5>
@@ -192,21 +192,30 @@ class Mostrar extends Connection{
 
     public function showComents($array, $usuario){
         $output = "";
+        $imagen = $_GET['imagen'];
         $cont = 0;
         foreach ($array as $element) {
             $output .= "<div class='comment-card'>";
+            $id = $element[0];
             $nombre = $element[1];
+            $playa = $element[2];
             $fecha = $element[4];
             $coment = $element[3];
             $output .= "<h3>Usuario: $nombre</h3>
             <p class='date'>Fecha: $fecha</p>
-            <div class='comment-text'>$coment</div>
-            </div>";
+            <div class='comment-text'>$coment</div>";
             if ($usuario == $nombre) {
-                
+                $output .="<a href='eliminar-com.php?id=$id&playa=$playa&imagen=$imagen'><button class='delete-button'>Eliminar</button></a>";
             }
+            $output .= "</div>";
     }
     return $output;
+    }
+
+    public function deleteComent($id){
+        $conn= $this->getConn();
+        $query = "DELETE FROM `Comentario` WHERE `id` = $id";
+        $result = mysqli_query($conn, $query);
     }
 }
            

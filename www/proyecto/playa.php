@@ -139,7 +139,7 @@ body {
         .comment-card {
             width: 100%;
             max-width: 400px;
-            margin: 20px auto;
+            margin: 20px 100px;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 8px;
@@ -163,6 +163,21 @@ body {
             margin-top: 10px;
             font-size: 1em;
             color: #444;
+        }
+        .delete-button {
+            top: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+        .delete-button:hover {
+            background-color: #c0392b;
         }
 
 </style>
@@ -209,9 +224,11 @@ body {
         </div>
     </div>
 
+    <h1>Comentarios</h1>
+
     <?php 
     $coments = $data->getComents($nombre);
-    echo $data->showComents($coments); 
+    echo $data->showComents($coments, $usuario); 
     ?>
 
     <div class="comment-form" style="margin-top: 50px; margin-bottom: 50px;">

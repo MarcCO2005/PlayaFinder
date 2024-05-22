@@ -196,6 +196,14 @@ input[type="submit"]:focus {
     color: #fff;
     text-decoration: none;
 }
+
+.card-img-top {
+    height: 200px;
+    width: 414px;
+    border: none;
+    object-fit: cover;
+}
+
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark transparent">
@@ -341,7 +349,7 @@ input[type="submit"]:focus {
             echo $output;
         ?>
 
-        
+</div> 
     </div>
     
     <footer class="bg-dark text-white pt-5 pb-4 full-width-footer" style="margin-top: 50px;">
