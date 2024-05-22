@@ -1,14 +1,16 @@
 <?php
 
 require_once "autoloader.php";
-
+session_start();
 $data = new Mostrar;
-
+$nombre = $_GET['nombre'];
+$imagen = $_GET['imagen'];
 $result = $data->getAllPlayas();
-$output = $data->showCards($result);
+$playa = $data->getPlaya($nombre, $result);
+
 $security = new Security();
 $email = $security->getUserData();
-$info = $security->getUser($email);
+
 ?>
 
 <!DOCTYPE html>
@@ -24,61 +26,76 @@ $info = $security->getUser($email);
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
-  body {
-    background-color: grey;
-    background-size: cover;
-    position: relative;
-    background-repeat:no-repeat;
-    width: 100%;
-} 
-.content {
-  margin-bottom: 50px;
+  /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.d-item {
-    height: 600px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-.subtitulo {
-    font-size: 30px;
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-.d-img {
-    width: 100%;
-    height: 670px;
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-.mapa{
-  border-radius: 15px;
-  width:100% ;
-  height:490px ;
+h1.beach-name {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #005f6b;
 }
 
+.address {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #00796b;
+}
 
-.imagen {
-    width: 600px;
-    height: 300px;
+.description p {
+    font-size: 1.1em;
     margin-bottom: 20px;
 }
 
-.card-footer {
+.image-container {
     text-align: center;
 }
-.navbar {
-            background-color: ; 
-            position: absolute;
-            width: 100%;
-            z-index: 999;
-        }
-        .carousel-item {
-            height: 100%; 
-        }
-        .navbar-dark .navbar-nav .nav-link:hover {
- 
-    background-color:  rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    h1.beach-name {
+        font-size: 2em;
+    }
+
+    .address, .description p {
+        font-size: 1em;
+    }
+}
+
+
+
+
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark transparent">
@@ -95,7 +112,7 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
@@ -109,7 +126,19 @@ $info = $security->getUser($email);
           </div>
         </div>
       </nav>
-
+      
+      <div class="container">
+        <h1 class="beach-name"><?php echo $playa[0]->getNombre(); ?></h1>
+        <p class="address"><?php echo $playa[0]->getCiudad(); ?></p>
+        <div class="description">
+            <p>
+            <?php echo $playa[0]->getDescripcion();?>
+          </p>
+        </div>
+        <div class="image-container">
+            <img src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
+        </div>
+    </div>
     
 </body>
 
