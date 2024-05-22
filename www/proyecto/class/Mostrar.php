@@ -190,7 +190,7 @@ class Mostrar extends Connection{
         return($array);
     }
 
-    public function showComents($array){
+    public function showComents($array, $usuario){
         $output = "";
         $cont = 0;
         foreach ($array as $element) {
@@ -202,6 +202,9 @@ class Mostrar extends Connection{
             <p class='date'>Fecha: $fecha</p>
             <div class='comment-text'>$coment</div>
             </div>";
+            if ($usuario == $nombre) {
+                
+            }
     }
     return $output;
     }
