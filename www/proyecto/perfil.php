@@ -1,9 +1,13 @@
 <?php
 
 require_once "autoloader.php";
+session_start();
+$object = new Mostrar();
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
+$nom = $info['nombre'];
+$object->modificar($nom);
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +42,7 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php "style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php "style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
@@ -52,19 +56,88 @@ $info = $security->getUser($email);
           </div>
         </div>
       </nav>
-<div class="content container mt-5">
-    <div class="card content">
+      <div class="content container mt-5">
+      <div class="card content">
         <div class="card-header">
-            Datos del Usuario
+            <h3>Datos del Usuario</h3>
         </div>
         <div class="card-body">
-            <h5 class="card-title">Nombre de Usuario: <?php echo $info['nombre']; ?></h5>
-            <p class="card-text">Correo Electrónico: <?php echo $info['email']; ?></p>
-            <p class="card-text">Localidad: <?php echo $info['provincia']; ?></p>
-            <a href="index.php"><button class="btn btn-primary" type="button"style="margin-right:10px" >Cerrar sesion</button></a>
+            <form action="" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre de Usuario:</label>
+                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $info["nombre"]; ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="<?php echo $info['email']; ?>">
+                </div>
+                <div class="mb-3">
+                <label for="provincia" class="form-label">Provincia</label>
+    <select name="provincia" class="form-select" id="provincia" required>
+        <option value="" selected disabled><?php echo $info['provincia']; ?></option>
+        <option value="Álava">Álava</option>
+        <option value="Albacete">Albacete</option>
+        <option value="Alicante">Alicante</option>
+        <option value="Almería">Almería</option>
+        <option value="Asturias">Asturias</option>
+        <option value="Ávila">Ávila</option>
+        <option value="Badajoz">Badajoz</option>
+        <option value="Barcelona">Barcelona</option>
+        <option value="Burgos">Burgos</option>
+        <option value="Cáceres">Cáceres</option>
+        <option value="Cádiz">Cádiz</option>
+        <option value="Cantabria">Cantabria</option>
+        <option value="Castellón">Castellón</option>
+        <option value="Ceuta">Ceuta</option>
+        <option value="Ciudad Real">Ciudad Real</option>
+        <option value="Córdoba">Córdoba</option>
+        <option value="Cuenca">Cuenca</option>
+        <option value="Gerona">Gerona</option>
+        <option value="Granada">Granada</option>
+        <option value="Guadalajara">Guadalajara</option>
+        <option value="Guipúzcoa">Guipúzcoa</option>
+        <option value="Huelva">Huelva</option>
+        <option value="Huesca">Huesca</option>
+        <option value="Islas Baleares">Islas Baleares</option>
+        <option value="Jaén">Jaén</option>
+        <option value="La Coruña">La Coruña</option>
+        <option value="La Rioja">La Rioja</option>
+        <option value="Las Palmas">Las Palmas</option>
+        <option value="León">León</option>
+        <option value="Lérida">Lérida</option>
+        <option value="Lugo">Lugo</option>
+        <option value="Madrid">Madrid</option>
+        <option value="Málaga">Málaga</option>
+        <option value="Melilla">Melilla</option>
+        <option value="Murcia">Murcia</option>
+        <option value="Navarra">Navarra</option>
+        <option value="Orense">Orense</option>
+        <option value="Palencia">Palencia</option>
+        <option value="Pontevedra">Pontevedra</option>
+        <option value="Salamanca">Salamanca</option>
+        <option value="Segovia">Segovia</option>
+        <option value="Sevilla">Sevilla</option>
+        <option value="Soria">Soria</option>
+        <option value="Tarragona">Tarragona</option>
+        <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+        <option value="Teruel">Teruel</option>
+        <option value="Toledo">Toledo</option>
+        <option value="Valencia">Valencia</option>
+        <option value="Valladolid">Valladolid</option>
+        <option value="Vizcaya">Vizcaya</option>
+        <option value="Zamora">Zamora</option>
+        <option value="Zaragoza">Zaragoza</option>
+    </select>
+                </div>
+                <div class="mb-3">
+                    <input id="saveForm" class="btn btn-primary" type="submit" name="submit" value="Modificar">
+                    <a href="index.php"><button class="btn btn-primary" type="button" style="margin-right:10px">Cerrar sesión</button></a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 </body>
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container text-center text-md-left">
