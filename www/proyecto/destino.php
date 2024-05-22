@@ -3,8 +3,12 @@
 require_once "autoloader.php";
 
 $security = new Security();
+$mostrar = new mostrar();
+
 $email = $security->getUserData();
 $info = $security->getUser($email);
+$estrellas = $mostrar->fivestar();  
+
 ?>
 
 <!DOCTYPE html>
@@ -206,34 +210,29 @@ input[type="submit"]:focus {
       
 <h1 class="Playas-frecuentes">Destinos populares</h1>
         
-        <div class="carousel-wrapper">
-            <div class="owl-carousel owl-theme">
-                <div class="item carousel-item-custom">
-                    <img src="./img/img1.jpg" alt="First Item" class="carousel-img">
-                    <h3>Playa de Los Genoveses</h3>
-                    <p>Almeria</p>
-                    <a href="#">READ MORE</a>
-                </div>
-                <div class="item carousel-item-custom">
-                    <img src="./img/img2.jpg" alt="Second Item" class="carousel-img">
-                    <h3>Playa de la Victoria</h3>
-                    <p>Cádiz</p>
-                    <a href="#">READ MORE</a>
-                </div>
-                <div class="item carousel-item-custom">
-                    <img src="./img/img3.jpg" alt="Third Item" class="carousel-img">
-                    <h3>Playa del Silencio</h3>
-                    <p>Asturias</p>
-                    <a href="#">READ MORE</a>
-                </div>
-                <div class="item carousel-item-custom">
-                    <img src="./img/img4.jpg" alt="Fourth Item" class="carousel-img">
-                    <h3>Playa de Cofete</h3>
-                    <p>Las Palmas</p>
-                    <a href="#">READ MORE</a>
-                </div>
-            </div>
+ 
+<div class="carousel-wrapper">
+        <div class="owl-carousel owl-theme">
+            <?php if (!empty($estrellas)): ?>
+                <?php foreach ($estrellas as $estrella): ?>
+                    <div class="item carousel-item-custom">
+                        <?php if (!is_null($estrella['imagen'])): ?>
+                            <img src="<?php echo htmlspecialchars($estrella['imagen']); ?>" alt="<?php echo isset($estrella['nombre']) ? htmlspecialchars($estrella['nombre']) : ''; ?>" class="carousel-img">
+                        <?php endif; ?>x
+                        <?php if (!is_null($estrella['nombre'])): ?>
+                            <h3><?php echo htmlspecialchars($estrella['nombre']); ?></h3>
+                        <?php endif; ?>
+                        <?php if (!is_null($estrella['valoracion'])): ?>
+                            <p><?php echo htmlspecialchars($estrella['valoracion']); ?></p>
+                        <?php endif; ?>
+                        <a href="#">READ MORE</a>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No hay playas con 5 estrellas disponibles.</p>
+            <?php endif; ?>
         </div>
+    </div>
       <br>
       <h1 style="text-align:center;">PLAYAS</h1>
       <div class="mb-3">

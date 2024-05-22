@@ -124,6 +124,24 @@ function showCards($array, $filtro, $filtroValoracion) {
             }
             return $playa;
         }
-    }
+        public function fivestar(){
+            $conn= $this->getConn();
+            $sql = "SELECT * FROM Playa WHERE valoracion = 5";
+            $result = $conn->query($sql);
+        
+            $playas = [];
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $playas[] = $row;
+                }
+            }
+        
+            $conn->close();
+            return $playas;
             
+        }
+        
+    }
+   
+    ?>      
     ?>
