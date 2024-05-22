@@ -253,6 +253,12 @@ class Mostrar extends Connection{
         return $carousel;
     }
 
+    public function eliminarCuenta($nombre){
+        $conn= $this->getConn();
+        $query = "DELETE FROM `Usuario` WHERE `nombre` = '$nombre'";
+        $result = mysqli_query($conn, $query);
+    }
+
 }
            
 ?>

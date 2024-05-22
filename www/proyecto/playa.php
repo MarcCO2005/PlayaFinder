@@ -39,53 +39,62 @@ body {
     padding: 0;
 }
 
-.content {
-  margin-top: 50px;
+.navbar{
+  padding-left: 80px;
+  padding-right: 80px;  
   margin-bottom: 50px;
 }
 
-.navbar {
-    margin-bottom: 20px;
-}
-
-.container {
-    
-    background-color: ;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.content {
+  margin-top: 70px;
+  margin-left: 50px;
+  width: 550px;
 }
 
 .beach-name {
     color: #333333;
-    text-align: center;
+    text-align: left;
     font-size: 2.5em;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .address {
     color: #555555;
-    text-align: center;
+    text-align: left;
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 50px; 
 }
 
 .description {
-    text-align: justify;
+    text-align: left;
     font-size: 1.1em;
     line-height: 1.6em;
     color: #444444;
     margin-bottom: 20px;
+    max-width: 400px;  
 }
 
 .image-container {
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Para centrar el contenido horizontalmente */
+    align-items: center; /* Para centrar el contenido verticalmente */
+    margin-right: 20px;
 }
 
 .image-container img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; 
+    max-height: 100%;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 80px;
+}
+
+.image-container img {
+    width: 600px; 
+    height: 600px; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 80px;
 }
 
 .nav-link {
@@ -102,44 +111,115 @@ body {
     font-size: 2em;
 }
 
+.container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;  
+    justify-content: space-between;
+}
+
+.pie {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;  
+    justify-content: space-between;
+}
+
+.content {
+  margin-top: 70px;
+  margin-left: 50px;
+}
+
+/* Estilos para el formulario */
 .comment-form {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        .comment-form h2 {
-            margin-bottom: 10px;
-        }
-        .comment-form label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .comment-form input, .comment-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        .comment-form button {
-            padding: 10px 15px;
-            background-color: #28a745;
-            color: white;
+    background-color: #f0f8ff;
+    padding: 30px;
+    border: solid 1px black;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Arial', sans-serif;
+}
+
+.comment-form h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
+
+.comment-form p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #555;
+    text-align: center;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: #333;
+    font-weight: 600;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    resize: vertical;
+    box-sizing: border-box;
+    height: 100px;
+}
+
+.comment-form button {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+        .delete-button {
+            top: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: #fff;
             border: none;
+            padding: 5px 10px;
             border-radius: 3px;
             cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 20px;
         }
-        .comment-form button:hover {
-            background-color: #218838;
+        .delete-button:hover {
+            background-color: #c0392b;
         }
         .comment-card {
             width: 100%;
-            max-width: 400px;
-            margin: 20px 100px;
+            max-width: 900px;
+            margin: 20px 250px;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 8px;
@@ -183,7 +263,7 @@ body {
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="container">
+        
             <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
               </a>
@@ -207,48 +287,49 @@ body {
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>
 </form>
-          </div>
+          
         </div>
       </nav>  
       
       <div class="container">
+    <div class="content">
         <h1 class="beach-name"><?php echo $playa[0]->getNombre(); ?></h1>
         <p class="address"><?php echo $playa[0]->getCiudad(); ?></p>
         <div class="description">
             <p>
-            <?php echo $playa[0]->getDescripcion();?>
-          </p>
+                <?php echo $playa[0]->getDescripcion(); ?>
+            </p>
         </div>
-        <div class="image-container">
-            <img src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
+
+        <div class="comment-form" style="margin-top: 50px; margin-bottom: 50px;">
+            <h2>Deja tu reseña aqui</h2>
+            <form action="" method="post">
+                <p>Usuario: <?php echo $info["nombre"];?></p>
+                <label for="comment">Comentario:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     </div>
+    <div class="image-container">
+        <img class="cards" src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
+    </div>
+</div>
 
-    <h1>Comentarios</h1>
+
+    <h1 style="margin: 50px 180px;">Seccion de comentarios</h1>
 
     <?php 
     $coments = $data->getComents($nombre);
     echo $data->showComents($coments, $usuario); 
     ?>
-
-    <div class="comment-form" style="margin-top: 50px; margin-bottom: 50px;">
-    <h2>Deja tu comentario</h2>
-    <form action="" method="post">
-        <p>Usuario: <?php echo $info["nombre"];?></p>
-        <p><?php echo $fecha;?></p>
-
-        <label for="comment">Comentario:</label>
-        <textarea id="comment" name="comment" rows="4" required></textarea>
-
-        <button type="submit">Enviar</button>
-    </form>
-</div>
     
 </body>
 
 
 <footer class="bg-dark text-white pt-5 pb-4">
-  <div class="container text-center text-md-left">
+  <div class="pie text-center text-md-left">
     <div class="row text-center text-md-left">
 
     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -321,6 +402,6 @@ body {
     </div>
   </div>
 
-</footer>
 
+</footer>
 </html>
