@@ -1,6 +1,7 @@
 <?php
 
 require_once "autoloader.php";
+session_start();
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
@@ -38,7 +39,7 @@ $info = $security->getUser($email);
 
 .d-img {
   width: 100%;
-  height: 710px;
+  height: auto;
   object-fit: cover;
     filter: brightness(0.6);
 }
@@ -63,9 +64,8 @@ $info = $security->getUser($email);
             height: 100%; 
         }
         .navbar-dark .navbar-nav .nav-link:hover {
- 
-    background-color:  rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
+    color:lightblue !important;
+    
 }
 
 </style>
@@ -130,7 +130,8 @@ $info = $security->getUser($email);
 
 </div>
 </div>
-
+<section>
+  <article>
 <div class="container">
   <h2 style="text-align: center; margin: 50px;">Quienes somos</h2>
   <div class="row">
@@ -160,7 +161,8 @@ $info = $security->getUser($email);
   </div>
 </div>
 </div>
-
+</article> 
+</section>
 
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container text-center text-md-left">

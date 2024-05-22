@@ -1,6 +1,13 @@
 <?php
 
 require_once "autoloader.php";
+session_start();
+
+
+$data = new Mostrar;
+
+$result = $data->getAllPlayas();
+
 
 $security = new Security();
 $email = $security->getUserData();
@@ -63,7 +70,7 @@ input[type="submit"] {
     color: white; 
     border: none; 
     padding: 10px 20px; 
-    font-size: 16px;ç
+    font-size: 16px;
     font-weight: bold; 
     border-radius: 5px;
     cursor: pointer; 
@@ -103,8 +110,8 @@ input[type="submit"]:focus {
             transform: scale(1.05);
         }
 .navbar-dark .navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
+    color:lightblue !important;
+    
 }
 
 .carousel-wrapper {
@@ -124,7 +131,7 @@ input[type="submit"]:focus {
 .carousel-item-custom h3 {
     margin-top: 15px;
     font-size: 1.5rem;
-    color: #0000000;
+    color: #000000;
 }
 .carousel-item-custom img {
     height: 175px;
@@ -155,9 +162,54 @@ input[type="submit"]:focus {
     padding: 0;
 }
 
+    .card-hover {
+        transition: transform 0.3s ease;
+    }
+    .card-hover:hover {
+        transform: scale(1.05);
+        
+    }
+    .card-img {
+    height: auto;
+
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+.card-img-top {
+    height: 200px;
+    width: 414px;
+    border: none;
+    object-fit: cover;
+}
+
+
+.carousel-wrapper .carousel-item-custom a:hover {
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    
+}
+.carousel-item-custom input[type="submit"]:hover,
+.carousel-item-custom a:hover {
+            transform: scale(1.05);
+            }
+            .btn-primary:hover {
+            transform: scale(1.05); /* Agrandar el botón al 5% más grande */
+        }
+.carousel-item-custom{
+    transition: transform 0.3s ease;
+}
+
+.carousel-item-custom:hover{
+    transform: scale(1.05);
+    
+}
 .Playas-frecuentes {
     justify-content: center;
     text-align: center;
+    
 }
 .carousel-wrapper .carousel-item-custom a {
     display: inline-block;
@@ -166,12 +218,14 @@ input[type="submit"]:focus {
     text-decoration: none;
     border: 2px solid #007BFF;
     transition: all 0.3s ease;
+    
 }
 
 .carousel-wrapper .carousel-item-custom a:hover {
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
+    
 }
 .carousel-item-custom input[type="submit"]:hover,
         .carousel-item-custom a:hover {
@@ -189,6 +243,7 @@ input[type="submit"]:focus {
     }
 </style>
 <body>
+
     <nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
             <a class="navbar-brand" href="logined.php">
@@ -203,7 +258,7 @@ input[type="submit"]:focus {
                 <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
@@ -219,34 +274,36 @@ input[type="submit"]:focus {
       </nav>
 
     <div class="container">
-      <br><br><br><br><br>
-      
-<h1 class="Playas-frecuentes" >Destinos populares</h1>
+      <br>
+      <br>
+      <br>
+      <br>
+<h1 class="Playas-frecuentes" >Destinos frecuentes</h1>
         
         <div class="carousel-wrapper">
             <div class="owl-carousel owl-theme">
                 <div class="item carousel-item-custom">
                     <img src="./img/img1.jpg" alt="First Item" class="carousel-img">
-                    <h3>Playa de Los Genoveses</h3>
-                    <p>Almeria</p>
+                    <h3>Item 1</h3>
+                    <p>Description for the first item goes here.</p>
                     <a href="#">READ MORE</a>
                 </div>
                 <div class="item carousel-item-custom">
                     <img src="./img/img2.jpg" alt="Second Item" class="carousel-img">
-                    <h3>Playa de la Victoria</h3>
-                    <p>Cádiz</p>
+                    <h3>Item 2</h3>
+                    <p>Description for the second item goes here.</p>
                     <a href="#">READ MORE</a>
                 </div>
                 <div class="item carousel-item-custom">
                     <img src="./img/img3.jpg" alt="Third Item" class="carousel-img">
-                    <h3>Playa del Silencio</h3>
-                    <p>Asturias</p>
+                    <h3>Item 3</h3>
+                    <p>Description for the third item goes here.</p>
                     <a href="#">READ MORE</a>
                 </div>
                 <div class="item carousel-item-custom">
                     <img src="./img/img4.jpg" alt="Fourth Item" class="carousel-img">
-                    <h3>Playa de Cofete</h3>
-                    <p>Las Palmas</p>
+                    <h3>Item 4</h3>
+                    <p>Description for the fourth item goes here.</p>
                     <a href="#">READ MORE</a>
                 </div>
             </div>
@@ -258,6 +315,7 @@ input[type="submit"]:focus {
         <label for="provincia" class="form-label">Filtra por provincia</label>
         <select name="provincia" class="form-select" style="width: 300px;" id="provincia" required>
             <option value="" selected disabled>Selecciona tu provincia</option>
+            <option value="0">Quitar filtros</option>
             <option value="Álava">Álava</option>
             <option value="Albacete">Albacete</option>
             <option value="Alicante">Alicante</option>
@@ -332,6 +390,7 @@ input[type="submit"]:focus {
         ?>
 
         
+    </div>
     </div>
     
     <footer class="bg-dark text-white pt-5 pb-4 " style="margin-top: 50px;">
@@ -428,7 +487,16 @@ input[type="submit"]:focus {
                 },
             });
         });
-      
+        function mostrarDesplegable(btn) {
+            var desplegable = btn.nextElementSibling;
+            if (desplegable.style.display === "none") {
+                desplegable.style.display = "block";
+                btn.querySelector('i').classList.replace('bi-chevron-down', 'bi-chevron-up');
+            } else {
+                desplegable.style.display = "none";
+                btn.querySelector('i').classList.replace('bi-chevron-up', 'bi-chevron-down');
+            }
+        }
     </script>
-    
+
 </html>

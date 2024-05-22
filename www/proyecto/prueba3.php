@@ -67,8 +67,8 @@ $info = $security->getUser($email);
     }
 
     .navbar-dark .navbar-nav .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 50px;
+    color:lightblue !important;
+    
     }
 
     .carousel-wrapper {
