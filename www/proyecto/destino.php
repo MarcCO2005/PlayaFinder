@@ -126,7 +126,7 @@ input[type="submit"]:focus {
 .carousel-item-custom h3 {
     margin-top: 15px;
     font-size: 1.5rem;
-    color: #0000000;
+    color: #000000;
 }
 .carousel-item-custom img {
     height: 175px;
@@ -157,25 +157,34 @@ input[type="submit"]:focus {
     padding: 0;
 }
 
-.card-hover {
+    .card-hover {
         transition: transform 0.3s ease;
     }
-
     .card-hover:hover {
         transform: scale(1.05);
+        
     }
     .card-img {
-    width: 100%;
-    height: 200px;
+    height: auto;
+
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
 }
+.card-img-top {
+    height: 200px;
+    width: 414px;
+    border: none;
+    object-fit: cover;
+}
+
 
 .carousel-wrapper .carousel-item-custom a:hover {
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
+    
 }
 .carousel-item-custom input[type="submit"]:hover,
 .carousel-item-custom a:hover {
@@ -190,10 +199,12 @@ input[type="submit"]:focus {
 
 .carousel-item-custom:hover{
     transform: scale(1.05);
+    
 }
 .Playas-frecuentes {
     justify-content: center;
     text-align: center;
+    
 }
 .carousel-wrapper .carousel-item-custom a {
     display: inline-block;
@@ -202,6 +213,7 @@ input[type="submit"]:focus {
     text-decoration: none;
     border: 2px solid #007BFF;
     transition: all 0.3s ease;
+    
 }
 
 .carousel-wrapper .carousel-item-custom a:hover {
