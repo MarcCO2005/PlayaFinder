@@ -352,6 +352,7 @@ input[type="submit"]:focus {
 
         
     </div>
+    </div>
     
     <footer class="bg-dark text-white pt-5 pb-4 full-width-footer" style="margin-top: 50px;">
         <div class="container text-center text-md-left">

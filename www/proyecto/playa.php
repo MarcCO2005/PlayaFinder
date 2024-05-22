@@ -19,6 +19,7 @@ $email = $security->getUserData();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu principal</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -27,27 +28,42 @@ $email = $security->getUserData();
 </head>
 <style>
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
 }
 
-
-h1.beach-name {
-    font-size: 2.5em;
+.navbar {
     margin-bottom: 20px;
-    color: #005f6b;
+}
+
+.container {
+    padding: 20px;
+    background-color: ;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.beach-name {
+    color: #333333;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
 .address {
+    color: #555555;
+    text-align: center;
     font-size: 1.2em;
     margin-bottom: 20px;
-    color: #00796b;
 }
 
-.description p {
+.description {
+    text-align: justify;
     font-size: 1.1em;
+    line-height: 1.6em;
+    color: #444444;
     margin-bottom: 20px;
 }
 
@@ -59,36 +75,28 @@ h1.beach-name {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .container {
-        margin: 20px;
-        padding: 10px;
-    }
-
-    h1.beach-name {
-        font-size: 2em;
-    }
-
-    .address, .description p {
-        font-size: 1em;
-    }
+.nav-link {
+    color: white !important;
+    font-size: 1.1em;
 }
-a:hover {
-    background-color: lightgrey;
-    border-radius: 50px;
-    color: #fff;
-    text-decoration: none;
+
+.nav-link:hover {
+    color: #ffd700 !important;
+}
+
+.bi-person-circle {
+    color: white;
+    font-size: 2em;
 }
 
 
 
 </style>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark transparent">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
@@ -99,27 +107,25 @@ a:hover {
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link" href="logined.php" style="color:black;">Menu</a>
+                <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"style="color:black;">Destino</a>
+                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php"style="color:black;">Contacto</a>
+                <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
               </li>
             </ul>
             <form class="d-flex">
     <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
-        <i style="color: black; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>
 </form>
-
           </div>
         </div>
       </nav>
-      <br>
-      <br> 
-      <div class="container-fluid">
+      
+      <div class="container">
         <h1 class="beach-name"><?php echo $playa[0]->getNombre(); ?></h1>
         <p class="address"><?php echo $playa[0]->getCiudad(); ?></p>
         <div class="description">
@@ -131,8 +137,10 @@ a:hover {
             <img src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
         </div>
     </div>
-    <br>
-    <footer>
+    
+</body>
+
+
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container text-center text-md-left">
     <div class="row text-center text-md-left">
@@ -206,8 +214,7 @@ a:hover {
       </div>
     </div>
   </div>
-</footer>
-</body>
 
+</footer>
 
 </html>
