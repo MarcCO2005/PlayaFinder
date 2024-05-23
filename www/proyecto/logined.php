@@ -56,19 +56,19 @@ $info = $security->getUser($email);
     text-align: center;
 }
 .navbar {
-            background-color: transparent !important; 
-            position: absolute;
-            width: 100%;
-            z-index: 999;
-        }
+    background-color: #302B37;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:#ffd700 !important;
+    
+}
         .carousel-item {
             height: 100%; 
         }
-        .navbar-dark .navbar-nav .nav-link:hover {
- 
-    background-color:  rgba(5, 255, 255, 0.5);
-    border-radius: 50px;
-}
+
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">

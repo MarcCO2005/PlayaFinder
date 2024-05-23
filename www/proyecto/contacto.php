@@ -43,6 +43,7 @@ $registerMessage = $security->doRegister();
             max-width: 1200px;
             margin: auto;
             padding: 20px;
+            height: 900px;
         }
         .contact-section {
             display: flex;
@@ -54,6 +55,7 @@ $registerMessage = $security->doRegister();
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 2px 20px -5px rgba(0,0,0,0.5);
+            margin-top: 50px;
         }
         .contact-info {
             background: #444;
@@ -94,10 +96,16 @@ $registerMessage = $security->doRegister();
             position: relative;
             z-index: 2;
         }
-        .navbar-dark .navbar-nav .nav-link:hover {
- color: white;
- background-color:  rgba(255, 255, 255, 0.5);
- border-radius: 50px;
+
+.navbar {
+    background-color: #302B37;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:#ffd700 !important;
+    
 }
     </style>
 </head>

@@ -96,6 +96,10 @@ input[type="submit"]:focus {
     width: 100%;
     z-index: 999;
 }
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:#ffd700 !important;
+    
+}
 .carousel-item-custom {
     transition: transform 0.3s ease;
 
@@ -103,10 +107,7 @@ input[type="submit"]:focus {
 .carousel-item-custom:hover {
             transform: scale(1.05);
         }
-.navbar-dark .navbar-nav .nav-link:hover {
-    color:lightblue !important;
-    
-}
+
 
 .carousel-wrapper {
     margin-top: 90px;

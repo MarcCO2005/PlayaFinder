@@ -62,6 +62,11 @@ class Mostrar extends Connection{
             $ciudad = $element->getCiudad();
             $valoracion = $this->valoracion($nombre);
             $descripcion = $element->getDescripcion();
+           
+           
+           
+           
+           
             if ($ciudad == $filtro) {
                 $output .= "<div class='col'>
                         <div class='content card h-100 card-hover card-img-top'>
