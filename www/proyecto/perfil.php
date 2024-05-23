@@ -98,6 +98,29 @@ $object->modificar($nom);
             justify-content: space-between;
             margin-top: 20px;
         }
+
+        .profile-container {
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -160,7 +183,17 @@ $object->modificar($nom);
         <div class="card-header">
             <h3>Datos del Usuario</h3>
         </div>
+    <div class="profile-container">
+        <div class="profile-picture">
+            <img src='perfiles/<?php echo $info["nombre"]; ?>.jpg' alt="Foto de Perfil">
+        </div>
+    </div>
         <div class="card-body">
+            <form action="foto_perfil.php?nombre=<?php echo $info['nombre']; ?>" method="POST" enctype="multipart/form-data">
+                <label for="photo">Selecciona una foto</label><br>
+                <input type="file" id="photo" name="photo" required><br><br>
+                <button type="submit">Subir Imagen</button>
+            </form>
             <form action="" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre de Usuario:</label>
