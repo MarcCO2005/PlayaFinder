@@ -94,44 +94,42 @@ $registerMessage = $security->doRegister();
             position: relative;
             z-index: 2;
         }
-        .navbar-dark .navbar-nav .nav-link:hover {
- color: white;
- background-color:  rgba(255, 255, 255, 0.5);
- border-radius: 50px;
+        .nav-link:hover {
+    color: #ffd700 !important;
 }
     </style>
 </head>
 <body>
 <div class="overlay"></div>
 <div class="content">
-    <nav class="navbar navbar-expand-sm navbar-dark">
-        <div class="container-fluid" style="margin-left:100px">
-            <a class="navbar-brand" href="index.php">
-                <img src="img/logo.jpg" alt="Logo" style="width:60px;" class="rounded-pill"> 
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="logined.php" style="color:white">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="destino.php"style="color:white">Destino</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.php"style="color:white">Contacto</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
-                        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
-                    </a>
-                </form>
-            </div>
+    <nav class="navbar navbar-expand-sm transparent">
+        <div class="container">
+            <a class="navbar-brand" href="logined.php">
+                <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
+              </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
+        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+    </a>
+</form>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="container">
         <div class="contact-section">
@@ -147,13 +145,13 @@ $registerMessage = $security->doRegister();
                 <h2>¡Nosotros te llamamos!</h2>
                 <form action="send_email.php" method="post">
                   <label for="name">Nombre</label><br>
-                  <input type="text" id="name" name="name" required><br>
+                  <input type="text" id="name" name="name" required style="  width: 100%;padding: 10px;margin-bottom: 20px;border: 2px solid #555;border-radius: 4px; background: #333;color: white;"><br>
         
                   <label for="email">Email</label><br>
-                  <input type="email" id="email" name="email" required><br>
+                  <input type="email" id="email" name="email" required style="  width: 100%;padding: 10px;margin-bottom: 20px;border: 2px solid #555;border-radius: 4px; background: #333;color: white;" ><br>
         
                   <label for="message">Mensaje</label><br>
-                  <textarea id="message" name="message" rows="4" required></textarea><br>
+                  <textarea id="message" name="message" rows="4" required style="  width: 100%;padding: 10px;margin-bottom: 20px;border: 2px solid #555;border-radius: 4px; background: #333;color: white;"></textarea><br>
         
             <div class="form-check">
                 <label id="boton">

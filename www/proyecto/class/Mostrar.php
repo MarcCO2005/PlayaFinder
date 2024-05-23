@@ -207,6 +207,9 @@ class Mostrar extends Connection{
             if ($usuario == $nombre) {
                 $output .="<a href='eliminar-com.php?id=$id&playa=$playa&imagen=$imagen'><button class='delete-button'>Eliminar</button></a>";
             }
+            if ($usuario == "admin") {
+                $output .="<a href='eliminar-com.php?id=$id&playa=$playa&imagen=$imagen'><button class='delete-button'>Eliminar</button></a>";
+            }
             $output .= "</div>";
     }
     return $output;

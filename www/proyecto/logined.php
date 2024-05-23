@@ -6,6 +6,7 @@ session_start();
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
+$email = $info['email'];
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +22,34 @@ $info = $security->getUser($email);
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
+  
+  .card-tiempo {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 300px;
+}
+
+.city {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.details p {
+    margin: 5px 0;
+}
+
+.temp {
+    font-weight: bold;
+}
+
+.humidity,
+.wind {
+    font-style: italic;
+}
+
 .content {
   margin-bottom: 50px;
 }
@@ -90,7 +119,19 @@ $info = $security->getUser($email);
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
               </li>
+              <?php
+
+            if ($email == "admin@gmail.com") {
+              echo "<li class='nav-item'>
+                <a class='nav-link' href='pornhub.com'style='color:white;'>Panel de administracion</a>
+              </li>";
+            }
+
+            ?>
             </ul>
+
+            
+
             <form class="d-flex">
     <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
@@ -128,6 +169,37 @@ $info = $security->getUser($email);
         </div>
     </div>
   </div>
+
+  <script>
+    const apiKey = "24f7a202694a4b3d0152bfaf1735bc8b";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=<?php echo $info['provincia'];?>";
+
+    async function checkWeather() {
+        const response = await fetch(apiUrl + `&appid=${apiKey}`);
+        var data = await response.json();
+
+        console.log(data);        
+
+        document.querySelector(".city"). innerHTML = data.name;
+        document.querySelector(".temp") .innerHTML = Math.round(data.main.temp) - 273 + "°с";
+        document.querySelector(".humidity"). innerHTML = data.main.humidity + "%";
+        document.querySelector (".wind"). innerHTML = data.wind. speed + "km/h";
+    }
+
+    checkWeather()
+
+</script>
+
+<div class="card-tiempo">
+    <h2 class="city"></h2>
+    <div class="details">
+        <p>Temperatura: <span class="temp"></span></p>
+        <p>Humedad: <span class="humidity"></span></p>
+        <p>Viento: <span class="wind"></span></p>
+    </div>
+</div>
+
+
 
   <div class="container">
   <h2 style="text-align: center; margin: 50px;">Quienes somos</h2>
