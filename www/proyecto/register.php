@@ -31,8 +31,9 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 .navbar-dark .navbar-nav .nav-link:hover {
-    color:lightblue !important;
-    
+ 
+ background-color:  rgba(255, 255, 255, 0.5);
+ border-radius: 50px;
 }
 
 </style>

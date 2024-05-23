@@ -161,15 +161,7 @@ $object->modificar($nom);
             <h3>Datos del Usuario</h3>
         </div>
         <div class="card-body">
-            <form action="foto.php" method="POST">
-            <div class="mb-3">
-                    <label for="name" class="form-label">Foto Perfil:</label>
-                    <label for="file">Seleccione un archivo:</label>
-                     <input type="file" id="file" name="file">
-        <br><br>
-        <input type="submit" value="Subir Archivo">
-        
-                </div>
+            <form action="" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre de Usuario:</label>
                     <input type="text" class="form-control" id="name" name="name" value="<?php echo $info["nombre"]; ?>">
