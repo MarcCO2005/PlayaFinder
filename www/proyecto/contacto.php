@@ -1,5 +1,6 @@
 <?php
 require_once "autoloader.php";
+session_start();
 $security = new Security();
 $registerMessage = $security->doRegister();
 ?>
@@ -97,7 +98,90 @@ $registerMessage = $security->doRegister();
  color: white;
  background-color:  rgba(255, 255, 255, 0.5);
  border-radius: 50px;
+        body {
+            background-color: #333;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('img/fondo.png');
+            background-size: cover;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 0;
+        }
+        .contact-info, .contact-form {
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px -5px rgba(0,0,0,0.5);
+        }
+        .contact-info {
+            background: #444;
+            flex: 1;
+            margin-right: 20px;
+        }
+        .contact-form {
+            background: black;
+            flex: 2;
+            margin-left: 20px;
+        }
+        .contact-info h2, .contact-form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .contact-info p, .contact-form label {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .contact-form button {
+            background: #ffc107;
+            color: #333;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .contact-form button:hover {
+            background: #e0a800;
+        }
+        footer {
+            background: #222;
+            color: #999;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+ color: white;
+ background-color:  rgba(255, 255, 255, 0.5);
+ border-radius: 50px;
 }
+    </style>
     </style>
 </head>
 <body>
@@ -114,6 +198,7 @@ $registerMessage = $security->doRegister();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link" href="logined.php">Menu</a>
                     </li>
                     <li class="nav-item">
@@ -121,6 +206,15 @@ $registerMessage = $security->doRegister();
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contacto.php">Contacto</a>
+=======
+                        <a class="nav-link" href="logined.php" style="color:white">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="destino.php"style="color:white">Destino</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.php"style="color:white">Contacto</a>
+>>>>>>> origin/Dario
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -130,6 +224,7 @@ $registerMessage = $security->doRegister();
                 </form>
             </div>
         </div>
+    </nav>
     </nav>
 
     <div class="container">
@@ -144,6 +239,7 @@ $registerMessage = $security->doRegister();
             </div>
             <div class="contact-form">
                 <h2>¡Nosotros te llamamos!</h2>
+<<<<<<< HEAD
                 <form >
                     <label for="name">Nombre</label><br>
                     <input type="text" id="name" name="name" required style="  width: 100%;padding: 10px;margin-bottom: 20px;border: 2px solid #555;border-radius: 4px; background: #333;color: white;"><br>
@@ -165,6 +261,24 @@ $registerMessage = $security->doRegister();
 
 
                     
+=======
+                <form action="send_email.php" method="post">
+                    <label for="name">Nombre</label><br>
+                    <input type="text" id="name" name="name" required><br>
+                    
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" required><br>
+                    
+                    <label for="message">Mensaje</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br>
+                    
+                    <div class="form-check">
+                        <label id="boton">
+                            <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                            Aceptar <a href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal" style="color: #ffc107;">Política de Privacidad</a>
+                        </label>
+                    </div>
+>>>>>>> origin/Dario
                     <button type="submit">ENVIAR</button>
                 </form>
             </div>
@@ -172,16 +286,24 @@ $registerMessage = $security->doRegister();
     </div>
 
     
+    
 <footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container-fluid text-center text-md-left">
   <div class="container-fluid text-center text-md-left">
     <div class="row text-center text-md-left">
 
     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Nombre de la compañia</h5>
+        <p>Playa finder</p>
         <p>Playa finder</p>
       </div>
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Proovedores</h5>
+          <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white" style="text-decoration: none;">IGN</a></p>
+          <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB" class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
+          <p><a href="https://www.pexels.com/es-es/" class="text-white" style="text-decoration: none;">Pexels</a></p>
+          <p><a href="https://www.tripadvisor.es/" class="text-white" style="text-decoration: none;">TripAdvisor</a></p>
           <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white" style="text-decoration: none;">IGN</a></p>
           <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB" class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
           <p><a href="https://www.pexels.com/es-es/" class="text-white" style="text-decoration: none;">Pexels</a></p>
@@ -251,3 +373,7 @@ $registerMessage = $security->doRegister();
       
 </body>
 </html>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Dario

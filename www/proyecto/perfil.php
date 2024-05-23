@@ -1,6 +1,7 @@
 <?php
 
 require_once "autoloader.php";
+session_start();
 $object = new Mostrar();
 $security = new Security();
 $email = $security->getUserData();

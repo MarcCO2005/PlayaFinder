@@ -74,6 +74,12 @@ function showCards($array, $filtro, $filtroValoracion) {
                         </div>
                     </div>
                 </div>";
+            $output .= "<div class='card-footer'>
+                        <a href='playa.php?nombre=$nombre' class='btn btn-primary'>Mas info</a>
+                        </div></div></div>";
+            }
+           /* <h4><a href='changestatus.php?id=$nombre'><img src='img/bulb-icon-off.png'></a> $name </h4>*/
+                        
         }
     }
     $output .= "</div>"; 
@@ -100,48 +106,30 @@ function showCards($array, $filtro, $filtroValoracion) {
             return $output;
         }
 
-        public function modificar($nom){
-            if (count($_POST) > 0) {
-                $nombre = $_POST['name'];
-                $email = $_POST['email'];
-                $provincia = $_POST['provincia'];
-                $conn= $this->getConn();
-                $query = "UPDATE `Usuario` SET `nombre`='$nombre',`email`='$email',`provincia`='$provincia' WHERE `nombre` = '$nom'";
-                $result = mysqli_query($conn, $query);
-            } else {
-                return null;
-            }
-            header("location: login.php");
-        }
-
-        public function getPlaya($nombre, $array){
-            $playa = [];
-            foreach ($array as $element) {
-                $name = $element->getNombre();
-                if ($name == $nombre) {
-                    array_push($playa, $element);
-                }
-            }
-            return $playa;
-        }
-        public function fivestar(){
+    public function modificar($nom){
+        if (count($_POST) > 0) {
+            $nombre = $_POST['name'];
+            $email = $_POST['email'];
+            $provincia = $_POST['provincia'];
             $conn= $this->getConn();
-            $sql = "SELECT * FROM Playa WHERE valoracion = 5";
-            $result = $conn->query($sql);
-        
-            $playas = [];
-            if ($result->num_rows > 0) {
-                while($row = $result->fetch_assoc()) {
-                    $playas[] = $row;
-                }
-            }
-        
-            $conn->close();
-            return $playas;
-            
+            $query = "UPDATE `Usuario` SET `nombre`='$nombre',`email`='$email',`provincia`='$provincia' WHERE `nombre` = '$nom'";
+            $result = mysqli_query($conn, $query);
+        } else {
+            return null;
         }
-        
+        header("location: login.php");
     }
-   
-    ?>      
-    ?>
+
+    public function getPlaya($nombre, $array){
+        $playa = [];
+        foreach ($array as $element) {
+            $name = $element->getNombre();
+            if ($name == $nombre) {
+                array_push($playa, $element);
+            }
+        }
+        return $playa;
+    }
+}
+           
+?>
