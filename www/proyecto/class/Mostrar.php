@@ -64,7 +64,7 @@ class Mostrar extends Connection{
             $descripcion = $element->getDescripcion();
             if ($ciudad == $filtro) {
                 $output .= "<div class='col'>
-                        <div class='content card h-100 card-hover'>
+                        <div class='content card h-100 card-hover card-img-top'>
                         <img src='img/playa$cont.jpeg' class='card-img-top'>
                         <div class='card-body'>";
             $output .= "<h5 class='card-title'>$nombre</h5>
@@ -149,6 +149,116 @@ class Mostrar extends Connection{
         }
         return $playa;
     }
+
+    public function comentar($nombre, $fecha, $playa, $imagen){
+        if (count($_POST) > 0) {
+            $comentario = $_POST['comment'];
+            $conn= $this->getConn();
+            $query = "INSERT INTO `Comentario`(`opinion`, `fecha`, `user_name`, `nombre_playa`) VALUES ('$comentario','$fecha','$nombre','$playa')";
+            $result = mysqli_query($conn, $query);
+
+        } else {
+            return null;
+        }
+        header("location: playa.php?nombre=$playa&imagen=$imagen");
+    }
+
+    public function getComents($playa){
+        $array = [];
+        $conn= $this->getConn();
+        $query = "SELECT * FROM `Comentario`";
+        $result = mysqli_query($conn, $query);
+        $total = $result->num_rows;
+        $cont = 0;
+        while ($cont < $total) {
+            $result->data_seek($cont);
+            $info = $result->fetch_array(MYSQLI_ASSOC);
+            $id = $info['id']; 
+            $nombre = $info["user_name"];
+            $playa_nom = $info['nombre_playa'];
+            $coment = $info['opinion'];
+            $fecha = $info['fecha'];
+
+            $element=[$id, $nombre, $playa_nom, $coment, $fecha];
+
+            if ($playa == $playa_nom) {
+                array_push($array, $element);
+            }
+            
+            $cont++;
+        }
+        return($array);
+    }
+
+    public function showComents($array, $usuario){
+        $output = "";
+        $imagen = $_GET['imagen'];
+        $cont = 0;
+        foreach ($array as $element) {
+            $output .= "<div class='comment-card'>";
+            $id = $element[0];
+            $nombre = $element[1];
+            $playa = $element[2];
+            $fecha = $element[4];
+            $coment = $element[3];
+            $output .= "<h3>Usuario: $nombre</h3>
+            <p class='date'>Fecha: $fecha</p>
+            <div class='comment-text'>$coment</div>";
+            if ($usuario == $nombre) {
+                $output .="<a href='eliminar-com.php?id=$id&playa=$playa&imagen=$imagen'><button class='delete-button'>Eliminar</button></a>";
+            }
+            $output .= "</div>";
+    }
+    return $output;
+    }
+
+    public function deleteComent($id){
+        $conn= $this->getConn();
+        $query = "DELETE FROM `Comentario` WHERE `id` = $id";
+        $result = mysqli_query($conn, $query);
+    }
+
+    public function fivestar($array) {
+        $carousel = "";
+        $cont = 0;
+        $carousel .= "<div class='carousel-wrapper'>
+            <div class='owl-carousel owl-theme'>";
+        
+        foreach ($array as $element) {
+            // Verificar que el elemento tenga los métodos necesarios
+            if (method_exists($element, 'getNombre') && method_exists($element, 'getCiudad') &&
+                method_exists($element, 'getValoracion') && method_exists($element, 'getDescripcion')) {
+                
+                $nombre = $element->getNombre();
+                $ciudad = $element->getCiudad();
+                $valoracion = $element->getValoracion();
+                $descripcion = $element->getDescripcion();
+                 $cont++;
+                if ($valoracion == 5) {
+                    
+                    $carousel .= "<div class='item carousel-item-custom'>
+                        <img src='img/playa$cont.jpeg' alt='' class='carousel-img'>
+                        <h3>$nombre</h3>
+                        <h4>$ciudad</h4>
+                        <p>$descripcion</p>
+                        <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg'>READ MORE</a>
+                    </div>";
+                }
+            }
+        }
+    
+        // Cerrar las etiquetas HTML abiertas
+        $carousel .= "</div></div>";
+    
+        return $carousel;
+    }
+
+    public function eliminarCuenta($nombre){
+        $conn= $this->getConn();
+        $query = "DELETE FROM `Usuario` WHERE `nombre` = '$nombre'";
+        $result = mysqli_query($conn, $query);
+    }
+
     public function fivestar($array) {
         $carousel = "";
         $cont = 0;

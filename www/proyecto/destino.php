@@ -61,6 +61,7 @@ body {
 
 .imagen {
     width: 400px;
+    width: 400px;
     height: 300px;
     margin-bottom: 20px;
 }
@@ -109,12 +110,22 @@ input[type="submit"]:focus {
 .carousel-item-custom:hover {
             transform: scale(1.05);
         }
+.carousel-item-custom {
+    transition: transform 0.3s ease;
+
+}
+.carousel-item-custom:hover {
+            transform: scale(1.05);
+        }
 .navbar-dark .navbar-nav .nav-link:hover {
+    color:lightblue !important;
+    
     color:lightblue !important;
     
 }
 
 .carousel-wrapper {
+    margin-top: 90px;
     margin-top: 90px;
 }
 
@@ -126,11 +137,14 @@ input[type="submit"]:focus {
     background-color: rgba(255, 255, 255, 1);
     height: 500px;
 
+    height: 500px;
+
 }
 
 .carousel-item-custom h3 {
     margin-top: 15px;
     font-size: 1.5rem;
+    color: #000000;
     color: #000000;
 }
 .carousel-item-custom img {
@@ -168,7 +182,23 @@ input[type="submit"]:focus {
     .card-hover:hover {
         transform: scale(1.05);
         
+        
     }
+    .card-img {
+    height: auto;
+
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+.card-img-top {
+    height: 200px;
+    width: 414px;
+    border: none;
+    object-fit: cover;
+}
+
     .card-img {
     height: auto;
 
@@ -190,6 +220,7 @@ input[type="submit"]:focus {
     color: #fff;
     text-decoration: none;
     
+    
 }
 .carousel-item-custom input[type="submit"]:hover,
 .carousel-item-custom a:hover {
@@ -205,10 +236,13 @@ input[type="submit"]:focus {
 .carousel-item-custom:hover{
     transform: scale(1.03);
     
+    transform: scale(1.03);
+    
 }
 .Playas-frecuentes {
     justify-content: center;
     text-align: center;
+    
     
 }
 .carousel-wrapper .carousel-item-custom a {
@@ -218,6 +252,7 @@ input[type="submit"]:focus {
     text-decoration: none;
     border: 2px solid #007BFF;
     transition: all 0.3s ease;
+    
     
 }
 
@@ -240,7 +275,23 @@ input[type="submit"]:focus {
 
     .card-hover:hover {
         transform: scale(1.05);
+        
+}
+.carousel-item-custom input[type="submit"]:hover,
+        .carousel-item-custom a:hover {
+            transform: scale(1.05);
+            }
+            .btn-primary:hover {
+            transform: scale(1.05); /* Agrandar el botón al 5% más grande */
+        }
+        .card-hover {
+        transition: transform 0.3s ease;
     }
+
+    .card-hover:hover {
+        transform: scale(1.05);
+    }
+
 </style>
 <body>
 
@@ -274,12 +325,20 @@ input[type="submit"]:focus {
       </nav>
 
     <div class="container">
-      <br>
-      <br>
-      <br>
-      <br>
-<h1 class="Playas-frecuentes" >Destinos frecuentes</h1>
-        +
+      <br><br><br><br><br>
+      
+<h1 class="Playas-frecuentes" >Destinos populares</h1>
+        
+<?php 
+
+$data = new Mostrar;
+
+$result = $data->getAllPlayas();
+
+echo $data->fivestar($result);
+
+?>        
+
       <br>
       <h1 style="text-align:center;">PLAYAS</h1>
       <div class="mb-3">
@@ -335,7 +394,7 @@ input[type="submit"]:focus {
             echo $output;
         ?>
 
-        
+</div> 
     </div>
     </div>
     

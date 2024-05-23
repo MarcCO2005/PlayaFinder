@@ -14,7 +14,7 @@ $registerMessage = $security->doRegister();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
-    <style>
+     <style>
       
         body {
             background-color: #333;
@@ -95,10 +95,11 @@ $registerMessage = $security->doRegister();
             z-index: 2;
         }
         .navbar-dark .navbar-nav .nav-link:hover {
-    color:lightblue !important;
-    
+ color: white;
+ background-color:  rgba(255, 255, 255, 0.5);
+ border-radius: 50px;
 }
-
+    
     </style>
 </head>
 <body>
@@ -145,27 +146,22 @@ $registerMessage = $security->doRegister();
             </div>
             <div class="contact-form">
                 <h2>¡Nosotros te llamamos!</h2>
-                <form >
+                <form action="send_email.php" method="post">
                     <label for="name">Nombre</label><br>
-                    <input type="text" id="name" name="name" required style="  width: 100%;padding: 10px;margin-bottom: 20px;border: 2px solid #555;border-radius: 4px; background: #333;color: white;"><br>
+                    <input type="text" id="name" name="name" required><br>
                     
                     <label for="email">Email</label><br>
-                    <input type="email" id="email" name="email" required style="  width: 100%;padding: 10px;margin-bottom: 20px;border: 2px solid #555;border-radius: 4px; background: #333;color: white;"><br>
+                    <input type="email" id="email" name="email" required><br>
                     
                     <label for="message">Mensaje</label><br>
-                    <textarea id="message" name="message" rows="4" required style="  width: 100%;padding: 10px;margin-bottom: 20px;border: 2px solid #555;border-radius: 4px; background: #333;color: white;"></textarea><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br>
                     
                     <div class="form-check">
-            <label id="boton">
-              <input type="checkbox" id="privacyPolicy" required>
-                  Aceptar <a href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal" style="color: #ffc107;">Política de Privacidad</a>
-                  
-              </label>
-
-</div>
-
-
-                    
+                        <label id="boton">
+                            <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                            Aceptar <a href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal" style="color: #ffc107;">Política de Privacidad</a>
+                        </label>
+                    </div>
                     <button type="submit">ENVIAR</button>
                 </form>
             </div>
@@ -173,16 +169,23 @@ $registerMessage = $security->doRegister();
     </div>
 
     
+    
 <footer class="bg-dark text-white pt-5 pb-4">
-  <div class="container-fluid text-center text-md-left">
+  <div class="container-fluid-fluid text-center text-md-left">
     <div class="row text-center text-md-left">
 
     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Nombre de la compañia</h5>
+        <p>Playa finder</p>
         <p>Playa finder</p>
       </div>
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
         <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Proovedores</h5>
+          <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white" style="text-decoration: none;">IGN</a></p>
+          <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB" class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
+          <p><a href="https://www.pexels.com/es-es/" class="text-white" style="text-decoration: none;">Pexels</a></p>
+          <p><a href="https://www.tripadvisor.es/" class="text-white" style="text-decoration: none;">TripAdvisor</a></p>
           <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white" style="text-decoration: none;">IGN</a></p>
           <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB" class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
           <p><a href="https://www.pexels.com/es-es/" class="text-white" style="text-decoration: none;">Pexels</a></p>
@@ -252,3 +255,4 @@ $registerMessage = $security->doRegister();
       
 </body>
 </html>
+
