@@ -115,7 +115,7 @@ input[type="submit"]:focus {
 }
 
 .carousel-wrapper {
-    margin-top: 80px;
+    margin-top: 90px;
 }
 
 .carousel-item-custom {
@@ -124,7 +124,7 @@ input[type="submit"]:focus {
     border-radius: 15px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 1);
-    height: 400px;
+    height: 500px;
 
 }
 
@@ -203,7 +203,7 @@ input[type="submit"]:focus {
 }
 
 .carousel-item-custom:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
     
 }
 .Playas-frecuentes {
@@ -279,35 +279,7 @@ input[type="submit"]:focus {
       <br>
       <br>
 <h1 class="Playas-frecuentes" >Destinos frecuentes</h1>
-        
-        <div class="carousel-wrapper">
-            <div class="owl-carousel owl-theme">
-                <div class="item carousel-item-custom">
-                    <img src="./img/img1.jpg" alt="First Item" class="carousel-img">
-                    <h3>Item 1</h3>
-                    <p>Description for the first item goes here.</p>
-                    <a href="#">READ MORE</a>
-                </div>
-                <div class="item carousel-item-custom">
-                    <img src="./img/img2.jpg" alt="Second Item" class="carousel-img">
-                    <h3>Item 2</h3>
-                    <p>Description for the second item goes here.</p>
-                    <a href="#">READ MORE</a>
-                </div>
-                <div class="item carousel-item-custom">
-                    <img src="./img/img3.jpg" alt="Third Item" class="carousel-img">
-                    <h3>Item 3</h3>
-                    <p>Description for the third item goes here.</p>
-                    <a href="#">READ MORE</a>
-                </div>
-                <div class="item carousel-item-custom">
-                    <img src="./img/img4.jpg" alt="Fourth Item" class="carousel-img">
-                    <h3>Item 4</h3>
-                    <p>Description for the fourth item goes here.</p>
-                    <a href="#">READ MORE</a>
-                </div>
-            </div>
-        </div>
+        +
       <br>
       <h1 style="text-align:center;">PLAYAS</h1>
       <div class="mb-3">
@@ -316,58 +288,32 @@ input[type="submit"]:focus {
         <select name="provincia" class="form-select" style="width: 300px;" id="provincia" required>
             <option value="" selected disabled>Selecciona tu provincia</option>
             <option value="0">Quitar filtros</option>
-            <option value="Álava">Álava</option>
-            <option value="Albacete">Albacete</option>
             <option value="Alicante">Alicante</option>
             <option value="Almería">Almería</option>
             <option value="Asturias">Asturias</option>
-            <option value="Ávila">Ávila</option>
-            <option value="Badajoz">Badajoz</option>
             <option value="Barcelona">Barcelona</option>
-            <option value="Burgos">Burgos</option>
-            <option value="Cáceres">Cáceres</option>
             <option value="Cádiz">Cádiz</option>
             <option value="Cantabria">Cantabria</option>
             <option value="Castellón">Castellón</option>
             <option value="Ceuta">Ceuta</option>
-            <option value="Ciudad Real">Ciudad Real</option>
-            <option value="Córdoba">Córdoba</option>
-            <option value="Cuenca">Cuenca</option>
             <option value="Gerona">Gerona</option>
             <option value="Granada">Granada</option>
-            <option value="Guadalajara">Guadalajara</option>
             <option value="Guipúzcoa">Guipúzcoa</option>
             <option value="Huelva">Huelva</option>
-            <option value="Huesca">Huesca</option>
             <option value="Islas Baleares">Islas Baleares</option>
-            <option value="Jaén">Jaén</option>
-            <option value="La Coruña">La Coruña</option>
-            <option value="La Rioja">La Rioja</option>
             <option value="Las Palmas">Las Palmas</option>
-            <option value="León">León</option>
-            <option value="Lérida">Lérida</option>
+            <option value="La Coruña">La Coruña</option>
             <option value="Lugo">Lugo</option>
-            <option value="Madrid">Madrid</option>
             <option value="Málaga">Málaga</option>
             <option value="Melilla">Melilla</option>
             <option value="Murcia">Murcia</option>
-            <option value="Navarra">Navarra</option>
-            <option value="Orense">Orense</option>
-            <option value="Palencia">Palencia</option>
             <option value="Pontevedra">Pontevedra</option>
-            <option value="Salamanca">Salamanca</option>
-            <option value="Segovia">Segovia</option>
-            <option value="Sevilla">Sevilla</option>
-            <option value="Soria">Soria</option>
-            <option value="Tarragona">Tarragona</option>
             <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
-            <option value="Teruel">Teruel</option>
-            <option value="Toledo">Toledo</option>
+            <option value="Tarragona">Tarragona</option>
             <option value="Valencia">Valencia</option>
-            <option value="Valladolid">Valladolid</option>
             <option value="Vizcaya">Vizcaya</option>
-            <option value="Zamora">Zamora</option>
             <option value="Zaragoza">Zaragoza</option>
+
     </select>
     <input type="submit" value="Filter" style="margin-top: 5px;">
 </form>
