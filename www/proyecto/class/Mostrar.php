@@ -149,6 +149,8 @@ class Mostrar extends Connection{
         }
         return $playa;
     }
+
+
 }
 
            

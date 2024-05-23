@@ -8,6 +8,7 @@ $email = $security->getUserData();
 $info = $security->getUser($email);
 $nom = $info['nombre'];
 $object->modificar($nom);
+  
 ?>
 
 <!DOCTYPE html>
