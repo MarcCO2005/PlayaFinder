@@ -72,7 +72,7 @@ class Mostrar extends Connection{
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
             $output .= "<div class='card-footer'>
-            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>
+            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Más info</a>
             <a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
                 <i class='bi bi-chevron-down'></i>
             </a>
@@ -90,7 +90,7 @@ class Mostrar extends Connection{
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
             $output .= "<div class='card-footer'>
-            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>
+            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Más info</a>
             <a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
                 <i class='bi bi-chevron-down'></i>
             </a>
@@ -241,7 +241,7 @@ class Mostrar extends Connection{
                         <h3>$nombre</h3>
                         <h4>$ciudad</h4>
                         <p>$descripcion</p>
-                        <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg'>READ MORE</a>
+                        <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg'>LEER MÁS</a>
                     </div>";
                 }
             }
