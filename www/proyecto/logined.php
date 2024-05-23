@@ -123,7 +123,7 @@ $email = $info['email'];
 
             if ($email == "admin@gmail.com") {
               echo "<li class='nav-item'>
-                <a class='nav-link' href='pornhub.com'style='color:white;'>Panel de administracion</a>
+                <a class='nav-link' href='admin.php?filtro=0'style='color:white;'>Panel de administracion</a>
               </li>";
             }
 

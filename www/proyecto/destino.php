@@ -6,6 +6,7 @@ session_start();
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
+$user = $info['nombre'];
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +30,36 @@ body {
     background-repeat: no-repeat;
     width: 100%;
 }
+
+.btn-custom {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom:active {
+    background-color: #004085;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5);
+}
+
 .content {
     margin-bottom: 50px;
 }
@@ -359,7 +390,7 @@ echo $data->fivestar($result);
                 $filtro = 0;
             }
 
-            $output = $data->showCards($result, $filtro);
+            $output = $data->showCards($result, $filtro, $user);
             echo $output;
         ?>
 
