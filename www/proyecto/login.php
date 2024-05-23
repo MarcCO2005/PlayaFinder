@@ -29,11 +29,10 @@ body {
     height: 800px;
     background-color: rgba(0, 0, 0, 0.5);
 }
-.navbar-dark .navbar-nav .nav-link:hover {
- 
- background-color:  rgba(255, 255, 255, 0.5);
- border-radius: 50px;  
- }
+.nav-link:hover {
+    color: #ffd700 !important;
+}
+
 
 </style>
 <body><div class="overlay"></div>

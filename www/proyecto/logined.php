@@ -35,7 +35,7 @@ $info = $security->getUser($email);
 
 .d-img {
   width: 100%;
-    height: auto;
+    height: 710px;
     object-fit: cover;
     filter: brightness(0.6);
 }
@@ -64,15 +64,10 @@ $info = $security->getUser($email);
         .carousel-item {
             height: 100%; 
         }
-        .navbar-dark .navbar-nav .nav-link:hover {
- 
-    background-color:  rgba(5, 255, 255, 0.5);
-    border-radius: 50px;
+        .nav-link:hover {
+    color: #ffd700 !important;
 }
-p{
-  margin-top: 50px;
-  font-size: 30px;
-}
+
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -110,24 +105,24 @@ p{
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
-                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
+                <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <a href="destino.php"><button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button></a>
             </div>
         </div>
         <div class="carousel-item d-item">
             <img src="img/fondo3.webp" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
-                <p class="card-text" style="margin-top: 50px">Descubre montañas majestuosas en todo el mundo con nuestro buscador. Tu aventura en la naturaleza está a solo un clic de distancia.</p>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
+                <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <a href="destino.php"><button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button></a>
             </div>
         </div>
         <div class="carousel-item d-item">
             <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
-                <p class="card-text" style="margin-top: 50px">Descubre ciudades vibrantes en todo el mundo con nuestro buscador. Tu aventura urbana perfecta está a solo un clic de distancia.</p>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
+                <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <a href="destino.php"><button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button></a>
             </div>
         </div>
     </div>
