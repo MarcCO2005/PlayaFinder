@@ -26,6 +26,7 @@ $registerMessage = $security->doRegister();
             background-size: cover;
             position: relative;
         }
+        
         .overlay {
             position: absolute;
             top: 0;
@@ -112,7 +113,8 @@ $registerMessage = $security->doRegister();
 <body>
 <div class="overlay"></div>
 <div class="content">
-    <nav class="navbar navbar-expand-sm transparent">
+
+<nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
             <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 

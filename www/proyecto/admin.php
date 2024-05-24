@@ -34,10 +34,10 @@ body {
 .btn-custom {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: bold;
     color: white;
-    background-color: #007bff;
+    background-color: red;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -46,7 +46,7 @@ body {
 }
 
 .btn-custom:hover {
-    background-color: #0056b3;
+    background-color: red;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -167,9 +167,8 @@ input[type="submit"]:focus {
 .carousel-item-custom:hover {
             transform: scale(1.05);
         }
-.navbar-dark .navbar-nav .nav-link:hover {
-    color:lightblue !important;
-    
+        .nav-link:hover {
+    color: #ffd700 !important;
 }
 
 .carousel-wrapper {
@@ -254,7 +253,12 @@ input[type="submit"]:focus {
             transform: scale(1.05);
             }
             .btn-primary:hover {
+            
             transform: scale(1.05); /* Agrandar el botón al 5% más grande */
+        }
+        .btn-danger{
+            margin-right:5px;
+            margin-left:5px
         }
 .carousel-item-custom{
     transition: transform 0.3s ease;
@@ -316,7 +320,7 @@ input[type="submit"]:focus {
                 <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
@@ -377,7 +381,7 @@ input[type="submit"]:focus {
 
             <label for="imagen">Subir Imagen:</label>
             <input type="file" id="imagen" name="imagen" accept="image/*" required>
-
+<br>
             <button class="button-playa" type="submit">Enviar</button>
         </form>
     </div>       

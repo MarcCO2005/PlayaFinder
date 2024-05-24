@@ -7,6 +7,7 @@ $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
 $email = $info['email'];
+$user = $info['nombre'];
 ?>
 
 <!DOCTYPE html>
@@ -22,33 +23,59 @@ $email = $info['email'];
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
-  
+   
   .card-tiempo {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-    max-width: 300px;
-}
+            background-color: #F1F5F7;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            height:300px;
+            width: 500px;
+            padding: 20px;
+            margin:20px;
+            transition: transform 0.2s;
+            text-align:center;
+            margin-left:520px;
+            border:0.1px solid grey ;
+           
+        }
 
-.city {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
+        .card-tiempo:hover {
+            transform: scale(1.05);
+        }
 
-.details p {
-    margin: 5px 0;
-}
+        .card-tiempo h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: black;
+        }
 
-.temp {
-    font-weight: bold;
-}
+        .card-tiempo .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.humidity,
-.wind {
-    font-style: italic;
-}
+        .card-tiempo .details img {
+            
+        }
+
+        .card-tiempo p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .card-tiempo .temp {
+            font-weight: bold;
+            color: #ff5722;
+        }
+
+        .card-tiempo .humidity,
+        .card-tiempo .wind {
+            font-weight: normal;
+            color: #03a9f4;
+        }
 
 .content {
   margin-bottom: 50px;
@@ -97,7 +124,18 @@ $email = $info['email'];
         .carousel-item {
             height: 100%; 
         }
+<<<<<<< HEAD
 
+=======
+        .nav-link:hover {
+    color: #ffd700 !important;
+}
+.weather-icon{
+  height:70px;
+  width: 80px;
+  justify-content:center;
+}
+>>>>>>> origin/Dario
 </style>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -133,7 +171,7 @@ $email = $info['email'];
             
 
             <form class="d-flex">
-    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
+      <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>
 </form>
@@ -179,24 +217,40 @@ $email = $info['email'];
         var data = await response.json();
 
         console.log(data);        
+        const weatherIcon = document.querySelector(".weather-icon");
 
-        document.querySelector(".city"). innerHTML = data.name;
+console.log("Weather condition:", data.weather[0].main);
         document.querySelector(".temp") .innerHTML = Math.round(data.main.temp) - 273 + "°с";
         document.querySelector(".humidity"). innerHTML = data.main.humidity + "%";
         document.querySelector (".wind"). innerHTML = data.wind. speed + "km/h";
-    }
+        let imageSrc = "";
+        if(data.weather[0].main == "Clouds"){
+        weatherIcon.src = "./img/weather/clouds.png";
+    }else if (data.weather[0].main == "Clear"){
+      weatherIcon.src = "./img/weather/clear.png";
+    }else if (data.weather[0].main == "Rain"){
+      weatherIcon.src = "./img/weather/rain.png";
+    }else if (data.weather[0].main == "Drizzle"){
+      weatherIcon.src = "./img/weather/drizzle.png";
+    }else if (data.weather[0].main == "Mist"){
+      weatherIcon.src = "./img/weather/mist.png";
+    } 
+  }
+
 
     checkWeather()
 
 </script>
 
 <div class="card-tiempo">
-    <h2 class="city"></h2>
+    <h2>Tiempo en <?php echo $info['provincia'];?></h2>
     <div class="details">
-        <p>Temperatura: <span class="temp"></span></p>
-        <p>Humedad: <span class="humidity"></span></p>
-        <p>Viento: <span class="wind"></span></p>
+       <img class="weather-icon" src="" alt="" >
+        <h4><i class="bi bi-thermometer-half"></i>Temperatura: <span class="temp"></span></h4>
+        <h4><i class="bi bi-droplet"></i>Humedad: <span class="humidity"></span></h4>
+        <h4><i class="bi bi-wind"></i>Viento: <span class="wind"></span></h4>
     </div>
+   
 </div>
 
 
@@ -218,7 +272,7 @@ $email = $info['email'];
       <div class="card content">
         <div class="card-body">
           <h5 class="card-title"><i class="bi bi-geo-alt-fill"></i>Ubicacion</h5>
-        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.324995560287!2d-0.4467339245252179!3d39.3715200185909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604d85f8e6d457%3A0xf8e8167400479b71!2sToni%20Pizzer%C3%ADa!5e0!3m2!1ses!2ses!4v1714148633685!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12468.402261118434!2d-0.3382104163700336!3d39.48020891775287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd60487a06475893%3A0x143e1fdf2b059794!2sMalvarrosa%2C%20Poblados%20Mar%C3%ADtimos%2C%2046011%20Valencia!5e0!3m2!1ses!2ses!4v1716537090076!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
