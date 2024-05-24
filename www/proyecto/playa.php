@@ -37,45 +37,62 @@ body {
 .navbar {
     margin-bottom: 20px;
 }
+/* */
 
 .container {
     padding: 20px;
     background-color: ;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; /* Para distribuir los elementos horizontalmente */
 }
 
 .beach-name {
     color: #333333;
-    text-align: center;
+    text-align: left;
     font-size: 2.5em;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .address {
     color: #555555;
-    text-align: center;
+    text-align: left;
     font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 50px; 
 }
 
 .description {
-    text-align: justify;
+    text-align: left;
     font-size: 1.1em;
     line-height: 1.6em;
     color: #444444;
     margin-bottom: 20px;
+    max-width: 400px;  
 }
 
 .image-container {
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Para centrar el contenido horizontalmente */
+    align-items: center; /* Para centrar el contenido verticalmente */
+    margin-right: 20px;
 }
 
 .image-container img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; 
+    max-height: 100%;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 80px;
+}
+
+.image-container img {
+    width: 600px; 
+    height: 600px; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 80px;
 }
 
 .nav-link {
@@ -133,23 +150,23 @@ body {
 </form>
           </div>
         </div>
-      </nav>
-      
+</nav>
       <div class="container">
+    <div class="content">
         <h1 class="beach-name"><?php echo $playa[0]->getNombre(); ?></h1>
         <p class="address"><?php echo $playa[0]->getCiudad(); ?></p>
         <div class="description">
             <p>
-            <?php echo $playa[0]->getDescripcion();?>
-          </p>
-        </div>
-        <div class="image-container">
-            <img class="cards" src="img/<?php echo $imagen;?>"alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
+                <?php echo $playa[0]->getDescripcion(); ?>
+            </p>
         </div>
     </div>
-    
-</body>
+    <div class="image-container">
+        <img class="cards" src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
+    </div>
+</div>
 
+</body>
 
 <footer class="bg-dark text-white pt-5 pb-4">
   <div class="container text-center text-md-left">
