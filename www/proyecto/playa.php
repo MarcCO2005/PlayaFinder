@@ -49,8 +49,19 @@ body {
 }
 
 .content {
-    margin-top: 30px;
-    margin-bottom: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.container {
+    padding: 20px;
+    background-color: ;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .beach-name {
@@ -113,22 +124,6 @@ body {
     font-size: 2em;
 }
 
-.container {
-    padding: 0px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;  
-    justify-content: space-between;
-}
-
-
-
-.content {
-  margin-top: 70px;
-  margin-left: 50px;
-}
-
-/* Estilos para el formulario */
 .comment-form {
     background-color: #f0f8ff;
     padding: 30px;
@@ -239,26 +234,10 @@ body {
             font-size: 1em;
             color: #444;
         }
-        .delete-button {
-            top: 20px;
-            right: 20px;
-            background-color: #e74c3c;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 0.9em;
-            margin-top: 20px;
-        }
-        .delete-button:hover {
-            background-color: #c0392b;
-        }
-        
 
 </style>
-<body> 
-    <nav class="navbar navbar-expand-sm navbar-dark ">
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
@@ -283,12 +262,11 @@ body {
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>
 </form>
-          </div>
+          
         </div>
-      </nav>
+      </nav>  
       
-      <div class="container " style="margin-top:30px">
-    <div class="content">
+      <div class="container">
         <h1 class="beach-name"><?php echo $playa[0]->getNombre(); ?></h1>
         <p class="address"><?php echo $playa[0]->getCiudad(); ?></p>
         <div class="description">
@@ -304,24 +282,16 @@ body {
                 <label for="comment">Comentario:</label>
                 <textarea id="comment" name="comment" rows="4" required></textarea>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </div>
-    <div class="image-container">
-        <img class="cards" src="img/<?php echo $imagen;?>" alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
-    </div>
+        <button type="submit">Enviar</button>
+    </form>
 </div>
-
+    
+</body>
 
     <h1 style="margin: 50px 180px;">Seccion de comentarios</h1>
 
-    <?php 
-    $coments = $data->getComents($nombre);
-    echo $data->showComents($coments, $usuario); 
-    ?>
-    <footer class="bg-dark text-white pt-5 pb-4">
-  <div class="pie text-center text-md-left">
+<footer class="bg-dark text-white pt-5 pb-4">
+  <div class="container text-center text-md-left">
     <div class="row text-center text-md-left">
 
     <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -370,31 +340,29 @@ body {
         </p>
       </div>
       <div class="col-md-5 col-lg-4">
-                    <div class="text-center text-md-right">
-                        <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-instagram"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-google"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-youtube"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-instagram"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-google"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-youtube"></i></a>
+            </li>
+          </ul>
         </div>
-    </footer>
-</body>
+      </div>
+    </div>
+  </div>
 
-
+</footer>
 
 </html>

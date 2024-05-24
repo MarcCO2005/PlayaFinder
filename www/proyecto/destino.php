@@ -97,15 +97,12 @@ input[type="submit"]:focus {
     width: 100%;
     z-index: 999;
 }
-.carousel-item-custom {
-    transition: transform 0.3s ease;
-
+.carousel-item {
+    height: 100%;
 }
-.carousel-item-custom:hover {
-            transform: scale(1.05);
-        }
-        .nav-link:hover {
-    color: #ffd700 !important;
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
 }
 
 .carousel-wrapper {
