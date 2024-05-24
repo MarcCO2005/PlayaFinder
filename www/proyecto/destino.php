@@ -17,306 +17,325 @@ $user = $info['nombre'];
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="./owlcarousel/owl.theme.default.min.css">
 </head>
 <style>
-body {
-    background-color: #F1F5F7;
-    background-size: cover;
-    position: relative;
-    background-repeat: no-repeat;
-    width: 100%;
-}
+    body {
+        background-color: #F1F5F7;
+        background-size: cover;
+        position: relative;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
 
-.btn-custom {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
+    .btn-custom {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
 
-.btn-custom:hover {
-    background-color: #0056b3;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    .btn-custom:hover {
+        background-color: #0056b3;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-.btn-custom:active {
-    background-color: #004085;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+    .btn-custom:active {
+        background-color: #004085;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-.btn-custom:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5);
-}
+    .btn-custom:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5);
+    }
 
-.content {
-    margin-bottom: 50px;
-}
+    .content {
+        margin-bottom: 50px;
+    }
 
-.d-item {
-    height: 600px;
-}
+    .d-item {
+        height: 600px;
+    }
 
-.subtitulo {
-    font-size: 30px;
-}
+    .subtitulo {
+        font-size: 30px;
+    }
 
-.d-img {
-    width: 100%;
-    height: 670px;
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-.mapa {
-    border-radius: 15px;
-    width: 100%;
-    height: 490px;
-}
+    .d-img {
+        width: 100%;
+        height: 670px;
+        object-fit: cover;
+        filter: brightness(0.6);
+    }
 
-.imagen {
-    width: 400px;
-    height: 300px;
-    margin-bottom: 20px;
-}
+    .mapa {
+        border-radius: 15px;
+        width: 100%;
+        height: 490px;
+    }
 
-input[type="submit"] {
-    background-color: #007BFF; 
-    color: white; 
-    border: none; 
-    padding: 10px 20px; 
-    font-size: 16px;
-    font-weight: bold; 
-    border-radius: 5px;
-    cursor: pointer; 
-    transition: background-color 0.3s ease, transform 0.3s ease; 
-}
+    .imagen {
+        width: 400px;
+        height: 300px;
+        margin-bottom: 20px;
+    }
 
-input[type="submit"]:hover {
-    background-color: #0056b3; 
-    transform: scale(1.05); 
-}
+    input[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
-input[type="submit"]:active {
-    background-color: #003f7f; 
-    transform: scale(1);
-}
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
 
-input[type="submit"]:focus {
-    outline: none; 
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
-}
+    input[type="submit"]:active {
+        background-color: #003f7f;
+        transform: scale(1);
+    }
+
+    input[type="submit"]:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    }
 
 
-.card-footer {
-    text-align: center;
-}
-.navbar {
-    background-color: #302B37;
-    position: absolute;
-    width: 100%;
-    z-index: 999;
-}
-.carousel-item-custom {
-    transition: transform 0.3s ease;
+    .card-footer {
+        text-align: center;
+    }
 
-}
-.carousel-item-custom:hover {
-            transform: scale(1.05);
-        }
-.navbar-dark .navbar-nav .nav-link:hover {
-    color:lightblue !important;
-    
-}
+    .navbar {
+        background-color: #302B37;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+    }
 
-.carousel-wrapper {
-    margin-top: 90px;
-}
+    .carousel-item-custom {
+        transition: transform 0.3s ease;
 
-.carousel-item-custom {
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 15px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 1);
-    height: 500px;
+    }
 
-}
+    .carousel-item-custom:hover {
+        transform: scale(1.05);
+    }
 
-.carousel-item-custom h3 {
-    margin-top: 15px;
-    font-size: 1.5rem;
-    color: #000000;
-}
-.carousel-item-custom img {
-    height: 175px;
-}
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: lightblue !important;
 
-.carousel-item-custom p {
-    font-size: 1rem;
-    color: #010617;
-}
+    }
 
-.carousel-item-custom a {
-    margin-top: 10px;
-    display: inline-block;
-    font-size: 1rem;
-    color: #007bff;
-}
+    .carousel-wrapper {
+        margin-top: 90px;
+    }
 
-.owl-carousel .owl-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
+    .carousel-item-custom {
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 1);
+        height: 500px;
 
-.full-width-footer {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
+    }
+
+    .carousel-item-custom h3 {
+        margin-top: 15px;
+        font-size: 1.5rem;
+        color: #000000;
+    }
+
+    .carousel-item-custom img {
+        height: 175px;
+    }
+
+    .carousel-item-custom p {
+        font-size: 1rem;
+        color: #010617;
+    }
+
+    .carousel-item-custom a {
+        margin-top: 10px;
+        display: inline-block;
+        font-size: 1rem;
+        color: #007bff;
+    }
+
+    .owl-carousel .owl-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .full-width-footer {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
     .card-hover {
         transition: transform 0.3s ease;
     }
+
     .card-hover:hover {
         transform: scale(1.05);
-        
+
     }
+
     .card-img {
-    height: auto;
+        height: auto;
 
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    
-}
-.card-img-top {
-    height: 200px;
-    width: 414px;
-    border: none;
-    object-fit: cover;
-}
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .card-img-top {
+        height: 200px;
+        width: 414px;
+        border: none;
+        object-fit: cover;
+    }
 
 
-.carousel-wrapper .carousel-item-custom a:hover {
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    
-}
-.carousel-item-custom input[type="submit"]:hover,
-.carousel-item-custom a:hover {
-            transform: scale(1.05);
-            }
-            .btn-primary:hover {
-            transform: scale(1.05); /* Agrandar el botón al 5% más grande */
-        }
-.carousel-item-custom{
-    transition: transform 0.3s ease;
-}
+    .carousel-wrapper .carousel-item-custom a:hover {
+        background-color: #007BFF;
+        color: #fff;
+        text-decoration: none;
 
-.carousel-item-custom:hover{
-<<<<<<< HEAD
-    transform: scale(1.03);
-=======
-    transform: scale(1.05);
->>>>>>> f2353f9f34109becd48895c073cebfe3ec95f498
-    
-}
-.Playas-frecuentes {
-    justify-content: center;
-    text-align: center;
-    
-}
-.carousel-wrapper .carousel-item-custom a {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #007BFF;
-    text-decoration: none;
-    border: 2px solid #007BFF;
-    transition: all 0.3s ease;
-    
-}
+    }
 
-.carousel-wrapper .carousel-item-custom a:hover {
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    
-}
-.carousel-item-custom input[type="submit"]:hover,
-        .carousel-item-custom a:hover {
-            transform: scale(1.05);
-            }
-            .btn-primary:hover {
-            transform: scale(1.05); /* Agrandar el botón al 5% más grande */
-        }
-        .card-hover {
+    .carousel-item-custom input[type="submit"]:hover,
+    .carousel-item-custom a:hover {
+        transform: scale(1.05);
+    }
+
+    .btn-primary:hover {
+        transform: scale(1.05);
+        /* Agrandar el botón al 5% más grande */
+    }
+
+    .carousel-item-custom {
+        transition: transform 0.3s ease;
+    }
+
+    .carousel-item-custom:hover {
+        transform: scale(1.03);
+
+    }
+
+    .Playas-frecuentes {
+        justify-content: center;
+        text-align: center;
+
+    }
+
+    .carousel-wrapper .carousel-item-custom a {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #007BFF;
+        text-decoration: none;
+        border: 2px solid #007BFF;
+        transition: all 0.3s ease;
+
+    }
+
+    .carousel-wrapper .carousel-item-custom a:hover {
+        background-color: #007BFF;
+        color: #fff;
+        text-decoration: none;
+
+    }
+
+    .carousel-item-custom input[type="submit"]:hover,
+    .carousel-item-custom a:hover {
+        transform: scale(1.05);
+    }
+
+    .btn-primary:hover {
+        transform: scale(1.05);
+        /* Agrandar el botón al 5% más grande */
+    }
+
+    .card-hover {
         transition: transform 0.3s ease;
     }
 
     .card-hover:hover {
         transform: scale(1.05);
     }
-
 </style>
+
 <body>
 
     <nav class="navbar navbar-expand-sm navbar-dark transparent">
         <div class="container">
             <a class="navbar-brand" href="logined.php">
-                <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
-              </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
-        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
-    </a>
-</form>
-          </div>
+                <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="destino.php" style="color:white;">Destino</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a class="nav-link" href="perfil.php" title="<?= $security->getUserData() ?>">
+                        <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
+                    </a>
+                </form>
+            </div>
         </div>
-      </nav>
+    </nav>
 
     <div class="container">
-      <br>
-      <br>
-      <br>
-      <br>
-<h1 class="Playas-frecuentes" >Destinos frecuentes</h1>
-        
-<<<<<<< HEAD
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="Playas-frecuentes">Destinos frecuentes</h1>
+
         <div class="carousel-wrapper">
             <div class="owl-carousel owl-theme">
                 <div class="item carousel-item-custom">
@@ -345,103 +364,91 @@ input[type="submit"]:focus {
                 </div>
             </div>
         </div>
-=======
-<?php 
-
-$data = new Mostrar;
-
-$result = $data->getAllPlayas();
-
-echo $data->fivestar($result);
-
-?>        
-
->>>>>>> Dario
-      <br>
-      <h1 style="text-align:center;">PLAYAS</h1>
-      <div class="mb-3">
-        <form action="" method="POST">
-        <label for="provincia" class="form-label">Filtra por provincia</label>
-        <select name="provincia" class="form-select" style="width: 300px;" id="provincia" required>
-            <option value="" selected disabled>Selecciona tu provincia</option>
-            <option value="0">Quitar filtros</option>
-            <option value="Álava">Álava</option>
-            <option value="Albacete">Albacete</option>
-            <option value="Alicante">Alicante</option>
-            <option value="Almería">Almería</option>
-            <option value="Asturias">Asturias</option>
-            <option value="Ávila">Ávila</option>
-            <option value="Badajoz">Badajoz</option>
-            <option value="Barcelona">Barcelona</option>
-            <option value="Burgos">Burgos</option>
-            <option value="Cáceres">Cáceres</option>
-            <option value="Cádiz">Cádiz</option>
-            <option value="Cantabria">Cantabria</option>
-            <option value="Castellón">Castellón</option>
-            <option value="Ceuta">Ceuta</option>
-            <option value="Ciudad Real">Ciudad Real</option>
-            <option value="Córdoba">Córdoba</option>
-            <option value="Cuenca">Cuenca</option>
-            <option value="Gerona">Gerona</option>
-            <option value="Granada">Granada</option>
-            <option value="Guadalajara">Guadalajara</option>
-            <option value="Guipúzcoa">Guipúzcoa</option>
-            <option value="Huelva">Huelva</option>
-            <option value="Huesca">Huesca</option>
-            <option value="Islas Baleares">Islas Baleares</option>
-            <option value="Jaén">Jaén</option>
-            <option value="La Coruña">La Coruña</option>
-            <option value="La Rioja">La Rioja</option>
-            <option value="Las Palmas">Las Palmas</option>
-            <option value="León">León</option>
-            <option value="Lérida">Lérida</option>
-            <option value="Lugo">Lugo</option>
-            <option value="Madrid">Madrid</option>
-            <option value="Málaga">Málaga</option>
-            <option value="Melilla">Melilla</option>
-            <option value="Murcia">Murcia</option>
-            <option value="Navarra">Navarra</option>
-            <option value="Orense">Orense</option>
-            <option value="Palencia">Palencia</option>
-            <option value="Pontevedra">Pontevedra</option>
-            <option value="Salamanca">Salamanca</option>
-            <option value="Segovia">Segovia</option>
-            <option value="Sevilla">Sevilla</option>
-            <option value="Soria">Soria</option>
-            <option value="Tarragona">Tarragona</option>
-            <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
-            <option value="Teruel">Teruel</option>
-            <option value="Toledo">Toledo</option>
-            <option value="Valencia">Valencia</option>
-            <option value="Valladolid">Valladolid</option>
-            <option value="Vizcaya">Vizcaya</option>
-            <option value="Zamora">Zamora</option>
-            <option value="Zaragoza">Zaragoza</option>
-    </select>
-    <input type="submit" value="Filter" style="margin-top: 5px;">
-</form>
-</div>
+        <br>
+        <h1 style="text-align:center;">PLAYAS</h1>
+        <div class="mb-3">
+            <form action="" method="POST">
+                <label for="provincia" class="form-label">Filtra por provincia</label>
+                <select name="provincia" class="form-select" style="width: 300px;" id="provincia" required>
+                    <option value="" selected disabled>Selecciona tu provincia</option>
+                    <option value="0">Quitar filtros</option>
+                    <option value="Álava">Álava</option>
+                    <option value="Albacete">Albacete</option>
+                    <option value="Alicante">Alicante</option>
+                    <option value="Almería">Almería</option>
+                    <option value="Asturias">Asturias</option>
+                    <option value="Ávila">Ávila</option>
+                    <option value="Badajoz">Badajoz</option>
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Burgos">Burgos</option>
+                    <option value="Cáceres">Cáceres</option>
+                    <option value="Cádiz">Cádiz</option>
+                    <option value="Cantabria">Cantabria</option>
+                    <option value="Castellón">Castellón</option>
+                    <option value="Ceuta">Ceuta</option>
+                    <option value="Ciudad Real">Ciudad Real</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Cuenca">Cuenca</option>
+                    <option value="Gerona">Gerona</option>
+                    <option value="Granada">Granada</option>
+                    <option value="Guadalajara">Guadalajara</option>
+                    <option value="Guipúzcoa">Guipúzcoa</option>
+                    <option value="Huelva">Huelva</option>
+                    <option value="Huesca">Huesca</option>
+                    <option value="Islas Baleares">Islas Baleares</option>
+                    <option value="Jaén">Jaén</option>
+                    <option value="La Coruña">La Coruña</option>
+                    <option value="La Rioja">La Rioja</option>
+                    <option value="Las Palmas">Las Palmas</option>
+                    <option value="León">León</option>
+                    <option value="Lérida">Lérida</option>
+                    <option value="Lugo">Lugo</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Málaga">Málaga</option>
+                    <option value="Melilla">Melilla</option>
+                    <option value="Murcia">Murcia</option>
+                    <option value="Navarra">Navarra</option>
+                    <option value="Orense">Orense</option>
+                    <option value="Palencia">Palencia</option>
+                    <option value="Pontevedra">Pontevedra</option>
+                    <option value="Salamanca">Salamanca</option>
+                    <option value="Segovia">Segovia</option>
+                    <option value="Sevilla">Sevilla</option>
+                    <option value="Soria">Soria</option>
+                    <option value="Tarragona">Tarragona</option>
+                    <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                    <option value="Teruel">Teruel</option>
+                    <option value="Toledo">Toledo</option>
+                    <option value="Valencia">Valencia</option>
+                    <option value="Valladolid">Valladolid</option>
+                    <option value="Vizcaya">Vizcaya</option>
+                    <option value="Zamora">Zamora</option>
+                    <option value="Zaragoza">Zaragoza</option>
+                </select>
+                <input type="submit" value="Filter" style="margin-top: 5px;">
+            </form>
+        </div>
         <?php
 
-            $data = new Mostrar;
+        $data = new Mostrar;
 
-            $result = $data->getAllPlayas();
-            
+        $result = $data->getAllPlayas();
 
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $filtro = $_POST['provincia'];
-            } else {
-                $filtro = 0;
-            }
 
-            $output = $data->showCards($result, $filtro, $user);
-            echo $output;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $filtro = $_POST['provincia'];
+        } else {
+            $filtro = 0;
+        }
+
+        $output = $data->showCards($result, $filtro, $user);
+        echo $output;
         ?>
 
-</div> 
     </div>
     </div>
-    
+    </div>
+
     <footer class="bg-dark text-white pt-5 pb-4 full-width-footer" style="margin-top: 50px;">
         <div class="container text-center text-md-left">
             <div class="row text-center text-md-left">
@@ -451,10 +458,14 @@ echo $data->fivestar($result);
                 </div>
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Proovedores</h5>
-                    <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white" style="text-decoration: none;">IGN</a></p>
-                    <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB" class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
-                    <p><a href="https://www.pexels.com/es-es/" class="text-white" style="text-decoration: none;">Pexels</a></p>
-                    <p><a href="https://www.tripadvisor.es/" class="text-white" style="text-decoration: none;">TripAdvisor</a></p>
+                    <p><a href="https://www.ign.es/web/ide-area-nodo-ide-ign" class="text-white"
+                            style="text-decoration: none;">IGN</a></p>
+                    <p><a href="https://www.meteomatics.com/en/weather-api/?ppc_keyword=weather%20api&utm_term=weather%20api&utm_campaign=Weather+API+(Spanien)&utm_source=adwords&utm_medium=ppc&hsa_acc=5001518620&hsa_cam=16963285670&hsa_grp=145005653988&hsa_ad=596908640811&hsa_src=g&hsa_tgt=kwd-40383213246&hsa_kw=weather%20api&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjw6auyBhDzARIsALIo6v8s1wVBJlKarCYIGybONke0MgRlu5yZSntDN5tWE_1ibex0KN0PsL0aAvRrEALw_wcB"
+                            class="text-white" style="text-decoration: none;">WeatherAPI</a></p>
+                    <p><a href="https://www.pexels.com/es-es/" class="text-white"
+                            style="text-decoration: none;">Pexels</a></p>
+                    <p><a href="https://www.tripadvisor.es/" class="text-white"
+                            style="text-decoration: none;">TripAdvisor</a></p>
                 </div>
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                     <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Links de interes</h5>
@@ -487,19 +498,24 @@ echo $data->fivestar($result);
                     <div class="text-center text-md-right">
                         <ul class="list-unstyled list-inline">
                             <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-facebook"></i></a>
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                                        class="bi bi-facebook"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-twitter"></i></a>
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                                        class="bi bi-twitter"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-instagram"></i></a>
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                                        class="bi bi-instagram"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-google"></i></a>
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                                        class="bi bi-google"></i></a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i class="bi bi-youtube"></i></a>
+                                <a href="" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                                        class="bi bi-youtube"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -507,45 +523,45 @@ echo $data->fivestar($result);
             </div>
         </div>
     </footer>
-      
+
 </body>
 
 
 
 <script src="./owlcarousel/jquery.min.js"></script>
-    <script src="./owlcarousel/owl.carousel.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".owl-carousel").owlCarousel({
-                dots: false,
-                loop: true,
-                margin: 50,
-                autoplay: true,
-                autoplayTimeout: 2000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    480: {
-                        items: 2,
-                    },
-                    768: {
-                        items: 3,
-                    }
+<script src="./owlcarousel/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+            dots: false,
+            loop: true,
+            margin: 50,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
                 },
-            });
+                480: {
+                    items: 2,
+                },
+                768: {
+                    items: 3,
+                }
+            },
         });
-        function mostrarDesplegable(btn) {
-            var desplegable = btn.nextElementSibling;
-            if (desplegable.style.display === "none") {
-                desplegable.style.display = "block";
-                btn.querySelector('i').classList.replace('bi-chevron-down', 'bi-chevron-up');
-            } else {
-                desplegable.style.display = "none";
-                btn.querySelector('i').classList.replace('bi-chevron-up', 'bi-chevron-down');
-            }
+    });
+    function mostrarDesplegable(btn) {
+        var desplegable = btn.nextElementSibling;
+        if (desplegable.style.display === "none") {
+            desplegable.style.display = "block";
+            btn.querySelector('i').classList.replace('bi-chevron-down', 'bi-chevron-up');
+        } else {
+            desplegable.style.display = "none";
+            btn.querySelector('i').classList.replace('bi-chevron-up', 'bi-chevron-down');
         }
-    </script>
+    }
+</script>
 
 </html>

@@ -1,15 +1,17 @@
 <?php
 
-class Mostrar extends Connection{
+class Mostrar extends Connection
+{
 
-    function import($file){
-        $conn= $this->getConn();
+    function import($file)
+    {
+        $conn = $this->getConn();
         $query = "DELETE FROM `Playa`";
         $result = mysqli_query($conn, $query);
 
         $gestor = fopen($file, "r");
         $query = "INSERT INTO `Playa`(`nombre`, `ciudad`, `Valoracion`, `descripcion`) VALUES (?,?,?,?)";
-        
+
         while (($element = fgetcsv($gestor)) !== false) {
             $nombre = $element[0];
             $ciudad = $element[1];
@@ -25,9 +27,10 @@ class Mostrar extends Connection{
         fclose($gestor);
     }
 
-    function getAllPlayas(){
+    function getAllPlayas()
+    {
         $array = [];
-        $conn= $this->getConn();
+        $conn = $this->getConn();
         $query = "SELECT * FROM `Playa`";
         $result = mysqli_query($conn, $query);
         $total = $result->num_rows;
@@ -45,10 +48,11 @@ class Mostrar extends Connection{
             array_push($array, $object);
             $cont++;
         }
-        return($array);
+        return ($array);
     }
 
-    function showCards($array, $filtro, $user) {
+    function showCards($array, $filtro, $user)
+    {
         $output = "";
         $cont = 0;
         $output = "<div class='row row-cols-1 row-cols-md-3 g-4'>";
@@ -63,17 +67,17 @@ class Mostrar extends Connection{
                         <div class='content card h-100 card-hover'>
                         <img src='img/$nombre.jpeg' class='card-img-top'>
                         <div class='card-body'>";
-            $output .= "<h5 class='card-title'>$nombre</h5>
+                $output .= "<h5 class='card-title'>$nombre</h5>
                 <p class='card-text'>Ciudad: $ciudad</p>
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
-            $output .= "<div class='card-footer'>
+                $output .= "<div class='card-footer'>
             <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>";
-            if ($user == 'admin') {
-            
-            $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn-custom'>Eliminar</a>";
-            }
-            $output .= "<a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
+                if ($user == 'admin') {
+
+                    $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn-custom'>Eliminar</a>";
+                }
+                $output .= "<a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
                 <i class='bi bi-chevron-down'></i>
             </a>
             <div class='desplegable' style='display: none;'>
@@ -85,15 +89,15 @@ class Mostrar extends Connection{
                         <div class='content card h-100 card-hover'>
                         <img src='img/$nombre.jpeg' class='card-img-top'>
                         <div class='card-body'>";
-            $output .= "<h5 class='card-title'>$nombre</h5>
+                $output .= "<h5 class='card-title'>$nombre</h5>
                 <p class='card-text'>Ciudad: $ciudad</p>
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
-            $output .= "<div class='card-footer'>
+                $output .= "<div class='card-footer'>
             <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>";
-            if ($user == 'admin') {
-            
-                $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn-custom'>Eliminar</a>";
+                if ($user == 'admin') {
+
+                    $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn-custom'>Eliminar</a>";
                 }
                 $output .= "<a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
                     <i class='bi bi-chevron-down'></i>
@@ -101,16 +105,18 @@ class Mostrar extends Connection{
                 <div class='desplegable' style='display: none;'>
                     <p>$descripcion</p>
                 </div>
-            </div></div></div>";}
-                        
+            </div></div></div>";
+            }
+
         }
         return $output;
     }
 
-    function valoracion($nombre){
+    function valoracion($nombre)
+    {
         $valoracion = 0;
         $output = "";
-        $conn= $this->getConn();
+        $conn = $this->getConn();
         $query = "SELECT `Valoracion` FROM `Playa` WHERE `nombre` = '$nombre'";
         $result = mysqli_query($conn, $query);
         $valoracion = $result->fetch_array(MYSQLI_ASSOC);
@@ -120,7 +126,7 @@ class Mostrar extends Connection{
             if ($valoracion > 0) {
                 $output .= "★";
                 $valoracion = $valoracion - 1;
-            } else{
+            } else {
                 $output .= "✩";
             }
             $cont++;
@@ -128,12 +134,13 @@ class Mostrar extends Connection{
         return $output;
     }
 
-    public function modificar($nom){
+    public function modificar($nom)
+    {
         if (count($_POST) > 0) {
             $nombre = $_POST['name'];
             $email = $_POST['email'];
             $provincia = $_POST['provincia'];
-            $conn= $this->getConn();
+            $conn = $this->getConn();
             $query = "UPDATE `Usuario` SET `nombre`='$nombre',`email`='$email',`provincia`='$provincia' WHERE `nombre` = '$nom'";
             $result = mysqli_query($conn, $query);
 
@@ -143,7 +150,8 @@ class Mostrar extends Connection{
         header("location: login.php");
     }
 
-    public function getPlaya($nombre, $array){
+    public function getPlaya($nombre, $array)
+    {
         $playa = [];
         foreach ($array as $element) {
             $name = $element->getNombre();
@@ -154,11 +162,11 @@ class Mostrar extends Connection{
         return $playa;
     }
 
-<<<<<<< HEAD
-    public function comentar($nombre, $fecha, $playa, $imagen){
+    public function comentar($nombre, $fecha, $playa, $imagen)
+    {
         if (count($_POST) > 0) {
             $comentario = $_POST['comment'];
-            $conn= $this->getConn();
+            $conn = $this->getConn();
             $query = "INSERT INTO `Comentario`(`opinion`, `fecha`, `user_name`, `nombre_playa`) VALUES ('$comentario','$fecha','$nombre','$playa')";
             $result = mysqli_query($conn, $query);
 
@@ -168,9 +176,10 @@ class Mostrar extends Connection{
         header("location: playa.php?nombre=$playa&imagen=$imagen");
     }
 
-    public function getComents($playa){
+    public function getComents($playa)
+    {
         $array = [];
-        $conn= $this->getConn();
+        $conn = $this->getConn();
         $query = "SELECT * FROM `Comentario`";
         $result = mysqli_query($conn, $query);
         $total = $result->num_rows;
@@ -178,24 +187,25 @@ class Mostrar extends Connection{
         while ($cont < $total) {
             $result->data_seek($cont);
             $info = $result->fetch_array(MYSQLI_ASSOC);
-            $id = $info['id']; 
+            $id = $info['id'];
             $nombre = $info["user_name"];
             $playa_nom = $info['nombre_playa'];
             $coment = $info['opinion'];
             $fecha = $info['fecha'];
 
-            $element=[$id, $nombre, $playa_nom, $coment, $fecha];
+            $element = [$id, $nombre, $playa_nom, $coment, $fecha];
 
             if ($playa == $playa_nom) {
                 array_push($array, $element);
             }
-            
+
             $cont++;
         }
-        return($array);
+        return ($array);
     }
 
-    public function showComents($array, $usuario){
+    public function showComents($array, $usuario)
+    {
         $output = "";
         $imagen = $_GET['imagen'];
         $cont = 0;
@@ -210,40 +220,44 @@ class Mostrar extends Connection{
             <p class='date'>Fecha: $fecha</p>
             <div class='comment-text'>$coment</div>";
             if ($usuario == $nombre) {
-                $output .="<a href='eliminar-com.php?id=$id&playa=$playa&imagen=$imagen'><button class='delete-button'>Eliminar</button></a>";
+                $output .= "<a href='eliminar-com.php?id=$id&playa=$playa&imagen=$imagen'><button class='delete-button'>Eliminar</button></a>";
             }
             if ($usuario == "admin") {
-                $output .="<a href='eliminar-com.php?id=$id&playa=$playa&imagen=$imagen'><button class='delete-button'>Eliminar</button></a>";
+                $output .= "<a href='eliminar-com.php?id=$id&playa=$playa&imagen=$imagen'><button class='delete-button'>Eliminar</button></a>";
             }
             $output .= "</div>";
-    }
-    return $output;
+        }
+        return $output;
     }
 
-    public function deleteComent($id){
-        $conn= $this->getConn();
+    public function deleteComent($id)
+    {
+        $conn = $this->getConn();
         $query = "DELETE FROM `Comentario` WHERE `id` = $id";
         $result = mysqli_query($conn, $query);
     }
 
-    public function fivestar($array) {
+    public function fivestar($array)
+    {
         $carousel = "";
         $cont = 0;
         $carousel .= "<div class='carousel-wrapper'>
             <div class='owl-carousel owl-theme'>";
-        
+
         foreach ($array as $element) {
             // Verificar que el elemento tenga los métodos necesarios
-            if (method_exists($element, 'getNombre') && method_exists($element, 'getCiudad') &&
-                method_exists($element, 'getValoracion') && method_exists($element, 'getDescripcion')) {
-                
+            if (
+                method_exists($element, 'getNombre') && method_exists($element, 'getCiudad') &&
+                method_exists($element, 'getValoracion') && method_exists($element, 'getDescripcion')
+            ) {
+
                 $nombre = $element->getNombre();
                 $ciudad = $element->getCiudad();
                 $valoracion = $element->getValoracion();
                 $descripcion = $element->getDescripcion();
-                 $cont++;
+                $cont++;
                 if ($valoracion == 5) {
-                    
+
                     $carousel .= "<div class='item carousel-item-custom'>
                         <img src='img/$nombre.jpeg' alt='' class='carousel-img'>
                         <h3>$nombre</h3>
@@ -254,78 +268,78 @@ class Mostrar extends Connection{
                 }
             }
         }
-    
+
         // Cerrar las etiquetas HTML abiertas
         $carousel .= "</div></div>";
-    
+
         return $carousel;
     }
 
-    public function eliminarCuenta($nombre){
-        $conn= $this->getConn();
+    public function eliminarCuenta($nombre)
+    {
+        $conn = $this->getConn();
         $query = "DELETE FROM `Usuario` WHERE `nombre` = '$nombre'";
         $result = mysqli_query($conn, $query);
     }
 
-    public function nuevaPlaya($nombre, $ciudad, $valoracion, $descripcion, $imagen){
+    public function nuevaPlaya($nombre, $ciudad, $valoracion, $descripcion, $imagen)
+    {
         if (count($_POST) > 0) {
-        $conn= $this->getConn();
-        $query = "INSERT INTO `Playa`(`nombre`, `ciudad`, `Valoracion`, `descripcion`) VALUES ('$nombre', '$ciudad', '$valoracion', '$descripcion')";
-        $result = mysqli_query($conn, $query);
+            $conn = $this->getConn();
+            $query = "INSERT INTO `Playa`(`nombre`, `ciudad`, `Valoracion`, `descripcion`) VALUES ('$nombre', '$ciudad', '$valoracion', '$descripcion')";
+            $result = mysqli_query($conn, $query);
         } else {
-        return null;
+            return null;
         }
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $targetDir = "img/";
             $_FILES['imagen']['name'] = "$nombre.jpeg";
-                // Check if a file is uploaded
-                if (!empty($_FILES["imagen"]["name"])) {
-        
-                    $targetFile = $targetDir . basename($_FILES["imagen"]["name"]);
+            // Check if a file is uploaded
+            if (!empty($_FILES["imagen"]["name"])) {
+
+                $targetFile = $targetDir . basename($_FILES["imagen"]["name"]);
+                $uploadOk = 1;
+                $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+                $check = getimagesize($_FILES["imagen"]["tmp_name"]);
+                if ($check !== false) {
                     $uploadOk = 1;
-                    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-                    $check = getimagesize($_FILES["imagen"]["tmp_name"]);
-                    if ($check !== false) { 
-                        $uploadOk = 1;
+                } else {
+                    echo "El archivo no es una imagen.";
+                    $uploadOk = 0;
+                }
+                if ($_FILES["imagen"]["size"] > 5000000) {
+                    echo "Lo siento, tu archivo es demasiado grande.";
+                    $uploadOk = 0;
+                }
+                if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+                    echo "Lo siento, solo se permiten archivos JPG, JPEG, PNG y GIF.";
+                    $uploadOk = 0;
+                }
+                if ($uploadOk == 0) {
+                    echo "Lo siento, tu archivo no fue subido.";
+                    return;
+                } else {
+                    if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $targetFile)) {
+                        $imagePath = $targetFile;
+
                     } else {
-                        echo "El archivo no es una imagen.";
-                        $uploadOk = 0;
-                    }
-                    if ($_FILES["imagen"]["size"] > 5000000) {
-                        echo "Lo siento, tu archivo es demasiado grande.";
-                        $uploadOk = 0;
-                    }
-                    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-                        echo "Lo siento, solo se permiten archivos JPG, JPEG, PNG y GIF.";
-                        $uploadOk = 0;
-                    }
-                    if ($uploadOk == 0) {
-                        echo "Lo siento, tu archivo no fue subido.";
+                        echo "Lo siento, hubo un error al subir tu archivo.";
                         return;
-                    } else {
-                        if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $targetFile)) {
-                            $imagePath = $targetFile;
-                            
-                        } else {
-                            echo "Lo siento, hubo un error al subir tu archivo.";
-                            return;
-                        }
                     }
                 }
+            }
+        }
+
     }
-    
-}
 
-public function deletePlaya($nombre){
-    $conn= $this->getConn();
-    $query = "DELETE FROM `Playa` WHERE `nombre` = '$nombre'";
-    $result = mysqli_query($conn, $query);
-}
-=======
->>>>>>> f2353f9f34109becd48895c073cebfe3ec95f498
+    public function deletePlaya($nombre)
+    {
+        $conn = $this->getConn();
+        $query = "DELETE FROM `Playa` WHERE `nombre` = '$nombre'";
+        $result = mysqli_query($conn, $query);
+    }
 
 }
 
-           
 ?>
