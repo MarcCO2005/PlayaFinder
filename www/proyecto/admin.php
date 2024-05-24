@@ -432,8 +432,9 @@ input[type="submit"]:focus {
             
 
             $data->nuevaPlaya($nombre, $ciudad, $valoracion, $descripcion, $_FILES);
+                
             }
-
+            $result = $data->getAllPlayas();
             $filtro = 0;
 
             if ($_SERVER['REQUEST_METHOD'] === 'GET') {
