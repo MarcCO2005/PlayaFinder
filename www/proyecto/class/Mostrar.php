@@ -70,15 +70,6 @@ class Mostrar extends Connection
                 <p class='card-text'>Ciudad: $ciudad</p>
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
-<<<<<<< HEAD
-                $output .= "<div class='card-footer'>
-            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>";
-                if ($user == 'admin') {
-
-                    $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn-custom'>Eliminar</a>";
-                }
-                $output .= "<a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
-=======
             $output .= "<div class='card-footer'>
             <a href='playa.php?nombre=$nombre&imagen=$nombre.jpeg' class='btn btn-primary'>Mas info</a>";
             if ($user == 'admin') {
@@ -86,7 +77,6 @@ class Mostrar extends Connection
             $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn-custom'>Eliminar</a>";
             }
             $output .= "<a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
->>>>>>> origin/Dario
                 <i class='bi bi-chevron-down'></i>
             </a>
             <div class='desplegable' style='display: none;'>
@@ -102,19 +92,11 @@ class Mostrar extends Connection
                 <p class='card-text'>Ciudad: $ciudad</p>
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
-<<<<<<< HEAD
-                $output .= "<div class='card-footer'>
-            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>";
-                if ($user == 'admin') {
-
-                    $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn-custom'>Eliminar</a>";
-=======
             $output .= "<div class='card-footer'>
             <a href='playa.php?nombre=$nombre&imagen=$nombre.jpeg' class='btn btn-primary'>Mas info</a>";
             if ($user == 'admin') {
             
                 $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn btn-danger'>Eliminar</a>";
->>>>>>> origin/Dario
                 }
                 $output .= "<a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
                     <i class='bi bi-chevron-down'></i>
