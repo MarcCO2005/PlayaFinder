@@ -12,6 +12,7 @@ $result = $data->getAllPlayas();
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
+$user = $info['nombre'];
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +36,36 @@ body {
     background-repeat: no-repeat;
     width: 100%;
 }
+
+.btn-custom {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom:active {
+    background-color: #004085;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5);
+}
+
 .content {
     margin-bottom: 50px;
 }
@@ -60,7 +91,7 @@ body {
 }
 
 .imagen {
-    width: 600px;
+    width: 400px;
     height: 300px;
     margin-bottom: 20px;
 }
@@ -70,7 +101,7 @@ input[type="submit"] {
     color: white; 
     border: none; 
     padding: 10px 20px; 
-    font-size: 16px;ç
+    font-size: 16px;
     font-weight: bold; 
     border-radius: 5px;
     cursor: pointer; 
@@ -102,16 +133,20 @@ input[type="submit"]:focus {
     width: 100%;
     z-index: 999;
 }
-.carousel-item {
-    height: 100%;
+.carousel-item-custom {
+    transition: transform 0.3s ease;
+
 }
+.carousel-item-custom:hover {
+            transform: scale(1.05);
+        }
 .navbar-dark .navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
+    color:lightblue !important;
+    
 }
 
 .carousel-wrapper {
-    margin-top: 80px;
+    margin-top: 90px;
 }
 
 .carousel-item-custom {
@@ -120,13 +155,14 @@ input[type="submit"]:focus {
     border-radius: 15px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 1);
-    height: 400px;
+    height: 500px;
+
 }
 
 .carousel-item-custom h3 {
     margin-top: 15px;
     font-size: 1.5rem;
-    color: #0000000;
+    color: #000000;
 }
 .carousel-item-custom img {
     height: 175px;
@@ -157,18 +193,34 @@ input[type="submit"]:focus {
     padding: 0;
 }
 
-.card-hover {
+    .card-hover {
         transition: transform 0.3s ease;
     }
-
     .card-hover:hover {
         transform: scale(1.05);
+        
     }
+    .card-img {
+    height: auto;
+
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+}
+.card-img-top {
+    height: 200px;
+    width: 414px;
+    border: none;
+    object-fit: cover;
+}
+
 
 .carousel-wrapper .carousel-item-custom a:hover {
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
+    
 }
 .carousel-item-custom input[type="submit"]:hover,
 .carousel-item-custom a:hover {
@@ -182,11 +234,13 @@ input[type="submit"]:focus {
 }
 
 .carousel-item-custom:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
+    
 }
 .Playas-frecuentes {
     justify-content: center;
     text-align: center;
+    
 }
 .carousel-wrapper .carousel-item-custom a {
     display: inline-block;
@@ -195,13 +249,30 @@ input[type="submit"]:focus {
     text-decoration: none;
     border: 2px solid #007BFF;
     transition: all 0.3s ease;
+    
 }
 
 .carousel-wrapper .carousel-item-custom a:hover {
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
+    
 }
+.carousel-item-custom input[type="submit"]:hover,
+        .carousel-item-custom a:hover {
+            transform: scale(1.05);
+            }
+            .btn-primary:hover {
+            transform: scale(1.05); /* Agrandar el botón al 5% más grande */
+        }
+        .card-hover {
+        transition: transform 0.3s ease;
+    }
+
+    .card-hover:hover {
+        transform: scale(1.05);
+    }
+
 </style>
 <body>
 
@@ -241,6 +312,7 @@ input[type="submit"]:focus {
       <br>
 <h1 class="Playas-frecuentes" >Destinos frecuentes</h1>
         
+<<<<<<< HEAD
         <div class="carousel-wrapper">
             <div class="owl-carousel owl-theme">
                 <div class="item carousel-item-custom">
@@ -269,6 +341,18 @@ input[type="submit"]:focus {
                 </div>
             </div>
         </div>
+=======
+<?php 
+
+$data = new Mostrar;
+
+$result = $data->getAllPlayas();
+
+echo $data->fivestar($result);
+
+?>        
+
+>>>>>>> Dario
       <br>
       <h1 style="text-align:center;">PLAYAS</h1>
       <div class="mb-3">
@@ -346,11 +430,11 @@ input[type="submit"]:focus {
                 $filtro = 0;
             }
 
-            $output = $data->showCards($result, $filtro);
+            $output = $data->showCards($result, $filtro, $user);
             echo $output;
         ?>
 
-        
+</div> 
     </div>
     </div>
     
