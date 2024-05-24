@@ -91,7 +91,7 @@ $user = $info['nombre'];
 
 .d-img {
   width: 100%;
-    height: auto;
+    height: 710px;
     object-fit: cover;
     filter: brightness(0.6);
 }
@@ -127,10 +127,6 @@ $user = $info['nombre'];
   height:70px;
   width: 80px;
   justify-content:center;
-}
-p{
-  margin-top: 50px;
-  font-size: 20px;
 }
 </style>
 <body>
@@ -181,39 +177,24 @@ p{
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
-<<<<<<< HEAD
                 <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
                 <a href="destino.php"><button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button></a>
-=======
-                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-               <a href="destino.php" class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu busqueda</a>
->>>>>>> d37a8e037b730b80a4522e16d201983808f81f24
             </div>
         </div>
         <div class="carousel-item d-item">
             <img src="img/fondo3.webp" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
-<<<<<<< HEAD
                 <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
                 <a href="destino.php"><button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button></a>
-=======
-                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-                <a href="destino.php" class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu busqueda</a>
->>>>>>> d37a8e037b730b80a4522e16d201983808f81f24
             </div>
         </div>
         <div class="carousel-item d-item">
             <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
-<<<<<<< HEAD
                 <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
                 <a href="destino.php"><button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button></a>
-=======
-                <p class="card-text" >Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-                <a href="destino.php" class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu busqueda</a>
->>>>>>> d37a8e037b730b80a4522e16d201983808f81f24
             </div>
         </div>
     </div>
