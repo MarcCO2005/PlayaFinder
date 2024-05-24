@@ -145,7 +145,7 @@ $registerMessage = $security->doRegister();
             </div>
             <div class="contact-form">
                 <h2>¡Nosotros te llamamos!</h2>
-                <form action="send_email.php" method="post">
+                <form action="sanjuanhipolitojavier@gmail.com" method="post">
                   <label for="name">Nombre</label><br>
                   <input type="text" id="name" name="name" required style="  width: 100%;padding: 10px;margin-bottom: 20px;border: 2px solid #555;border-radius: 4px; background: #333;color: white;"><br>
         
