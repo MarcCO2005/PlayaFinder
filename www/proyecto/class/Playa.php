@@ -3,16 +3,14 @@
 class Playa {
     protected $nombre;
     protected $ciudad;
-    protected $cod_post;
-    protected $cat;
     protected $valoracion;
+    protected $descripcion;
 
-    function __construct($nombre, $ciudad, $cod_post, $cat, $valoracion){
+    function __construct($nombre, $ciudad, $valoracion, $descripcion){
         $this->nombre = $nombre;
         $this->ciudad = $ciudad;
-        $this->cod_post = $cod_post;
-        $this->cat = $cat;
         $this->valoracion = $valoracion;
+        $this->descripcion = $descripcion;
     }
 
     public function getNombre()
@@ -34,25 +32,6 @@ class Playa {
     {
         $this->ciudad = $ciudad;
     }
-
-    public function getCod_post()
-    {
-        return $this->cod_post;
-    }
-
-    public function setCod_post($cod_post)
-    {
-        $this->cod_post = $cod_post;
-    }
-
-    public function getCat()
-    {
-        return $this->cat;
-    }
-    public function setCat($cat)
-    {
-        $this->cat = $cat;
-    }
     public function getValoracion()
     {
         return $this->valoracion;
@@ -60,6 +39,14 @@ class Playa {
     public function setValoracion($valoracion)
     {
         $this->valoracion = $valoracion;
+    }
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
     }
 }
 

@@ -1,9 +1,13 @@
 <?php
 
 require_once "autoloader.php";
+session_start();
+
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
+$email = $info['email'];
+$user = $info['nombre'];
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +23,60 @@ $info = $security->getUser($email);
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
+   
+  .card-tiempo {
+            background-color: #F1F5F7;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            height:300px;
+            width: 500px;
+            padding: 20px;
+            margin:20px;
+            transition: transform 0.2s;
+            text-align:center;
+            margin-left:520px;
+            border:0.1px solid grey ;
+           
+        }
+
+        .card-tiempo:hover {
+            transform: scale(1.05);
+        }
+
+        .card-tiempo h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .card-tiempo .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-tiempo .details img {
+            
+        }
+
+        .card-tiempo p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .card-tiempo .temp {
+            font-weight: bold;
+            color: #ff5722;
+        }
+
+        .card-tiempo .humidity,
+        .card-tiempo .wind {
+            font-weight: normal;
+            color: #03a9f4;
+        }
+
 .content {
   margin-bottom: 50px;
 }
@@ -62,10 +120,13 @@ $info = $security->getUser($email);
         .carousel-item {
             height: 100%; 
         }
-        .navbar-dark .navbar-nav .nav-link:hover {
- 
-    background-color:  rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
+        .nav-link:hover {
+    color: #ffd700 !important;
+}
+.weather-icon{
+  height:70px;
+  width: 80px;
+  justify-content:center;
 }
 </style>
 <body>
@@ -83,14 +144,26 @@ $info = $security->getUser($email);
                 <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="prueba.php"style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
               </li>
+              <?php
+
+            if ($email == "admin@gmail.com") {
+              echo "<li class='nav-item'>
+                <a class='nav-link' href='admin.php?filtro=0'style='color:white;'>Panel de administracion</a>
+              </li>";
+            }
+
+            ?>
             </ul>
+
+            
+
             <form class="d-flex">
-    <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
+      <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
     </a>
 </form>
@@ -104,28 +177,75 @@ $info = $security->getUser($email);
             <img src="img/img1.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
-                <p class="card-text" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
+                <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <a href="destino.php"><button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button></a>
             </div>
         </div>
         <div class="carousel-item d-item">
             <img src="img/fondo3.webp" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
-                <p class="card-text" style="margin-top: 50px">Descubre montañas majestuosas en todo el mundo con nuestro buscador. Tu aventura en la naturaleza está a solo un clic de distancia.</p>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
+                <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <a href="destino.php"><button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button></a>
             </div>
         </div>
         <div class="carousel-item d-item">
             <img src="img/img3.jpg" class="d-block w-100 d-img" alt="">
             <div class="carousel-caption top-0 mt-4">
                 <h1 class="card-title" style="margin-top: 150px">Bienvenido, <?php echo $info['nombre'];?>!</h1>
-                <p class="card-text" style="margin-top: 50px">Descubre ciudades vibrantes en todo el mundo con nuestro buscador. Tu aventura urbana perfecta está a solo un clic de distancia.</p>
-                <button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button>
+                <p class="card-text subtitulo" style="margin-top: 50px">Descubre playas paradisíacas en todo el mundo con nuestro buscador. Tu escapada playera perfecta está a solo un clic de distancia.</p>
+                <a href="destino.php"><button class="btn btn-primary px-4 py-2 fs-5 mt-5">Comienza tu búsqueda</button></a>
             </div>
         </div>
     </div>
   </div>
+
+  <script>
+    const apiKey = "24f7a202694a4b3d0152bfaf1735bc8b";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=<?php echo $info['provincia'];?>";
+
+    async function checkWeather() {
+        const response = await fetch(apiUrl + `&appid=${apiKey}`);
+        var data = await response.json();
+
+        console.log(data);        
+        const weatherIcon = document.querySelector(".weather-icon");
+
+console.log("Weather condition:", data.weather[0].main);
+        document.querySelector(".temp") .innerHTML = Math.round(data.main.temp) - 273 + "°с";
+        document.querySelector(".humidity"). innerHTML = data.main.humidity + "%";
+        document.querySelector (".wind"). innerHTML = data.wind. speed + "km/h";
+        let imageSrc = "";
+        if(data.weather[0].main == "Clouds"){
+        weatherIcon.src = "./img/weather/clouds.png";
+    }else if (data.weather[0].main == "Clear"){
+      weatherIcon.src = "./img/weather/clear.png";
+    }else if (data.weather[0].main == "Rain"){
+      weatherIcon.src = "./img/weather/rain.png";
+    }else if (data.weather[0].main == "Drizzle"){
+      weatherIcon.src = "./img/weather/drizzle.png";
+    }else if (data.weather[0].main == "Mist"){
+      weatherIcon.src = "./img/weather/mist.png";
+    } 
+  }
+
+
+    checkWeather()
+
+</script>
+
+<div class="card-tiempo">
+    <h2>Tiempo en <?php echo $info['provincia'];?></h2>
+    <div class="details">
+       <img class="weather-icon" src="" alt="" >
+        <h4><i class="bi bi-thermometer-half"></i>Temperatura: <span class="temp"></span></h4>
+        <h4><i class="bi bi-droplet"></i>Humedad: <span class="humidity"></span></h4>
+        <h4><i class="bi bi-wind"></i>Viento: <span class="wind"></span></h4>
+    </div>
+   
+</div>
+
+
 
   <div class="container">
   <h2 style="text-align: center; margin: 50px;">Quienes somos</h2>
@@ -144,7 +264,7 @@ $info = $security->getUser($email);
       <div class="card content">
         <div class="card-body">
           <h5 class="card-title"><i class="bi bi-geo-alt-fill"></i>Ubicacion</h5>
-        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.324995560287!2d-0.4467339245252179!3d39.3715200185909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604d85f8e6d457%3A0xf8e8167400479b71!2sToni%20Pizzer%C3%ADa!5e0!3m2!1ses!2ses!4v1714148633685!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12468.402261118434!2d-0.3382104163700336!3d39.48020891775287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd60487a06475893%3A0x143e1fdf2b059794!2sMalvarrosa%2C%20Poblados%20Mar%C3%ADtimos%2C%2046011%20Valencia!5e0!3m2!1ses!2ses!4v1716537090076!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>

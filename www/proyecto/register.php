@@ -1,5 +1,6 @@
 <?php
 require_once "autoloader.php";
+session_start();
 $security = new Security();
 $registerMessage = $security->doRegister();
 ?>
@@ -90,39 +91,39 @@ body {
     <label for="provincia" class="form-label">Provincia</label>
     <select name="provincia" class="form-select" id="provincia" required>
         <option value="" selected disabled>Selecciona tu provincia</option>
-        <option value="Álava">Álava</option>
+        <option value="Alava">Álava</option>
         <option value="Albacete">Albacete</option>
         <option value="Alicante">Alicante</option>
-        <option value="Almería">Almería</option>
+        <option value="Almeria">Almería</option>
         <option value="Asturias">Asturias</option>
-        <option value="Ávila">Ávila</option>
+        <option value="Avila">Ávila</option>
         <option value="Badajoz">Badajoz</option>
         <option value="Barcelona">Barcelona</option>
         <option value="Burgos">Burgos</option>
-        <option value="Cáceres">Cáceres</option>
-        <option value="Cádiz">Cádiz</option>
+        <option value="Caceres">Cáceres</option>
+        <option value="Cadiz">Cádiz</option>
         <option value="Cantabria">Cantabria</option>
-        <option value="Castellón">Castellón</option>
+        <option value="Castellon">Castellón</option>
         <option value="Ceuta">Ceuta</option>
         <option value="Ciudad Real">Ciudad Real</option>
-        <option value="Córdoba">Córdoba</option>
+        <option value="Cordoba">Córdoba</option>
         <option value="Cuenca">Cuenca</option>
         <option value="Gerona">Gerona</option>
         <option value="Granada">Granada</option>
         <option value="Guadalajara">Guadalajara</option>
-        <option value="Guipúzcoa">Guipúzcoa</option>
+        <option value="Guipuzcoa">Guipúzcoa</option>
         <option value="Huelva">Huelva</option>
         <option value="Huesca">Huesca</option>
         <option value="Islas Baleares">Islas Baleares</option>
-        <option value="Jaén">Jaén</option>
+        <option value="Jaen">Jaén</option>
         <option value="La Coruña">La Coruña</option>
         <option value="La Rioja">La Rioja</option>
         <option value="Las Palmas">Las Palmas</option>
-        <option value="León">León</option>
-        <option value="Lérida">Lérida</option>
+        <option value="Leon">León</option>
+        <option value="Lerida">Lérida</option>
         <option value="Lugo">Lugo</option>
         <option value="Madrid">Madrid</option>
-        <option value="Málaga">Málaga</option>
+        <option value="Malaga">Málaga</option>
         <option value="Melilla">Melilla</option>
         <option value="Murcia">Murcia</option>
         <option value="Navarra">Navarra</option>
