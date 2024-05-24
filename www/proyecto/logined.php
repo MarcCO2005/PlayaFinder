@@ -1,4 +1,28 @@
-<?php
+[18:00, 21/5/2024] Marcos: <?php
+
+require_once "autoloader.php";
+session_start();
+$data = new Mostrar;
+$nombre = $_GET['nombre'];
+$imagen = $_GET['imagen'];
+$result = $data->getAllPlayas();
+$playa = $data->getPlaya($nombre, $result);
+
+$security = new Security();
+$email = $security->getUserData();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu principal</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootst…
+[20:31, 23/5/2024] Marcos: <?php
 
 require_once "autoloader.php";
 session_start();
@@ -6,6 +30,7 @@ session_start();
 $security = new Security();
 $email = $security->getUserData();
 $info = $security->getUser($email);
+$email = $info['email'];
 ?>
 
 <!DOCTYPE html>
@@ -21,53 +46,8 @@ $info = $security->getUser($email);
     <link rel="icon" type="image/x-icon" href="img/logo.jpg">
 </head>
 <style>
-.content {
-  margin-bottom: 50px;
-}
-
-.d-item {
-    height: 600px;
-}
-
-.subtitulo {
-    font-size: 30px;
-}
-
-.d-img {
-  width: 100%;
-    height: 710px;
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-.mapa{
-  border-radius: 15px;
-  width:100% ;
-  height:490px ;
-}
-
-
-.imagen {
-    width: 600px;
-    height: 300px;
-    margin-bottom: 20px;
-}
-
-.card-footer {
-    text-align: center;
-}
-.navbar {
-            background-color: transparent !important; 
-            position: absolute;
-            width: 100%;
-            z-index: 999;
-        }
-        .carousel-item {
-            height: 100%; 
-        }
-        .nav-link:hover {
-    color: #ffd700 !important;
-}
-.card-tiempo {
+  
+  .card-tiempo {
             background-color:	#F8DE7E;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -190,7 +170,19 @@ $info = $security->getUser($email);
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
               </li>
+              <?php
+
+            if ($email == "admin@gmail.com") {
+              echo "<li class='nav-item'>
+                <a class='nav-link' href='pornhub.com'style='color:white;'>Panel de administracion</a>
+              </li>";
+            }
+
+            ?>
             </ul>
+
+            
+
             <form class="d-flex">
     <a class="nav-link" href="perfil.php" title="<?=$security->getUserData()?>">
         <i style="color: white; font-size: 2em;" class="d-block w-100 bi bi-person-circle"></i>
@@ -228,6 +220,7 @@ $info = $security->getUser($email);
         </div>
     </div>
   </div>
+
   <script >
     const apiKey = "24f7a202694a4b3d0152bfaf1735bc8b";
     const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=<?php echo $info['provincia'];?>";
@@ -247,10 +240,10 @@ document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
 
 let imageSrc = "";
 if (tempCelsius > 20) {
-    imageSrc = "img/sol.jpeg"; 
+    imageSrc = "img/sol.png"; 
       
 } else {
-    imageSrc = "img/nublado.jpeg"; 
+    imageSrc = "img/nublado.png"; 
 }
 document.querySelector(".weather-image").src = imageSrc;
 }
@@ -269,6 +262,8 @@ document.querySelector(".weather-image").src = imageSrc;
     </div>
    
 </div>
+
+
 
   <div class="container">
   <h2 style="text-align: center; margin: 50px;">Quienes somos</h2>
