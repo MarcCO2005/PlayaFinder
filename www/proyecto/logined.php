@@ -67,6 +67,107 @@ $info = $security->getUser($email);
         .nav-link:hover {
     color: #ffd700 !important;
 }
+.card-tiempo {
+            background-color:	#F8DE7E;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            padding: 20px;
+            margin:20px;
+            transition: transform 0.2s;
+            
+           
+        }
+
+        .card-tiempo:hover {
+            transform: scale(1.05);
+        }
+
+        .card-tiempo h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .card-tiempo .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-tiempo .details img {
+            
+        }
+
+        .card-tiempo p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .card-tiempo .temp {
+            font-weight: bold;
+            color: #ff5722;
+        }
+
+        .card-tiempo .humidity,
+        .card-tiempo .wind {
+            font-weight: normal;
+            color: #03a9f4;
+        }
+
+.content {
+  margin-bottom: 50px;
+}
+
+.d-item {
+    height: 600px;
+}
+
+.subtitulo {
+    font-size: 30px;
+}
+
+.d-img {
+  width: 100%;
+    height: 710px;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+.mapa{
+  border-radius: 15px;
+  width:100% ;
+  height:490px ;
+}
+
+
+.imagen {
+    width: 600px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    text-align: center;
+}
+.navbar {
+            background-color: transparent !important; 
+            position: absolute;
+            width: 100%;
+            z-index: 999;
+        }
+        .carousel-item {
+            height: 100%; 
+        }
+        .nav-link:hover {
+    color: #ffd700 !important;
+}
+.weather-image{
+  height:70px;
+  width: 80px;
+  justify-content:center;
+}
 
 </style>
 <body>
@@ -127,6 +228,47 @@ $info = $security->getUser($email);
         </div>
     </div>
   </div>
+  <script >
+    const apiKey = "24f7a202694a4b3d0152bfaf1735bc8b";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=<?php echo $info['provincia'];?>";
+
+    async function checkWeather() {
+        const response = await fetch(apiUrl + &appid=${apiKey});
+        var data = await response.json();
+
+        console.log(data);        
+        const tempCelsius = Math.round(data.main.temp - 273.15);
+
+document.querySelector(".city").innerHTML = data.name;
+document.querySelector(".temp").innerHTML = tempCelsius + "°C";
+document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+
+
+let imageSrc = "";
+if (tempCelsius > 20) {
+    imageSrc = "img/sol.jpeg"; 
+      
+} else {
+    imageSrc = "img/nublado.jpeg"; 
+}
+document.querySelector(".weather-image").src = imageSrc;
+}
+
+    checkWeather()
+
+</script>
+
+<div class="card-tiempo">
+    <h2 class="city"></h2>
+    <div class="details">
+       <img class="weather-image" src="" alt="" >
+        <p>Temperatura: <span class="temp"></span></p>
+        <p>Humedad: <span class="humidity"></span></p>
+        <p>Viento: <span class="wind"></span></p>
+    </div>
+   
+</div>
 
   <div class="container">
   <h2 style="text-align: center; margin: 50px;">Quienes somos</h2>
