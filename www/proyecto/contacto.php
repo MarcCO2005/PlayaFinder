@@ -26,7 +26,6 @@ $registerMessage = $security->doRegister();
             background-size: cover;
             position: relative;
         }
-        
         .overlay {
             position: absolute;
             top: 0;
@@ -44,7 +43,6 @@ $registerMessage = $security->doRegister();
             max-width: 1200px;
             margin: auto;
             padding: 20px;
-            height: 900px;
         }
         .contact-section {
             display: flex;
@@ -56,7 +54,6 @@ $registerMessage = $security->doRegister();
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 2px 20px -5px rgba(0,0,0,0.5);
-            margin-top: 50px;
         }
         .contact-info {
             background: #444;
@@ -97,24 +94,15 @@ $registerMessage = $security->doRegister();
             position: relative;
             z-index: 2;
         }
-
-.navbar {
-    background-color: #302B37;
-    position: absolute;
-    width: 100%;
-    z-index: 999;
-}
-.navbar-dark .navbar-nav .nav-link:hover {
-    color:#ffd700 !important;
-    
+        .nav-link:hover {
+    color: #ffd700 !important;
 }
     </style>
 </head>
 <body>
 <div class="overlay"></div>
 <div class="content">
-
-<nav class="navbar navbar-expand-sm navbar-dark transparent">
+    <nav class="navbar navbar-expand-sm transparent">
         <div class="container">
             <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
@@ -257,4 +245,3 @@ $registerMessage = $security->doRegister();
       
 </body>
 </html>
-
