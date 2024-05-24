@@ -34,10 +34,10 @@ body {
 .btn-custom {
     display: inline-block;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 10px;
     font-weight: bold;
     color: white;
-    background-color: #007bff;
+    background-color: red;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -46,7 +46,7 @@ body {
 }
 
 .btn-custom:hover {
-    background-color: #0056b3;
+    background-color: red;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -60,6 +60,45 @@ body {
     box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5);
 }
 
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.button-playa {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-playa:hover {
+    background-color: #45a049;
+}
 .content {
     margin-bottom: 50px;
 }
@@ -82,12 +121,6 @@ body {
     border-radius: 15px;
     width: 100%;
     height: 490px;
-}
-
-.imagen {
-    width: 400px;
-    height: 300px;
-    margin-bottom: 20px;
 }
 
 input[type="submit"] {
@@ -137,10 +170,6 @@ input[type="submit"]:focus {
         .nav-link:hover {
     color: #ffd700 !important;
 }
-.btn-danger{
-            margin-right:5px;
-            margin-left:5px
-        }
 
 .carousel-wrapper {
     margin-top: 90px;
@@ -207,7 +236,7 @@ input[type="submit"]:focus {
 }
 .card-img-top {
     height: 200px;
-    width: 414px;
+    width: 360px;
     border: none;
     object-fit: cover;
 }
@@ -224,7 +253,12 @@ input[type="submit"]:focus {
             transform: scale(1.05);
             }
             .btn-primary:hover {
+            
             transform: scale(1.05); /* Agrandar el botón al 5% más grande */
+        }
+        .btn-danger{
+            margin-right:5px;
+            margin-left:5px
         }
 .carousel-item-custom{
     transition: transform 0.3s ease;
@@ -286,7 +320,7 @@ input[type="submit"]:focus {
                 <a class="nav-link" href="logined.php" style="color:white;">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"style="color:white;">Destino</a>
+                <a class="nav-link" href="destino.php"style="color:white;">Destino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contacto.php"style="color:white;">Contacto</a>
@@ -304,80 +338,88 @@ input[type="submit"]:focus {
     <div class="container">
       <br><br><br><br><br>
       
-<h1 class="Playas-frecuentes" >Destinos populares</h1>
-        
-<?php 
+      <div class="card">
+        <h2>Añadir Playa</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <label for="nombrePlaya">Nombre de la Playa:</label>
+            <input type="text" id="nombrePlaya" name="nombrePlaya" required>
 
-$data = new Mostrar;
+            <label for="valoracion">Valoración (1 a 5):</label>
+            <input type="number" id="valoracion" name="valoracion" min="1" max="5" required>
 
-$result = $data->getAllPlayas();
+            <label for="provincia">Provincia:</label>
+            <select name="provincia" class="form-select" style="width: 300px;" id="provincia" required>
+                <option value="" selected disabled>Selecciona tu provincia</option>
+                <option value="Alicante">Alicante</option>
+                <option value="Almería">Almería</option>
+                <option value="Asturias">Asturias</option>
+                <option value="Barcelona">Barcelona</option>
+                <option value="Cádiz">Cádiz</option>
+                <option value="Cantabria">Cantabria</option>
+                <option value="Castellón">Castellón</option>
+                <option value="Ceuta">Ceuta</option>
+                <option value="Gerona">Gerona</option>
+                <option value="Granada">Granada</option>
+                <option value="Guipúzcoa">Guipúzcoa</option>
+                <option value="Huelva">Huelva</option>
+                <option value="Islas Baleares">Islas Baleares</option>
+                <option value="La Coruña">La Coruña</option>
+                <option value="Las Palmas">Las Palmas</option>
+                <option value="Lugo">Lugo</option>
+                <option value="Málaga">Málaga</option>
+                <option value="Melilla">Melilla</option>
+                <option value="Murcia">Murcia</option>
+                <option value="Pontevedra">Pontevedra</option>
+                <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                <option value="Tarragona">Tarragona</option>
+                <option value="Valencia">Valencia</option>
+                <option value="Vizcaya">Vizcaya</option>
+    </select>
 
-echo $data->fivestar($result);
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
-?>        
+            <label for="imagen">Subir Imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
+<br>
+            <button class="button-playa" type="submit">Enviar</button>
+        </form>
+    </div>       
 
       <br>
       <h1 style="text-align:center;">PLAYAS</h1>
       <div class="mb-3">
-        <form action="" method="POST">
-        <label for="provincia" class="form-label">Filtra por provincia</label>
-        <select name="provincia" class="form-select" style="width: 300px;" id="provincia" required>
-            <option value="" selected disabled>Selecciona tu provincia</option>
-            <option value="0">Quitar filtros</option>
-            <option value="Álava">Álava</option>
-            <option value="Albacete">Albacete</option>
-            <option value="Alicante">Alicante</option>
-            <option value="Almería">Almería</option>
-            <option value="Asturias">Asturias</option>
-            <option value="Ávila">Ávila</option>
-            <option value="Badajoz">Badajoz</option>
-            <option value="Barcelona">Barcelona</option>
-            <option value="Burgos">Burgos</option>
-            <option value="Cáceres">Cáceres</option>
-            <option value="Cádiz">Cádiz</option>
-            <option value="Cantabria">Cantabria</option>
-            <option value="Castellón">Castellón</option>
-            <option value="Ceuta">Ceuta</option>
-            <option value="Ciudad Real">Ciudad Real</option>
-            <option value="Córdoba">Córdoba</option>
-            <option value="Cuenca">Cuenca</option>
-            <option value="Gerona">Gerona</option>
-            <option value="Granada">Granada</option>
-            <option value="Guadalajara">Guadalajara</option>
-            <option value="Guipúzcoa">Guipúzcoa</option>
-            <option value="Huelva">Huelva</option>
-            <option value="Huesca">Huesca</option>
-            <option value="Islas Baleares">Islas Baleares</option>
-            <option value="Jaén">Jaén</option>
-            <option value="La Coruña">La Coruña</option>
-            <option value="La Rioja">La Rioja</option>
-            <option value="Las Palmas">Las Palmas</option>
-            <option value="León">León</option>
-            <option value="Lérida">Lérida</option>
-            <option value="Lugo">Lugo</option>
-            <option value="Madrid">Madrid</option>
-            <option value="Málaga">Málaga</option>
-            <option value="Melilla">Melilla</option>
-            <option value="Murcia">Murcia</option>
-            <option value="Navarra">Navarra</option>
-            <option value="Orense">Orense</option>
-            <option value="Palencia">Palencia</option>
-            <option value="Pontevedra">Pontevedra</option>
-            <option value="Salamanca">Salamanca</option>
-            <option value="Segovia">Segovia</option>
-            <option value="Sevilla">Sevilla</option>
-            <option value="Soria">Soria</option>
-            <option value="Tarragona">Tarragona</option>
-            <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
-            <option value="Teruel">Teruel</option>
-            <option value="Toledo">Toledo</option>
-            <option value="Valencia">Valencia</option>
-            <option value="Valladolid">Valladolid</option>
-            <option value="Vizcaya">Vizcaya</option>
-            <option value="Zamora">Zamora</option>
-            <option value="Zaragoza">Zaragoza</option>
+        <form action="" method="GET">
+        <label for="filtro" class="form-label">Filtra por provincia</label>
+        <select name="filtro" class="form-select" style="width: 300px;" id="filtro" required>
+                <option value="" selected disabled>Selecciona tu provincia</option>
+                <option value="0">Quitar filtros</option>
+                <option value="Alicante">Alicante</option>
+                <option value="Almería">Almería</option>
+                <option value="Asturias">Asturias</option>
+                <option value="Barcelona">Barcelona</option>
+                <option value="Cádiz">Cádiz</option>
+                <option value="Cantabria">Cantabria</option>
+                <option value="Castellón">Castellón</option>
+                <option value="Ceuta">Ceuta</option>
+                <option value="Gerona">Gerona</option>
+                <option value="Granada">Granada</option>
+                <option value="Guipúzcoa">Guipúzcoa</option>
+                <option value="Huelva">Huelva</option>
+                <option value="Islas Baleares">Islas Baleares</option>
+                <option value="La Coruña">La Coruña</option>
+                <option value="Las Palmas">Las Palmas</option>
+                <option value="Lugo">Lugo</option>
+                <option value="Málaga">Málaga</option>
+                <option value="Melilla">Melilla</option>
+                <option value="Murcia">Murcia</option>
+                <option value="Pontevedra">Pontevedra</option>
+                <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+                <option value="Tarragona">Tarragona</option>
+                <option value="Valencia">Valencia</option>
+                <option value="Vizcaya">Vizcaya</option>
     </select>
-    <input type="submit" value="Filter" style="margin-top: 5px;">
+    <input type="submit" value="Filter" style="width: 100px; margin-top: 5px;">
 </form>
 </div>
         <?php
@@ -385,10 +427,22 @@ echo $data->fivestar($result);
             $data = new Mostrar;
 
             $result = $data->getAllPlayas();
-            
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $filtro = $_POST['provincia'];
+            $nombre = $_POST['nombrePlaya'];
+            $valoracion = $_POST['valoracion'];
+            $ciudad = $_POST['provincia'];
+            $descripcion = $_POST['descripcion'];
+            
+
+            $data->nuevaPlaya($nombre, $ciudad, $valoracion, $descripcion, $_FILES);
+                
+            }
+            $result = $data->getAllPlayas();
+            $filtro = 0;
+
+            if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+                $filtro = $_GET['filtro'];
             } else {
                 $filtro = 0;
             }
