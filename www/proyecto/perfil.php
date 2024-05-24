@@ -8,6 +8,7 @@ $email = $security->getUserData();
 $info = $security->getUser($email);
 $nom = $info['nombre'];
 $object->modificar($nom);
+  
 ?>
 
 <!DOCTYPE html>
@@ -189,12 +190,24 @@ $object->modificar($nom);
         </div>
     </div>
         <div class="card-body">
+<<<<<<< HEAD
             <form action="foto_perfil.php?nombre=<?php echo $info['nombre']; ?>" method="POST" enctype="multipart/form-data">
                 <label for="photo">Selecciona una foto</label><br>
                 <input type="file" id="photo" name="photo" required><br><br>
                 <button type="submit">Subir Imagen</button>
             </form>
             <form action="" method="POST">
+=======
+            <form action="foto.php" method="POST">
+            <div class="mb-3">
+                    <label for="name" class="form-label">Foto Perfil:</label>
+                    <label for="file">Seleccione un archivo:</label>
+                     <input type="file" id="file" name="file">
+        <br><br>
+        <input type="submit" value="Subir Archivo">
+        
+                </div>
+>>>>>>> f2353f9f34109becd48895c073cebfe3ec95f498
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre de Usuario:</label>
                     <input type="text" class="form-control" id="name" name="name" value="<?php echo $info["nombre"]; ?>">

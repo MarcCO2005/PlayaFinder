@@ -139,6 +139,7 @@ body {
     font-size: 2em;
 }
 
+<<<<<<< HEAD
 .container {
     padding: 20px;
     background-color: #fff;
@@ -305,6 +306,19 @@ body {
         .delete-button:hover {
             background-color: #c0392b;
         }
+=======
+.cards {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:lightblue !important;
+    
+}
+>>>>>>> f2353f9f34109becd48895c073cebfe3ec95f498
 
 </style>
 <body>
@@ -354,6 +368,7 @@ body {
                 <?php echo $playa[0]->getDescripcion(); ?>
             </p>
         </div>
+<<<<<<< HEAD
 
         <div class="comment-form" style="margin-top: 50px; margin-bottom: 50px;">
             <h2>Deja tu reseña aqui</h2>
@@ -364,6 +379,10 @@ body {
 
                 <button type="submit">Enviar</button>
             </form>
+=======
+        <div class="image-container">
+            <img class="cards" src="img/<?php echo $imagen;?>"alt="Imagen de <?php echo $playa[0]->getNombre(); ?>">
+>>>>>>> f2353f9f34109becd48895c073cebfe3ec95f498
         </div>
     </div>
     <div class="image-container">

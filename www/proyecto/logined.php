@@ -94,9 +94,8 @@ $email = $info['email'];
             height: 100%; 
         }
         .navbar-dark .navbar-nav .nav-link:hover {
- 
-    background-color:  rgba(5, 255, 255, 0.5);
-    border-radius: 50px;
+    color:lightblue !important;
+    
 }
 
 </style>

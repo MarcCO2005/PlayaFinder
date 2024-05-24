@@ -96,6 +96,7 @@ $registerMessage = $security->doRegister();
         }
 <<<<<<< HEAD
         .navbar-dark .navbar-nav .nav-link:hover {
+<<<<<<< HEAD
  color: white;
  background-color:  rgba(255, 255, 255, 0.5);
  border-radius: 50px;
@@ -103,7 +104,12 @@ $registerMessage = $security->doRegister();
         .nav-link:hover {
     color: #ffd700 !important;
 >>>>>>> Dario
+=======
+    color:lightblue !important;
+    
+>>>>>>> f2353f9f34109becd48895c073cebfe3ec95f498
 }
+
     </style>
 </head>
 <body>

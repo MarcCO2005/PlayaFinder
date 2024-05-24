@@ -234,7 +234,11 @@ input[type="submit"]:focus {
 }
 
 .carousel-item-custom:hover{
+<<<<<<< HEAD
     transform: scale(1.03);
+=======
+    transform: scale(1.05);
+>>>>>>> f2353f9f34109becd48895c073cebfe3ec95f498
     
 }
 .Playas-frecuentes {

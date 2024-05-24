@@ -154,6 +154,7 @@ class Mostrar extends Connection{
         return $playa;
     }
 
+<<<<<<< HEAD
     public function comentar($nombre, $fecha, $playa, $imagen){
         if (count($_POST) > 0) {
             $comentario = $_POST['comment'];
@@ -321,7 +322,10 @@ public function deletePlaya($nombre){
     $query = "DELETE FROM `Playa` WHERE `nombre` = '$nombre'";
     $result = mysqli_query($conn, $query);
 }
+=======
+>>>>>>> f2353f9f34109becd48895c073cebfe3ec95f498
 
 }
+
            
 ?>
