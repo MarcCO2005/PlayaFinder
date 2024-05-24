@@ -130,9 +130,23 @@ $user = $info['nombre'];
     }
 
 
+<<<<<<< HEAD
     .card-footer {
         text-align: center;
     }
+=======
+}
+.carousel-item-custom:hover {
+            transform: scale(1.05);
+        }
+        .nav-link:hover {
+    color: #ffd700 !important;
+}
+.btn-danger{
+            margin-right:5px;
+            margin-left:5px
+        }
+>>>>>>> origin/Dario
 
     .navbar {
         background-color: #302B37;

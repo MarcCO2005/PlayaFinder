@@ -122,6 +122,9 @@ $object->modificar($nom);
     height: auto;
     display: block;
 }
+.nav-link:hover {
+    color: #ffd700 !important;
+}
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

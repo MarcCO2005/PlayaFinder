@@ -26,6 +26,7 @@ $registerMessage = $security->doRegister();
             background-size: cover;
             position: relative;
         }
+        
         .overlay {
             position: absolute;
             top: 0;
@@ -116,6 +117,7 @@ $registerMessage = $security->doRegister();
 <div class="overlay"></div>
 <div class="content">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container-fluid" style="margin-left:100px">
             <a class="navbar-brand" href="index.php">
@@ -144,6 +146,10 @@ $registerMessage = $security->doRegister();
             </div>
 =======
     <nav class="navbar navbar-expand-sm transparent">
+=======
+
+<nav class="navbar navbar-expand-sm navbar-dark transparent">
+>>>>>>> origin/Dario
         <div class="container">
             <a class="navbar-brand" href="logined.php">
                 <img src="img/logo.jpg" alt="Avatar Logo" style="width:60px;" class="rounded-pill"> 
