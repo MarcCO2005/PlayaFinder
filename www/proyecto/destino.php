@@ -134,10 +134,13 @@ input[type="submit"]:focus {
 .carousel-item-custom:hover {
             transform: scale(1.05);
         }
-.navbar-dark .navbar-nav .nav-link:hover {
-    color:lightblue !important;
-    
+        .nav-link:hover {
+    color: #ffd700 !important;
 }
+.btn-danger{
+            margin-right:5px;
+            margin-left:5px
+        }
 
 .carousel-wrapper {
     margin-top: 90px;

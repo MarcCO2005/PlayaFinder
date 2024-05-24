@@ -53,7 +53,6 @@ class Mostrar extends Connection{
         $cont = 0;
         $output = "<div class='row row-cols-1 row-cols-md-3 g-4'>";
         foreach ($array as $element) {
-            $cont++;
             $nombre = $element->getNombre();
             $ciudad = $element->getCiudad();
             $valoracion = $this->valoracion($nombre);
@@ -68,7 +67,7 @@ class Mostrar extends Connection{
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
             $output .= "<div class='card-footer'>
-            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>";
+            <a href='playa.php?nombre=$nombre&imagen=$nombre.jpeg' class='btn btn-primary'>Mas info</a>";
             if ($user == 'admin') {
             
             $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn-custom'>Eliminar</a>";
@@ -90,10 +89,10 @@ class Mostrar extends Connection{
                 <p class='card-text' style='font-size: 20px;'> $valoracion</p>
                 </div>";
             $output .= "<div class='card-footer'>
-            <a href='playa.php?nombre=$nombre&imagen=playa$cont.jpeg' class='btn btn-primary'>Mas info</a>";
+            <a href='playa.php?nombre=$nombre&imagen=$nombre.jpeg' class='btn btn-primary'>Mas info</a>";
             if ($user == 'admin') {
             
-                $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn-custom'>Eliminar</a>";
+                $output .= "<a href='eliminar_playa.php?nombre=$nombre' class='btn btn-danger'>Eliminar</a>";
                 }
                 $output .= "<a href='javascript:void(0);' class='btn btn-secondary' onclick='mostrarDesplegable(this)'>
                     <i class='bi bi-chevron-down'></i>
