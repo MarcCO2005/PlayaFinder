@@ -3,7 +3,6 @@
 function fotoperf() {
     $targetDir = "Assets/event_picture/";
 
-    // Verificar que el archivo haya sido enviado y que no haya errores
     if (isset($_FILES['imageFile']) && $_FILES['imageFile']['error'] == UPLOAD_ERR_OK) {
         $_FILES['imageFile']['name'] = 'prueba.jpg';
         $targetFile = $targetDir . basename($_FILES["imageFile"]["name"]);
@@ -36,12 +35,14 @@ function fotoperf() {
                 return;
             }
         }
-    } else {
-        echo "No se ha enviado ningún archivo o hubo un error en la subida.";
-    }
+    } 
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     fotoperf();
+    
+    // Redirigir después de ejecutar la función fotoperf()
+    header("Location: perfil.php");
+    exit; // Asegurarse de que el script se detenga después de la redirección
 }
 ?>
